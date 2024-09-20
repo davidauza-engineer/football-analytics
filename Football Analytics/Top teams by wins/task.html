@@ -1,0 +1,25 @@
+<div class="step-text">
+<h5 id="description">Description</h5>
+<p>In the first stage of our football analytics project, you will focus on setting up the environment by downloading and extracting the necessary data files. You will work with a SQLite database containing extensive <a href="https://www.kaggle.com/datasets/hugomathien/soccer/data" rel="noopener noreferrer nofollow" target="_blank">football match data</a>. </p>
+<p>You might have noticed that there is no accompanying ERD provided with the data. This adds an extra layer of excitement to working with the database. You can use tools like <a href="https://www.dbvis.com/" rel="noopener noreferrer nofollow" target="_blank">DbVisualizer</a> to generate the <a href="https://www.dropbox.com/scl/fi/z5ox1pe6s3nvq0frjkpfx/football-ERD.svg?rlkey=kbxogta7b1x5gzdohe5xshtrg&amp;st=3ikmv53y&amp;dl=1" rel="noopener noreferrer nofollow" target="_blank">ERD</a> and query the database. You can generate the ERD using the following <a href="https://www.dbvis.com/docs/24.2/working-with-schemas/viewing-entity-relationships/" rel="noopener noreferrer nofollow" target="_blank">steps</a>.</p>
+<p>By the end of this stage, you will have successfully retrieved the database and performed a simple analysis to identify the top 10 teams with the most wins using SQL and Python.</p>
+<h5 id="objectives">Objectives</h5>
+<p>To complete this stage:</p>
+<ol>
+<li>Download the <code class="language-python">database.zip</code> file and save it in the <code class="language-python">data</code> directory.</li>
+<li>Extract the content of the zip file to the <code class="language-python">data/database</code> directory.</li>
+<li>Connect to the SQLite database file named <code class="language-python">database.sqlite</code> with <a href="https://docs.python.org/3/library/sqlite3.html" rel="noopener noreferrer nofollow" target="_blank">sqlite3</a>.</li>
+<li>Perform the analysis to count the number of wins for each team and list the top 10 teams by wins using SQL query and the Pandas library. Using Pandas' <a href="https://pandas.pydata.org/docs/reference/api/pandas.read_sql_query.html" rel="noopener noreferrer nofollow" target="_blank"><code class="language-python">read_sql_query</code></a> function may be important for running your SQL query.</li>
+<li>Print the results as a list of lists.</li>
+</ol>
+<h5 id="examples">Examples</h5>
+<p><strong>Example 1:</strong><em> an example of the program output</em></p>
+<pre><code class="language-python">[
+  ['Borussia Dortmund', 180],
+  ['Milan', 165],
+  ['PSV', 150],
+  ['SL Benfica', 141],
+  ['FC St. Gallen', 132]
+]</code></pre>
+
+</div>

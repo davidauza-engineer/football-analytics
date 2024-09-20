@@ -1,0 +1,264 @@
+hyperskill_project:
+  id: 480
+  ide_files: https://cogniterra.org/media/attachments/lesson/39440/additional_files.json
+  is_template_based: false
+  use_ide: true
+update_date: "Thu, 01 Jan 1970 00:00:00 UTC"
+stages:
+  - id: 2742
+    step: 48239
+    is_completed: false
+  - id: 2743
+    step: 48240
+    is_completed: false
+  - id: 2744
+    step: 48241
+    is_completed: false
+  - id: 2745
+    step: 48242
+    is_completed: false
+topics:
+  0:
+    - title: Operating systems
+      theory_id: 9704
+    - title: Command line overview
+      theory_id: 8977
+    - title: Working with file modes and permissions
+      theory_id: 13961
+    - title: Working with SQLite
+      theory_id: 17163
+    - title: Introduction to Python
+      theory_id: 47352
+    - title: Multi-line programs
+      theory_id: 47555
+    - title: "PEP 8: Coding style guide"
+      theory_id: 47499
+    - title: Taking user's input
+      theory_id: 47680
+    - title: Program with numbers
+      theory_id: 47734
+    - title: If statement
+      theory_id: 5953
+    - title: Else statement
+      theory_id: 5932
+    - title: For loop
+      theory_id: 6065
+    - title: Importing modules
+      theory_id: 6019
+    - title: While loop
+      theory_id: 5940
+    - title: "Loop control: break, continue, pass"
+      theory_id: 6302
+    - title: Class
+      theory_id: 6661
+    - title: Class instances
+      theory_id: 6669
+    - title: Methods
+      theory_id: 6931
+    - title: Methods and attributes
+      theory_id: 6981
+    - title: Files
+      theory_id: 13025
+    - title: "SQL: structured query language"
+      theory_id: 7054
+    - title: Basic data types
+      theory_id: 7123
+    - title: Literals
+      theory_id: 7400
+    - title: Arithmetic expressions
+      theory_id: 7409
+    - title: Basic CREATE statement
+      theory_id: 9084
+    - title: Basic SELECT statement
+      theory_id: 7392
+    - title: SELECT FROM statement
+      theory_id: 8611
+    - title: Logic and comparison expressions
+      theory_id: 8619
+    - title: File types
+      theory_id: 13017
+    - title: Introduction to pandas
+      theory_id: 10416
+    - title: Reading data in pandas
+      theory_id: 31809
+    - title: The NULL value
+      theory_id: 7907
+    - title: Special WHERE operators
+      theory_id: 10521
+    - title: Program execution
+      theory_id: 6047
+    - title: Errors
+      theory_id: 6052
+    - title: Exceptions
+      theory_id: 6042
+    - title: Built-in exceptions
+      theory_id: 11680
+    - title: Exception handling
+      theory_id: 6270
+    - title: Basic INSERT statement
+      theory_id: 9059
+    - title: Basic DELETE statement
+      theory_id: 9075
+    - title: Introduction to SQLite
+      theory_id: 12165
+    - title: File modes and permissions
+      theory_id: 13953
+    - title: Files in Python
+      theory_id: 8691
+    - title: Results ordering
+      theory_id: 8627
+    - title: Types of JOINs
+      theory_id: 12100
+    - title: Aggregate functions
+      theory_id: 9611
+    - title: GROUP BY statement
+      theory_id: 9908
+    - title: Subqueries
+      theory_id: 11793
+    - title: Set operations
+      theory_id: 9798
+    - title: Basic data types
+      theory_id: 47516
+    - title: Variables
+      theory_id: 47536
+    - title: "Integer arithmetic: basic operations"
+      theory_id: 47564
+    - title: "Integer arithmetic: special operations"
+      theory_id: 47917
+    - title: Invoking functions
+      theory_id: 5891
+    - title: Boolean type and operations. True and false
+      theory_id: 6025
+    - title: Comparisons
+      theory_id: 5920
+    - title: List
+      theory_id: 5979
+    - title: Declaring functions
+      theory_id: 5900
+    - title: Global vs local. Scopes
+      theory_id: 6322
+    - title: "Function, arguments and parameters"
+      theory_id: 7248
+    - title: "Working with strings: basic methods"
+      theory_id: 6842
+    - title: Quotes and multi-line strings
+      theory_id: 5814
+    - title: String formatting
+      theory_id: 6037
+    - title: Escape sequences
+      theory_id: 7130
+    - title: Splitting strings and joining lists
+      theory_id: 6972
+    - title: Dictionary
+      theory_id: 6481
+    - title: Type casting
+      theory_id: 6224
+    - title: Sep and end arguments of print
+      theory_id: 7452
+  1:
+    - title: What is math?
+      theory_id: 28537
+    - title: Applications of math
+      theory_id: 28832
+    - title: "Math notations, formulas, and statements"
+      theory_id: 28757
+    - title: Basic concepts
+      theory_id: 26143
+    - title: Cartesian coordinates
+      theory_id: 13114
+    - title: Basics of sets
+      theory_id: 8220
+    - title: Basics of functions
+      theory_id: 8857
+    - title: Properties of functions
+      theory_id: 20683
+    - title: The concept of probability
+      theory_id: 38243
+    - title: Probability and Statistics
+      theory_id: 11637
+    - title: What is linear algebra?
+      theory_id: 35882
+    - title: Data visualization with Python
+      theory_id: 44231
+    - title: Numerical and categorical data
+      theory_id: 24686
+    - title: Population and sample
+      theory_id: 11274
+    - title: "Mean, median, and mode"
+      theory_id: 11282
+    - title: Parameters and options
+      theory_id: 9746
+    - title: Properties of numerical functions
+      theory_id: 20704
+    - title: "Vectors, matrices, scalars"
+      theory_id: 16969
+    - title: Introduction to matrices
+      theory_id: 7112
+    - title: Intro to NumPy
+      theory_id: 9672
+    - title: Creating modules
+      theory_id: 6057
+    - title: Multiple modules. Package
+      theory_id: 6384
+    - title: Installing packages with pip
+      theory_id: 6230
+    - title: The Jupyter Notebook
+      theory_id: 12623
+    - title: Google Colab
+      theory_id: 12631
+    - title: Iterators
+      theory_id: 8479
+    - title: Introduction to matplotlib
+      theory_id: 16788
+    - title: Matplotlib scatter plot
+      theory_id: 17926
+    - title: Intro to seaborn
+      theory_id: 18556
+    - title: Series
+      theory_id: 10421
+    - title: DataFrame
+      theory_id: 10933
+    - title: Accessing data in a DataFrame
+      theory_id: 12998
+    - title: .loc & .iloc
+      theory_id: 13343
+    - title: Summarizing numeric columns
+      theory_id: 13359
+    - title: Grouping and aggregating data in pandas
+      theory_id: 12585
+    - title: Conditional selection
+      theory_id: 13301
+    - title: Searching within a pandas DataFrame
+      theory_id: 15868
+    - title: Combining Data in Pandas
+      theory_id: 12349
+    - title: Lambda functions
+      theory_id: 7092
+    - title: Ordering and total order
+      theory_id: 9253
+    - title: Sorting a list
+      theory_id: 10059
+    - title: Writing Efficient SQL Queries
+      theory_id: 29930
+  2:
+    - title: Array creation and indexing
+      theory_id: 10077
+    - title: Dataclass
+      theory_id: 25094
+    - title: Match statement
+      theory_id: 37658
+    - title: Matplotlib bar chart
+      theory_id: 16796
+    - title: MultiIndex dataframes
+      theory_id: 36963
+    - title: CASE statement
+      theory_id: 33652
+    - title: Indexes
+      theory_id: 6189
+    - title: Function decorators
+      theory_id: 10103
+    - title: Slicing
+      theory_id: 6177
+  3:
+    - title: List comprehension
+      theory_id: 6315

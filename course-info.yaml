@@ -1,0 +1,14 @@
+type: hyperskill
+title: Football Analytics
+language: English
+summary: "<p>Football is a data-rich sport, offering opportunities to uncover valuable\
+  \ insights through analytics. This project delves into football analytics using\
+  \ data from the top European leagues. You will explore the data using the data analyst's\
+  \ favorite tools: Python and SQL.\_ You'll combine both tools to retrieve information\
+  \ from a database and perform data manipulation, analysis, and visualization.</p><br/><br/>Learn\
+  \ more at <a href=\"https://hyperskill.org/projects/480?utm_source=ide&utm_medium=ide&utm_campaign=ide&utm_content=project-card\"\
+  >https://hyperskill.org/projects/480</a>"
+programming_language: Python
+content:
+  - Football Analytics
+mode: Study

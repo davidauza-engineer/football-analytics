@@ -1,0 +1,23 @@
+<div class="step-text">
+<h5 id="description">Description</h5>
+<p>After calculating the number of wins for each team in the previous stage, you can visualize the distribution using a kernel density estimation (KDE) plot:</p>
+<p style="text-align: center;"><picture><img alt="Density plot of wins" height="320" name="Density plot of wins.svg" src="https://ucarecdn.com/6e2525f8-a12e-4893-b96e-d8d55eccdd7c/" width="426"/></picture></p>
+<p>The plot shows that the most prolific teams scored over 200 goals, while most teams scored fewer than 50 goals.</p>
+<p>In this stage, you will delve deeper into the football match data, focusing specifically on the German league. The goal is to identify the teams with the most drawn matches.</p>
+<p>You can perform most of your analysis using either an SQL query or by manipulating the data with Pandas—your choice. By the end of this stage, you will have a list of the top 3 teams in Germany with the highest number of drawn matches.</p>
+<h5 id="objectives">Objectives</h5>
+<p>To complete this stage:</p>
+<ol>
+<li>Connect to the SQLite database file named <code class="language-python">database.sqlite</code> using <code class="language-python">sqlite3</code>.</li>
+<li>Perform data analysis using SQL and Pandas to count the number of draws for each team in the German league.</li>
+<li>Print the top 3 teams with the highest number of draws as a sorted list of lists.</li>
+</ol>
+<h5 id="examples">Examples</h5>
+<p><strong>Example 1:</strong><em> an example of the program output</em></p>
+<pre><code class="language-python">[
+  ['Bayern Munich', 12],
+  ['Borussia Dortmund', 12],
+  ['Schalke 04', 9]
+]
+</code></pre>
+</div>
