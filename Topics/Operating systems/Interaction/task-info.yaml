@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: OS Process Management
+  - text: User Space Interface
+  - text: Command Line Interface
+  - text: Graphical User Interface
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/17543#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 20 Sep 2024 14:22:20 UTC"
+record: -1
+selected_options:
+  - 2
+  - 3
+local_check: false

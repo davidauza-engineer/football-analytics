@@ -1,0 +1,28 @@
+type: matching
+captions:
+  - OS
+  - Kernel
+  - CLI
+  - GUI
+options:
+  - Text-based interface in which a person interacts with a computer with commands
+  - "Manages computer hardware, software resources, and provides common services for\
+  \ computer programs"
+  - The main part of any operating system providing programs with coordinated access
+    to computer resources
+  - User interface that allows users to interact with the device using graphical icons
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/9709#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 20 Sep 2024 14:24:50 UTC"
+record: -1
+ordering:
+  - 1
+  - 2
+  - 0
+  - 3

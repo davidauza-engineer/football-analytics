@@ -1,0 +1,24 @@
+type: matching
+captions:
+  - Monolithic kernel
+  - Microkernel
+  - Kernel
+options:
+  - is a program that performs most of the OS functions
+  - "performs a smaller subset of the OS functions, can be extended with additional\
+  \ modules - drivers"
+  - "is a mandatory part of any OS, it's core"
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/19902#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 20 Sep 2024 14:25:29 UTC"
+record: -1
+ordering:
+  - 0
+  - 1
+  - 2
