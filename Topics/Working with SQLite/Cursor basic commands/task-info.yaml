@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: <code>cursor.execute()</code>
+  - text: <code>cursor.executemany()</code>
+  - text: <code>cursor.fetchone()</code>
+  - text: <code>cursor.fetchmany()</code>
+  - text: <code>cursor.close()</code>
+  - text: <code>cursor.fetchall()</code>
+  - text: <code>cursor.fetchrow()</code>
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/20670#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 21 Sep 2024 15:45:46 UTC"
+record: -1
+selected_options:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+local_check: false

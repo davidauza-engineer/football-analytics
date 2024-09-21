@@ -1,0 +1,22 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: <code>cursor.execute("select * from Customers where Country="Czeeechia"");
+      print(cursor.fetchmany())</code>
+  - text: <code>cursor.execute("select * from Customers where Country='Czeeechia'");
+      print(cursor.fetchall())</code>
+  - text: <code>cursor.execute("select * from Customers where Country=Czeeechia"); print(cursor.fetchall)</code>
+  - text: <code>cursor.execute("select from Customers where Country='Czeeechia'"); print(cursor.fetchall())</code>
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/18311#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 21 Sep 2024 15:43:38 UTC"
+record: -1
+selected_options:
+  - 1
+local_check: false

@@ -1,0 +1,24 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: "<code>None</code>, <code>int</code>, <code>float</code>, <code>str</code>,\
+    \ <code>bytes</code>"
+  - text: "<code>None</code>, <code>boolean</code>, <code>int</code>, <code>float</code>,\
+    \ <code>str</code>, <code>tuples</code>"
+  - text: "<code>None</code>, <code>int</code>, <code>float</code>, <code>str</code>,\
+    \ <code>bytes</code>, <code>set</code>"
+  - text: "<code>None</code>, <code>int</code>, <code>float</code>, <code>str</code>,\
+    \  <code>date</code>"
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/17166#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 21 Sep 2024 15:46:25 UTC"
+record: -1
+selected_options:
+  - 0
+local_check: false
