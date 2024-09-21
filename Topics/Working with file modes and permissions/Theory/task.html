@@ -1,0 +1,80 @@
+<div class="step-text">
+<p>You may already know that in Unix, files have access settings and that there are several permissions and limitations for users. In this topic we will learn how to change access settings using commands in the Unix terminal. Let's find out how to do it below.</p>
+<h5 id="view-file-permissions" style="text-align: center;"> View file permissions</h5>
+<p>First of all, it's good to know what file permissions you already have. To check it, you can use the <code class="language-bash">ls</code> command and its option <code class="language-bash">-l</code>. Just type <code class="language-bash">ls -l &lt;filename&gt;</code> in the terminal, and you will get something like this:</p>
+<pre><code class="language-no-highlight">$ ls -l file.txt
+-rw-r--r-- 1 admin admin 0 march 12 16:22 file.txt
+</code></pre>
+<p>Here you see who the file owner is, the creation date, and the permission set <code class="language-bash">-rw-r--r--</code>.</p>
+<p>Also, you can use the <code class="language-bash">stat</code> command. It displays information about the files and file systems in more details than <code class="language-bash">ls -l</code>. The other difference is that file permissions here are displayed as octal numbers:</p>
+<pre><code class="language-no-highlight">$ stat file.txt
+  File: file.txt
+  Size: 0         	Blocks: 0          IO Block: 4096   regular empty file
+Device: 806h/2054d	Inode: 2114279     Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 1000/   admin)   Gid: ( 1000/   admin)
+Access: 2021-03-16 13:18:04.699986770 +0300
+Modify: 2021-03-12 16:22:37.614043826 +0300
+Change: 2021-05-19 19:50:50.112886819 +0300
+ Birth: -</code></pre>
+<p>To shorten this output and view only access information you can use the <code class="language-bash">grep</code> command. It finds and displays only those strings that contain the word <em>Access</em>:</p>
+<pre><code class="language-no-highlight">$ stat file.txt | grep Access
+Access: (0644/-rw-r--r--)  Uid: ( 1000/   admin)   Gid: ( 1000/   admin)
+Access: 2021-03-16 13:18:04.699986770 +0300
+</code></pre>
+<p>In the same way, you can find out the permissions for the directory.</p>
+<p>So, now you know how to see file permissions. Let's find out how you can change them.</p>
+<h5 id="change-file-owner" style="text-align: center;">Change file owner</h5>
+<p>If you want to change the owner of the file and/or a group, you can use the <code class="language-bash">chown</code> command. Its syntax is as follows: <code class="language-bash">chown user &lt;option&gt; /path/to/file</code>. In the user field, you need to specify the user to whom you want to delegate the file. You can also specify a group separated by a colon, for example, user: group. Then not only the user will change, but also the whole group. For example, let's take the <code class="language-bash">save_the_world.txt</code> and transfer it to <em>superman </em>user and also change the group:</p>
+<pre><code class="language-bash">chown superman:marvel ./save_the_world.txt</code></pre>
+<p>If you want to change the owner of an entire directory, you can use the same command, just write the path to the folder instead of the file path. The path can be specified as both absolute and relative as in the example above.</p>
+<p>If you want these changes to apply not only to this directory but also to all its subdirectories, add the <code class="language-bash">-R</code> option:</p>
+<pre><code class="language-bash">chown -R superman:marvel ./save_the_world.txt</code></pre>
+<p>Great, now you know how to change the <em>owner</em> and the <em>group</em>. The next step is to learn how to "change the file mode" (another way to describe access permissions).</p>
+<h5 id="change-file-mode" style="text-align: center;">Change file mode</h5>
+<p>To change the file mode you can use the <code class="language-bash">chmod</code> command. With this command, you can set permissions to read, write, and execute a file/directory for the owner, group, and the world. The syntax of the command is as follows:</p>
+<pre><code class="language-bash">chmod permissions filename</code></pre>
+<p>There are two modes to use this command: an absolute mode and a symbolic mode. This means that we use either octal numbers or characters to define a permission set. Let's study some examples for the absolute mode first.</p>
+<p>We have a file <code class="language-bash">modify_it_now.exe</code> and its permissions are <code class="language-bash">-r--r--r--</code> or <code class="language-bash">444</code> in octal. The task is to change the mode so that the owner can read, write, and execute the file. The group should be able to read and execute, and the<em> </em>others should be able only to execute.</p>
+<p>In the absolute mode it will look like this: <code class="language-bash">751</code>. So, you can type in the terminal:</p>
+<pre><code class="language-bash">chmod 751 modify_it_now.exe</code></pre>
+<p>Now let's move on to the symbolic mode.</p>
+<h5 id="symbolic-mode" style="text-align: center;">Symbolic mode</h5>
+<p>As for the symbolic mode, you can modify permissions only of a specific owner. This mode involves mathematical symbols to modify the Unix file permissions:</p>
+<ul>
+<li>+ adds permission to a file or a directory</li>
+<li>- removes permission</li>
+<li>= sets permission and overrides permissions set earlier</li>
+</ul>
+<p>Also, it's important to know user denotations:</p>
+<ul>
+<li>u is user/owner</li>
+<li>g is group</li>
+<li>o is other</li>
+<li>a is all</li>
+</ul>
+<p>The syntax thus will be as follows: <code class="language-bash">chmod &lt;user denotation&gt; &lt;operator&gt; &lt;permissions&gt;</code>.</p>
+<p>So, if we want to modify the file permissions, we should type:</p>
+<pre><code class="language-bash"># modifying user permissions
+chmod u=rwx modify_it_now.exe
+
+# modifying group permissions
+chmod g=r+x modify_it_now.exe
+
+# modifying other permissions
+chmod o=r+w modify_it_now.exe</code></pre>
+<p>Here we override the permissions so that users can read, write and execute, group can read and execute, and others can read and write.</p>
+<p>In case we want to set the same permissions for all, for example, so that everybody could read, write and execute the file, we should type:</p>
+<pre><code class="language-bash">chmod a=rwx modify_it_now.exe</code></pre>
+<p>And if we want to only allow the others to read our file, we might use <code class="language-bash">+</code>:</p>
+<pre><code class="language-bash">chmod o+r modify_it_now.exe</code></pre>
+<p>This way we do not override the whole permissions set but change the concrete permission. In the example above we added the reading permission to others without changing the rest.</p>
+<p>Finally, if permission is to be removed, we should use the <code class="language-bash">-</code> operator.</p>
+<h5 id="conclusion" style="text-align: center;">Conclusion</h5>
+<p>To sum up,</p>
+<ul>
+<li>both <code class="language-bash">ls -l</code> or <code class="language-bash">stat</code> commands will give you the information about the file permissions;</li>
+<li>using <code class="language-bash">chown</code> command you can change the owner of the file and the group;</li>
+<li>with the <code class="language-bash">chmod</code> command you can change the mode of the file;</li>
+<li>remember the two ways to change the file mode: absolute and symbolic.</li>
+</ul>
+</div>

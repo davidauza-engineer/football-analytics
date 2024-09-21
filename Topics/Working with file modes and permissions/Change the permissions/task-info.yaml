@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: 745
+  - text: 500
+  - text: 744
+  - text: 520
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/13968#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 21 Sep 2024 14:57:03 UTC"
+record: -1
+selected_options:
+  - 2
+local_check: false

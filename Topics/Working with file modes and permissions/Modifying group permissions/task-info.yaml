@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: chmod rwx program.exe
+  - text: chmod g=rwx program.exe
+  - text: chmod program.exe
+  - text: chmod u=r-x program.exe
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/13966#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 21 Sep 2024 14:50:32 UTC"
+record: -1
+selected_options:
+  - 1
+local_check: false
