@@ -1,0 +1,23 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: width
+  - text: H_BAR
+  - text: LIGHT_SPEED
+  - text: PI
+  - text: length
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/47685#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sun, 22 Sep 2024 21:59:29 UTC"
+record: -1
+selected_options:
+  - 1
+  - 2
+  - 3
+local_check: false

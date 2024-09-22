@@ -1,0 +1,15 @@
+custom_name: "PEP 8: Coding style guide"
+content:
+  - Theory
+  - What’s PEP 8 Anyway
+  - Understanding indentation
+  - PEP 8 rule on indentation
+  - Keep it short and sweet
+  - Print long lines
+  - What’s in a Name
+  - Avoid extra spaces
+  - Naming constants
+  - Space around operators
+  - Follow rules and rewrite
+  - Consistency is the key
+  - Match with styles

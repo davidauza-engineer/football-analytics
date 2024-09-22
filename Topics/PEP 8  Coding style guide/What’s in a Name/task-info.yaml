@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: myVariable
+  - text: MYVARIABLE
+  - text: my_variable
+  - text: MyVariable
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/47684#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sun, 22 Sep 2024 21:56:23 UTC"
+record: -1
+selected_options:
+  - 2
+custom_name: What’s in a Name?
+local_check: false

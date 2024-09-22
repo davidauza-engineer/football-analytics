@@ -1,0 +1,26 @@
+type: matching
+captions:
+  - MEMORY_SIZE
+  - I'm feeling lucky today!
+  - radius
+  - "She said, \"Good morning, Captain!\""
+options:
+  - It is a constant.
+  - It is a variable.
+  - Use single quotes to print the sentence.
+  - Use double quotes to print the sentence.
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/47733#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sun, 22 Sep 2024 22:05:51 UTC"
+record: -1
+ordering:
+  - 0
+  - 3
+  - 1
+  - 2

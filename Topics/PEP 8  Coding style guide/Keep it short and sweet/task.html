@@ -1,0 +1,11 @@
+<div class="step-text">
+<p>Let's move to the next rule. PEP 8 tells us to keep our lines of code short—<strong>no more than 79 characters.</strong> It’s like not letting a sentence run on for too long in a book; it helps keep things readable. When your code lines are concise, it's easier for others (and future you!) to read and understand what each part of your program is doing without getting lost in a "wall of text." </p><p>We know you are now capable of identifying well-written code and poorly-written code. Please select those options in which the code is consistent with PEP 8:</p><p>A)</p><pre><code class="language-python">def lemmatize_text(tokens: list[str]) -&gt; list[str]:         lemmatizer = WordNetLemmatizer()         tokens = pos_tag(tokens)         tokens = [lemmatizer.lemmatize(token, pos=f"{tag_map(tag)}") for token, tag in tokens]         return tokens </code></pre><p>B)</p><pre><code class="language-python">def tag_map(postag: str) -&gt; str:
+    if postag.startswith("J"):
+        return wordnet.ADJ
+    elif postag.startswith("V"):
+        return wordnet.VERB
+    elif postag.startswith(("R", "D", "P", "X")):
+        return wordnet.ADV
+    else:
+        return wordnet.NOUN</code></pre><p>C)</p><pre><code class="language-python">print("Hello, world")</code></pre>
+</div>
