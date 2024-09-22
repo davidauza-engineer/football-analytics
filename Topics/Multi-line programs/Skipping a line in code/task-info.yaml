@@ -1,0 +1,19 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: How<br>are<br> you?
+  - text: How are you?
+  - text: How<br>are you?
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/47561#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sun, 22 Sep 2024 21:29:19 UTC"
+record: -1
+selected_options:
+  - 0
+local_check: false

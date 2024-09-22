@@ -1,0 +1,21 @@
+type: sorting
+options:
+  - print("small")
+  - print("Line breaks are")
+  - print("but mighty")
+  - print()
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/47740#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sun, 22 Sep 2024 21:30:32 UTC"
+record: -1
+ordering:
+  - 1
+  - 0
+  - 3
+  - 2
