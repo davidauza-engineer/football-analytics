@@ -1,0 +1,16 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: Hello World! I am learning Python.
+  - text: I am learning Python.
+  - text: Hello World!
+  - text: Hello World!<br>I am learning Python.
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/47391#comment
+status: Solved
+record: -1
+custom_name: "First spell : function"
+local_check: false

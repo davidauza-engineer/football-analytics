@@ -1,0 +1,13 @@
+type: code
+custom_name: Can I give you a Nickname?
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/47334#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sun, 22 Sep 2024 21:19:35 UTC"
+record: -1
+submission_language: python3
