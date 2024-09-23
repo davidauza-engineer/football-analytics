@@ -1,0 +1,24 @@
+type: matching
+custom_name: "Input: a new built-in function"
+captions:
+  - input
+  - print
+  - string
+options:
+  - Takes an input from a user
+  - Outputs something in the console
+  - "It is not a function, it's a data type"
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/47677#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Mon, 23 Sep 2024 09:31:37 UTC"
+record: -1
+ordering:
+  - 0
+  - 1
+  - 2

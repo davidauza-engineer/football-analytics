@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: date
+  - text: integer
+  - text: number
+  - text: string
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/47534#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Mon, 23 Sep 2024 09:46:27 UTC"
+record: -1
+selected_options:
+  - 3
+local_check: false

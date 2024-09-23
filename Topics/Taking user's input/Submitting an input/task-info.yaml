@@ -1,0 +1,19 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: "Only if the user takes too long (for instance, 2 hours)"
+  - text: "No"
+  - text: "Yes, in every case"
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/47531#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Mon, 23 Sep 2024 09:44:14 UTC"
+record: -1
+selected_options:
+  - 1
+local_check: false
