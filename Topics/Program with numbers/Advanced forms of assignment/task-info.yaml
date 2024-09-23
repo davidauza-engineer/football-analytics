@@ -1,0 +1,10 @@
+type: choice
+is_multiple_choice: false
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/47562#comment
+status: Unchecked
+record: -1
+local_check: false
