@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: backslashes
+  - text: curly braces
+  - text: colons
+  - text: spaces
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/5954#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Tue, 24 Sep 2024 09:28:29 UTC"
+record: -1
+selected_options:
+  - 3
+local_check: false

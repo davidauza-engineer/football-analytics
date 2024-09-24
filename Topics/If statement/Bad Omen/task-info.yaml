@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: x &gt;= 666
+  - text: x = 666
+  - text: x &lt; 666
+  - text: x == 666
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/5955#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Tue, 24 Sep 2024 09:31:09 UTC"
+record: -1
+selected_options:
+  - 1
+local_check: false
