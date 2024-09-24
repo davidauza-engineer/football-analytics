@@ -1,0 +1,82 @@
+<div class="step-text">
+<p>Computers are known for their ability to do things that people consider to be boring and energy-consuming. For example, repeating identical tasks without any errors is one of these things. In this topic, we'll learn what Python tool can help you with that, how to implement it, and what functions you can use along with it.</p>
+<h5 id="what-is-iteration">What is iteration?</h5>
+<p>In Python, the process of repetitive <a class="theory-lookup not-relevant" href="/learn/step/6065" rel="noopener noreferrer nofollow" target="_blank" title="In Python, execution refers to the process of running a program or a part of a program, such as a function or a coroutine. | Python is an interpreted language, which means that the code is not compiled into machine code before it is run. Instead, Python uses a virtual machine to execute the code. When it comes to coroutines, a coroutine becomes a task when it is passed to the `create_task()` function to be scheduled for execution. A future, on the other hand, is a low-level awaitable object that encapsulates an eventual result of an asynchronous operation. When a future object is awaited, the coroutine will wait until the future is resolved somewhere else.">execution</a> of the same <a class="theory-lookup not-relevant" href="/learn/step/6065" rel="noopener noreferrer nofollow" target="_blank" title="In Python, a block of code refers to a group of consecutive lines of code that are executed as a single unit. | It is typically defined by a header line, also known as a line that starts with a keyword such as 'if', 'for', 'while', or 'def'. The header line is followed by one or more indented lines of code that make up the block. These indented lines are executed only if the condition specified in the header line is true. Proper indentation is crucial for the block of code to work correctly. Blocks of code can be nested, meaning that a block of code can contain another block of code.">block of code</a> is called an <strong>iteration</strong>.</p>
+<p>There are two types of iteration:</p>
+<p><strong>Definite iteration</strong>, where the number of repetitions is stated in advance.</p>
+<p><strong><a class="theory-lookup not-relevant" href="/learn/step/6065" rel="noopener noreferrer nofollow" target="_blank" title="In Python, indefinite iteration refers to the process of repeatedly executing a block of code as long as a specified condition remains true. | Unlike definite iteration, where the number of repetitions is predetermined, indefinite iteration continues until the condition is no longer satisfied. This type of iteration is often implemented using the 'while' loop in Python, which checks the condition before each iteration and executes the code block if the condition is true. It's important to ensure that the condition will eventually be false to avoid an infinite loop.">Indefinite iteration</a></strong>, where a code block executes as long as the condition stated in advance is true.</p>
+<p>After the first iteration, the program comes back to the beginning of the code's body and repeats it, making a so-called <strong>loop</strong>. The most popular is the <code class="language-python">for</code><strong> </strong>loop<strong>, </strong>named after the <code class="language-python">for</code><strong> operator</strong>, which provides the code's execution. <code class="language-python">For</code> loops are usually considered to be definite. </p>
+<h5 id="for-loop-syntax">For loop syntax</h5>
+<p>Here is the scheme of the loop:</p>
+<pre><code class="language-python">for variable in iterable:
+    statement</code></pre>
+<p>where <code class="language-python">statement</code> is a block of operations executed for each item in<strong> </strong><code class="language-python">iterable</code><strong>, </strong>an object used in iteration (e.g., a string or a list). <code class="language-python">Variable</code> takes the value of the next item from the iterable after each iteration.</p>
+<p>Now try to guess what output we'll get if we execute the following piece of code:</p>
+<pre><code class="language-python">oceans = ['Atlantic', 'Pacific', 'Indian', 'Southern', 'Arctic']
+for ocean in oceans:
+    print(ocean)</code></pre>
+<p>During each iteration, the program will take one item from the list and execute the statements on it, so the final output will be:</p>
+<pre><code class="language-python">Atlantic
+Pacific
+Indian
+Southern
+Arctic</code></pre>
+<p>Strings are also iterable, so you can spell a word, for example:</p>
+<pre><code class="language-python">for char in 'magic':
+    print(char)</code></pre>
+<p> Like this:</p>
+<pre><code class="language-python">m
+a
+g
+i
+c</code></pre>
+<h5 id="range-function">Range function</h5>
+<p>The <code class="language-python">range()</code><strong> </strong>function can be used to specify the number of iterations. It returns a sequence of numbers from 0 (by default) and ends at a specified number. Be careful: the last number won't be in the output since we started from 0.</p>
+<p>Let's look at the example below:</p>
+<pre><code class="language-python">for i in range(5):
+    print(i)</code></pre>
+<p>What we'll get is this: </p>
+<pre><code class="language-python">0
+1
+2
+3
+4</code></pre>
+<p>You can change the <strong>starting value</strong> if you're not satisfied with 0, moreover, you can configure the <strong>increment (step)</strong> value by adding a third parameter:</p>
+<pre><code class="language-python">for i in range(5, 45, 10):
+    print(i)</code></pre>
+<p>According to the parameters included, we've asked to print the numbers from 5 to 45 with an increment value of 10. Be careful again, the last value is not included in the output:</p>
+<pre><code class="language-python">5
+15
+25
+35</code></pre>
+<p>If you're not going to use the counter variable in your loop, you can show it by replacing its name with the underscore symbol:</p>
+<pre><code class="language-python">for _ in range(100):
+    do_smth()</code></pre>
+<p>In the example above, we don't need the counter variable in any way, we simply use the loop to repeat the <code class="language-python">do_smth()</code> function a given number of times. </p>
+<h5 id="input-data-processing">Input data processing </h5>
+<p>You can also use the <code class="language-python">input()</code><strong> function </strong>that helps the user to pass a value to some variable and work with it. Thus, you can get the same output as with the previous piece of code:</p>
+<pre><code class="language-python">word = input()
+for char in word:
+    print(char)</code></pre>
+<p>Oh, look, you can write a piece of code with a practical purpose:</p>
+<pre><code class="language-python">times = int(input('How many times should I say "Hello"?'))
+for i in range(times):
+    print('Hello!')</code></pre>
+<p>You can, therefore, ask the user to specify the number of iterations to be performed.</p>
+<h5 id="nested-loop">Nested loop</h5>
+<p>In Python, it is easy to put one loop inside another one – a <strong>nested loop</strong>. The type of the inner and outer loops doesn't matter, the first to execute is the outer loop, then the inner one executes:</p>
+<pre><code class="language-python">names = ['Rose', 'Daniel']
+surnames = ['Miller', 'Smith']
+for name in names:
+    for surname in surnames:
+         print(name, surname)</code></pre>
+<p>The output is shown below: </p>
+<pre><code class="language-python">Rose Miller
+Rose Smith
+Daniel Miller
+Daniel Smith</code></pre>
+<p>Check out the Python Tutor <a href="https://pythontutor.com/visualize.html#code=names%20%3D%20%5B'Rose',%20'Daniel'%5D%0Asurnames%20%3D%20%5B'Miller',%20'Smith'%5D%0Afor%20name%20in%20names%3A%0A%20%20%20%20for%20surname%20in%20surnames%3A%0A%20%20%20%20%20%20%20%20%20print%28name,%20surname%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" rel="noopener noreferrer nofollow" target="_blank">visualization</a> for a better understanding of how the code works. Click <code class="language-python">Next&gt;</code> and follow the arrows. In this example,  we use two <code class="language-python">for</code> loops to create fictional people's names. You can deal with iterable objects of different sizes without too much fuss.</p>
+<h5 id="conclusion">Conclusion</h5>
+<p>All in all, <code class="language-python">for</code> loops are an efficient way to automate some repetitive actions. You can add variables and operations to make a nested loop. Moreover, you can control the number of iterations with the help of the <code class="language-python">range()</code> function. Be careful with the syntax: an extra indent or the lack of a colon can cause an error!</p>
+<p>Read more on this topic in <a href="https://hyperskill.org/blog/post/python-range-function-and-its-methods" rel="noopener noreferrer nofollow" target="_blank">Python </a><a class="theory-lookup not-relevant" href="/learn/step/6065" rel="noopener noreferrer nofollow" target="_blank" title="In Python, the range function is a built-in function used to generate a sequence of numbers over a specified range of values. | It takes one, two, or three integer arguments, which determine the start, stop, and step size of the sequence, respectively. By default, the range function starts from 0, increments by 1, and stops before the specified stop value. It is often used in loops to iterate over a sequence of numbers. It is also an example of a higher-order function, as it can take a function as an input or return a function as an output.">range function</a> and its methods on Hyperskill Blog.</p>
+</div>

@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: a
+  - text: b
+  - text: c
+  - text: d
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6546#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Tue, 24 Sep 2024 10:05:22 UTC"
+record: -1
+selected_options:
+  - 2
+local_check: false

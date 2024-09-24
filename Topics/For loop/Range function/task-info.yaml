@@ -1,0 +1,21 @@
+type: number
+files:
+  - name: answer.txt
+    visible: true
+    placeholders:
+      - offset: 0
+        length: 1
+        placeholder_text: type your solution here
+        initial_state:
+          length: 1
+          offset: 0
+        initialized_from_dependency: false
+        selected: true
+        status: Solved
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6067#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Tue, 24 Sep 2024 09:59:40 UTC"
+record: -1

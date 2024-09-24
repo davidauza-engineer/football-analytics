@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: all the loops start simultaneously.
+  - text: the outer loop starts first.
+  - text: with <code>for</code> and <code>while</code> the <code>for</code> loop always
+      starts first.
+  - text: the inner loop starts first.
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6066#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Tue, 24 Sep 2024 10:00:08 UTC"
+record: -1
+selected_options:
+  - 1
+local_check: false
