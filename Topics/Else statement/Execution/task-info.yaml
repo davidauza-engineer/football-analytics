@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: immediately after the code from an <code>if</code> statement is run
+  - text: it is run independently of an <code>if</code> statement
+  - text: when the value of condition is <code>False</code>
+  - text: when the value of condition is <code>True</code>
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/5933#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Tue, 24 Sep 2024 09:44:51 UTC"
+record: -1
+selected_options:
+  - 2
+local_check: false

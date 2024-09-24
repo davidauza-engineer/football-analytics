@@ -1,0 +1,34 @@
+<div class="step-text">
+<p>Setting conditions is a pretty popular and useful tool in programming. However, sometimes just to check if a condition is true or not might not be enough. Let's say, you don't want a piece of code to execute if your condition is false, but, if that's the case, there is another piece of code you do want to execute. For situations like this Python has another powerful tool about which we're gonna learn in this topic! </p>
+<h5 id="simple-if-else" style="text-align: center;">Simple if-else</h5>
+<p>An <strong>if-<a class="theory-lookup not-relevant" href="/learn/step/5932" rel="noopener noreferrer nofollow" target="_blank" title="In Python, an else statement is a part of conditional expressions that allows executing a block of code when the condition of the preceding if statement is not met. | It provides an alternative for the if statement, ensuring that only one block of code will be executed. Unlike the if statement, the else statement does not require a condition. It is often used in nested if-else statements for clearer and less error-prone code. Proper indentation is essential for the correct execution of the else statement.">else statement</a></strong> is another type of <a class="theory-lookup not-relevant" href="/learn/step/5932" rel="noopener noreferrer nofollow" target="_blank" title="In Python, a conditional expression, also known as an if-else statement, is a type of control flow statement that allows you to execute different blocks of code depending on whether a specified condition is true or false. | It consists of an if clause followed by a block of code to be executed if the condition is true, and an else clause followed by a block of code to be executed if the condition is false. Proper indentation is crucial for the if-else statement to work correctly.">conditional expression</a> in Python. It differs from an <strong><a class="theory-lookup not-relevant" href="/learn/step/5932" rel="noopener noreferrer nofollow" target="_blank" title="In Python, an if statement is a conditional expression used to execute a block of code only if a specified condition is true. | The condition is always a boolean expression, which means it can have a value of either true or false. The if statement is followed by a colon and a block of code that will be executed if the condition is met. Proper indentation is crucial for the if statement to work correctly. It is a fundamental tool in programming that allows for more complex logic and decision-making within a program.">if statement</a></strong> by the presence of the additional keyword <code class="language-python">else</code>. The block of code that <code class="language-python">else</code> contains executes when the condition of your if statement does not hold (the <a class="theory-lookup not-relevant" href="/learn/step/5932" rel="noopener noreferrer nofollow" target="_blank" title="In Python, a boolean value is a special data type that can have only two possible values: True or False. | These values are used to represent the two opposite states of something, such as on or off, yes or no. The values of non-boolean types, such as integers or strings, are called truthy or falsy, depending on whether they are interpreted as true or false. In Python, the following values are evaluated as false: constant defined to be false (None), zero of any numeric type (0, 0.0, 0j), empty sequences and containers ([], (), {}, set()), and empty strings ('', b''). Anything else generally evaluates to true.">Boolean value</a> is <code class="language-python">False</code>). Since an else statement is an alternative for an if statement, only one block of code can be executed. Also,  <code class="language-python">else</code> doesn't require any condition:</p>
+<pre><code class="language-python">if today == "holiday":
+    print("Lucky you!")
+else:
+    print("Keep your chin up, then.")</code></pre>
+<p>Note that the 4-space <strong>indentation</strong> rule applies here too.</p>
+<p>As you may soon find out, programmers do like all sorts of shortcuts. For conditional expressions, there's a trick as well – you can write an if-else statement in one line. This is called a <strong><a class="theory-lookup not-relevant" href="/learn/step/5932" rel="noopener noreferrer nofollow" target="_blank" title="In Python, a ternary operator, also known as a conditional expression, is a concise way to write an if-else statement in one line. | It has the syntax: `value_if_true if condition else value_if_false`. The operation order follows a left-to-right convention, and the code should still be readable and maintainable. The condition is always a boolean expression, and the ternary operator allows for a block of code to be executed only if a specified condition is true.">ternary operator</a> </strong>and it looks like this:</p>
+<pre><code class="language-python">print("It’s a day now!" if sun else "It’s a night for sure!")</code></pre>
+<p>Or, more generally:</p>
+<pre><code class="language-python">first_alternative if condition else second_alternative</code></pre>
+<p>It's a matter of convenience, but remember that the code you create should still be readable.</p>
+<h5 id="nested-if-else" style="text-align: center;">Nested if-else</h5>
+<p>It should be mentioned that <code class="language-python">if-else</code> statements can be <strong>nested</strong> the same way as <code class="language-python">if</code> statements. An additional conditional expression may appear after the <code class="language-python">if</code> section as well as after the <code class="language-python">else</code> section. Once again, don't forget to indent properly:</p>
+<pre><code class="language-python">if x &lt; 100:
+    print('x &lt; 100')
+else:
+    if x == 100:
+        print('x = 100')
+    else:
+        print('x &gt; 100')
+    print('This will be printed only because x &gt;= 100')</code></pre>
+<h5 id="summary">Summary</h5>
+<p>In this topic, we've learned about one more type of conditional expression: if-else statement. Let's go through the main points again:</p>
+<ul>
+<li>the keyword <code class="language-python">else</code> is used to give an alternative;</li>
+<li>it will be executed in case <code class="language-python">if</code> statement isn't;</li>
+<li>it doesn't require any condition;</li>
+<li><code class="language-python">if-else</code> statements can be nested.</li>
+</ul>
+<p>That's it! Now you are ready not only to set conditions but also to consider different alternatives. Congratulations!</p>
+</div>
