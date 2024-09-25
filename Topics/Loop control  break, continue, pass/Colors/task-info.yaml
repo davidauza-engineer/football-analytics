@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: '"black" is the first element in the list'
+  - text: '"black" is the last element in the list'
+  - text: The list <code>colors</code> doesn't have an element "white"
+  - text: The list <code>colors</code> doesn't have an element "black"
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6606#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 25 Sep 2024 10:04:57 UTC"
+record: -1
+selected_options:
+  - 3
+local_check: false

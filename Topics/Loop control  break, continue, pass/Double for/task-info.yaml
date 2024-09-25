@@ -1,0 +1,24 @@
+type: number
+files:
+  - name: answer.txt
+    visible: true
+    placeholders:
+      - offset: 0
+        length: 1
+        placeholder_text: type your solution here
+        initial_state:
+          length: 23
+          offset: 0
+        initialized_from_dependency: false
+        selected: true
+        status: Solved
+    learner_created: false
+  - name: main.py
+    visible: true
+    learner_created: true
+feedback_link: https://hyperskill.org/learn/step/6605#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 25 Sep 2024 10:14:43 UTC"
+record: -1
