@@ -1,0 +1,13 @@
+type: code
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/8444#comment
+status: Solved
+feedback:
+  message: "<html>Kudos! Carl gives credit to you and suggests another solution: you\
+    \ can replace your loop with the formula (k * (k + 1)) // 2.</html>"
+  time: "Wed, 25 Sep 2024 09:50:49 UTC"
+record: -1
+submission_language: python3

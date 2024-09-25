@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: doesn’t change its value after each iteration
+  - text: changes its value after each iteration
+  - text: decreases its value after each iteration
+  - text: increases its value after each iteration
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/5941#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 25 Sep 2024 09:44:31 UTC"
+record: -1
+selected_options:
+  - 1
+custom_name: What's a counter?
+local_check: false
