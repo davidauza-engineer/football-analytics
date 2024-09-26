@@ -1,0 +1,68 @@
+<div class="step-text">
+<p>If attributes define the data that the objects of a particular class have, the <strong>methods</strong> define their <a class="theory-lookup not-relevant" href="/learn/step/6931" rel="noopener noreferrer nofollow" target="_blank" title="In Python, a behavior refers to the actions or operations that can be performed on a data object, determined by its data type. | Just as all dogs share the type dog and can bark, a data object's type determines what operations can be performed on it. For example, a string data type can have methods like indexing, item assignment, and formatting applied to it. These methods are not independent, as they are defined within a class. Data within a class is stored in attributes (variables), which can be either class attributes (shared by all instances of the class) or instance attributes (unique to each instance).">behavior</a>. Python has several types of methods that you can create within a class but, in this topic, we will focus on the instance methods.</p>
+<h5 id="method-syntax">Method syntax</h5>
+<p>Methods define the functionality of the objects that belong to the particular class. The basic syntax looks like this:</p>
+<pre><code class="language-python"># basic method syntax
+class MyClass:
+    # the constructor
+    def __init__(self, arg1):
+        self.att = arg1
+
+    # custom method
+    def do_smt(self):
+        # does something</code></pre>
+<p>You can see that declaring a method resembles declaring a function: we have the keyword <code class="language-python">def</code> followed by the name of the method. The parameters of the method are written inside the parentheses.</p>
+<p>The first parameter of the method should always be <code class="language-python">self</code>. You may remember that <code class="language-python">self</code> represents the particular instance of the class. When it comes to instance methods, the first parameter that is passed to the method is the instance that called it. Let's create an instance of <strong>MyClass </strong>and see how this works:</p>
+<pre><code class="language-python">my_object = MyClass(some_value)
+# calling the instance method
+my_object.do_smt()
+# my_object does something</code></pre>
+<p>In this example, the <strong>my_object </strong>instance is passed <em>implicitly</em> so we do not write the parameter in the code. We can, however, pass the instance explicitly:</p>
+<pre><code class="language-python">MyClass.do_smt(my_object)
+# my_object does the same thing</code></pre>
+<p>These examples clearly illustrate why <code class="language-python">self</code> has to be the first argument of the instance methods. If you want your method to have other parameters, just write them after the <code class="language-python">self</code> keyword!</p>
+<h5 id="methods-vs-functions">Methods vs functions</h5>
+<p>Though they are quite similar, Python does make a distinction between methods and functions. To quote the official documentation, <em>"a method is a function that 'belongs to' an object." </em>Since we're interested in OOP, we'll specifically be looking at methods associated with <a class="theory-lookup not-relevant" href="/learn/step/6931" rel="noopener noreferrer nofollow" target="_blank" title="In Python, a class instance is an object of a class. | It is a specific example of the class, following the structure outlined in the class. For instance, if there is a class named 'River', we can create class instances such as 'Volga', 'Seine', and 'Nile'. Initially, all instances of the class are identical to one another. However, to customize the initial state of an instance, a constructor method is used. A class can have different constructors for different instances. When deciding which attribute to choose in a program, one should first decide whether the attribute should store a value unique to each object of the class or shared by all instances. Within a method, a reference to a particular instance is done through the keyword 'self'. Within the method, we define instance attributes that are different for all instances.">class instances</a>.</p>
+<p>Let's consider an example:</p>
+<pre><code class="language-python"># class and its methods
+class Ship:
+    def __init__(self, name, capacity):
+        self.name = name
+        self.capacity = capacity
+        self.cargo = 0
+
+    def sail(self):
+        print("{} has sailed!".format(self.name))
+
+
+# function
+def sail_function(name):
+    print("{} has sailed!".format(name))
+</code></pre>
+<p>What is of interest to us here is the method <code class="language-python">.sail()</code> of the class <code class="language-python">Ship()</code> and the function <code class="language-python">sail_function()</code>. Let's call them:</p>
+<pre><code class="language-python"># creating an instance of the class Ship
+# and calling the method sail
+black_pearl = Ship("Black Pearl", 800)
+black_pearl.sail()
+# prints "Black Pearl has sailed!"
+
+
+# calling the function sail_function
+sail_function(black_pearl.name)
+# also prints "Black Pearl has sailed!"</code></pre>
+<p>The way that we've defined them, both our method and our function produce the same results but in different ways. A method is connected to an object of the class; it is not independent the way a function is. Sure, they are both called by their names, but to call a method, we need to invoke the object to which this method belongs.</p>
+<h5 id="return">Return</h5>
+<p>So far, the method hasn't returned any values since we only used the <code class="language-python">print()</code> function. Obviously, just as with functions, we can define what type of data the method can return with the <code class="language-python">return</code> statement. For example, let's create a method that calculates how many kilograms of cargo the ship has (initially, the weight of the cargo is given in tonnes):</p>
+<pre><code class="language-python">class Ship:
+    # other methods
+    
+    def convert_cargo(self):
+        return self.cargo * 1000</code></pre>
+<p>The method is simple: it converts the tonnes into kilograms (by multiplying it by 1000) and then returns the calculated value. If we were to call it, we wouldn't get any messages unless we explicitly printed the result of the function:</p>
+<pre><code class="language-python">print(black_pearl.convert_cargo())  # 0</code></pre>
+<p>Since we haven't changed the <a class="theory-lookup not-relevant" href="/learn/step/6931" rel="noopener noreferrer nofollow" target="_blank" title="In Python, a default value is a preassigned value that a parameter in a function takes on if no argument is passed for that parameter during the function call. | Default values allow functions to be flexible and accept different inputs while maintaining a consistent structure. They can be added to a function when defining it and can be mutable or immutable objects. For instance, if a default value is a list, it can be added to with new values.">default value</a> of the <code class="language-python">cargo</code> attribute, the method would return 0 multiplied by 1000, which is also 0.</p>
+<h5 id="conclusion">Conclusion</h5>
+<p><strong>Methods</strong> within classes specify the behavior of a class or its objects. They are similar to functions with the exception that they are strongly connected to the class and cannot be called independently from it or its instances.</p>
+<p>The first parameter of instance methods is the keyword <code class="language-python">self</code> that represents the particular instance of the class. That particular instance of the class is the first argument that is passed to the method. Methods can <a class="theory-lookup not-relevant" href="/learn/step/6931" rel="noopener noreferrer nofollow" target="_blank" title="In Python, a return value is the result produced by a function when it terminates. | If a function performs an action without returning a specific result, its return value is None. However, if a function includes a return statement, the function will stop executing at that point and return the specified value. A function can have multiple return statements, and the execution will end after the first one is encountered. If you assign the result of a function with no return value to a variable or print it, you will get None.">return values</a> or simply print messages (i.e. return nothing).</p>
+<p>Methods allow you to add any functionality to your classes. This is how you can manipulate your objects and create complex programs, so we encourage you to explore methods in your projects!</p>
+</div>
