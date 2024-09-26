@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: <code>my_tea = Tea</code>
+  - text: <code>my_tea = Tea()</code>
+  - text: <code>my_tea = Tea("plant")</code>
+  - text: "<code>my_tea = Tea(\"plant\", \"beverage\")</code>"
+  - text: "<code>my_tea = Tea(life_form=\"plant\", purpose=\"beverage\")</code>"
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6664#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Thu, 26 Sep 2024 07:39:05 UTC"
+record: -1
+selected_options:
+  - 1
+local_check: false
