@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: It protects attributes and methods of an instance
+  - text: It represents the class
+  - text: It represents a particular instance of the class
+  - text: It allows to access attributes and methods of the class
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/23424#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Thu, 26 Sep 2024 07:56:08 UTC"
+record: -1
+selected_options:
+  - 2
+  - 3
+local_check: false

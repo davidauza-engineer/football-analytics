@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: <code>student.student_info()</code>
+  - text: <code>Student.student_info(student)</code>
+  - text: <code>student_info.Student(student)</code>
+  - text: <code>student.student_info(Student)</code>
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/23425#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Thu, 26 Sep 2024 07:57:49 UTC"
+record: -1
+selected_options:
+  - 0
+  - 1
+local_check: false
