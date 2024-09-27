@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: denoting the file size
+  - text: distinguishing the file names
+  - text: distinguishing the file format
+  - text: denoting the style of a file
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/13028#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 27 Sep 2024 09:49:40 UTC"
+record: -1
+selected_options:
+  - 2
+custom_name: Why do we need a file extension?
+local_check: false

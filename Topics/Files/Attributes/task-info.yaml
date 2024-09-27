@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: File permissions that define access to the file.
+  - text: A unique identifier of the file
+  - text: Metadata that define file system behaviour.
+  - text: A file format that tells us what kind of information is stored in this file.
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6991#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 27 Sep 2024 09:50:15 UTC"
+record: -1
+selected_options:
+  - 2
+local_check: false

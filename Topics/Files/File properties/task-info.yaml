@@ -1,0 +1,26 @@
+type: matching
+captions:
+  - example.txt
+  - TXT
+  - Plain Text File
+  - 168 bytes
+options:
+  - File type
+  - File size
+  - File name
+  - File extension
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6993#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 27 Sep 2024 09:49:13 UTC"
+record: -1
+ordering:
+  - 2
+  - 3
+  - 0
+  - 1

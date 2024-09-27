@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: It does not start with the root directory.
+  - text: There are no relative paths.
+  - text: They are the same.
+  - text: It does not contain system files.
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/13032#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 27 Sep 2024 09:51:45 UTC"
+record: -1
+selected_options:
+  - 0
+custom_name: What is the difference?
+local_check: false
