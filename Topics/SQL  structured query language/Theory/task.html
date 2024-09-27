@@ -1,0 +1,270 @@
+<div class="step-text">
+<p><strong>SQL (Structured Query Language) </strong>is a <a href="https://www.jetbrains.com/mps/concepts/domain-specific-languages/" rel="noopener noreferrer nofollow" target="_blank">domain-specific programming language</a> designed to handle data in tables. It was developed in the 1970s. To this day, SQL-like interfaces are very popular in various data management systems, not only the ones based on tables!</p>
+<p>Understanding such a popular language is likely to be very useful. If you are a software engineer, it's good to learn it because many systems store and process business data via services that support SQL. For example, the backend of an insurance company's information system may use SQL to extract and update data about their clients.</p>
+<p>We will begin by looking at a practical example of how you can use SQL to calculate statistics. Then we will examine what the letters in the name SQL stand for.</p>
+<p><iframe src="https://form.typeform.com/to/OG1vq4gc#user_id=xxxxx"></iframe></p>
+<h5 id="calculating-statistics">Calculating statistics</h5>
+<p>SQL makes aggregating data and calculating statistics easier. Suppose you need to evaluate changes in the popularity of the name Jessie between 1920 and 2000 (inclusive) based on census data. Using SQL, you can complete this task with only 11 lines of code! You might not know the exact definition of each keyword of SQL yet, so try to read it as a sentence written in English. It selects records about individuals named <code class="language-sql">'Jessie'</code> who were born <code class="language-sql">BETWEEN 1920 and 2000</code>. It groups them by <code class="language-sql">year</code> and <code class="language-sql">gender</code>, counts the number of records in each group via <code class="language-sql">COUNT(*)</code>, and generates a table with columns named <code class="language-sql">year</code>, <code class="language-sql">gender</code>, and <code class="language-sql">cnt</code>. It also sorts the table by <code class="language-sql">year</code> and <code class="language-sql">gender</code> in descending order.</p>
+<p>The "census" table:</p>
+<table align="center" border="1" cellpadding="1" cellspacing="1">
+<tbody>
+<tr>
+<th>
+<p>id</p>
+</th>
+<th>
+<p>year</p>
+</th>
+<th>
+<p>name</p>
+</th>
+<th>
+<p>...</p>
+</th>
+<th>
+<p>gender</p>
+</th>
+</tr>
+<tr>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>2000</p>
+</td>
+<td>
+<p>Jessie</p>
+</td>
+<td>
+<p>...</p>
+</td>
+<td>
+<p>M</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>1880</p>
+</td>
+<td>
+<p>Kelly</p>
+</td>
+<td>
+<p>...</p>
+</td>
+<td>
+<p>F</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>3</p>
+</td>
+<td>
+<p>1985</p>
+</td>
+<td>
+<p>Willie</p>
+</td>
+<td>
+<p>...</p>
+</td>
+<td>
+<p>M</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>4</p>
+</td>
+<td>
+<p>2018</p>
+</td>
+<td>
+<p>Taylor</p>
+</td>
+<td>
+<p>...</p>
+</td>
+<td>
+<p>M</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>...</p>
+</td>
+<td>
+<p>...</p>
+</td>
+<td>
+<p>...</p>
+</td>
+<td>
+<p>...</p>
+</td>
+<td>
+<p>...</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>N</p>
+</td>
+<td>
+<p>1946</p>
+</td>
+<td>
+<p>Jessie</p>
+</td>
+<td>
+<p>...</p>
+</td>
+<td>
+<p>F</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The query:</p>
+<pre><code class="language-sql">SELECT
+  year, gender, COUNT(*) as cnt
+FROM
+  census
+WHERE
+  year BETWEEN 1920 and 2000
+  AND name = 'Jessie'
+GROUP BY
+  year, gender
+ORDER BY
+  year, gender DESC</code></pre>
+<p>The query evaluation result:</p>
+<table align="center" border="1" cellpadding="1" cellspacing="1">
+<tbody>
+<tr>
+<th>
+<p>year</p>
+</th>
+<th>
+<p>gender</p>
+</th>
+<th>
+<p>cnt</p>
+</th>
+</tr>
+<tr>
+<td>
+<p>1920</p>
+</td>
+<td>
+<p>M</p>
+</td>
+<td>
+<p>1590</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>1920</p>
+</td>
+<td>
+<p>F</p>
+</td>
+<td>
+<p>3329</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>...</p>
+</td>
+<td>
+<p>...</p>
+</td>
+<td>
+<p>...</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>1960</p>
+</td>
+<td>
+<p>M</p>
+</td>
+<td>
+<p>935</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>1960</p>
+</td>
+<td>
+<p>F</p>
+</td>
+<td>
+<p>509</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>...</p>
+</td>
+<td>
+<p>...</p>
+</td>
+<td>
+<p>...</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>2000</p>
+</td>
+<td>
+<p>M</p>
+</td>
+<td>
+<p>533</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>2000</p>
+</td>
+<td>
+<p>F</p>
+</td>
+<td>
+<p>710</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>SQL is the standard <a href="https://www.techopedia.com/definition/1179/data-manipulation-language-dml" rel="noopener noreferrer nofollow" target="_blank">data manipulation language</a> used by data-driven companies around the world. There is a lot to gain from understanding it and plenty to learn. The best place to start is with the basics, so let's now look at what each letter in the name SQL means to find out what exactly we're dealing with! </p>
+<h5 id="s-is-for-structured">S is for Structured</h5>
+<p>SQL is a language used to extract and update data <strong>structured</strong> as tables. This kind of data appears in various application areas, such as Excel spreadsheets containing accounting data, or census statistics in Google BigQuery. Another example is an online store that utilizes a special software system to store and access tables, known as a <strong>Relational Database Management System (RDBMS)</strong>. These can help to process the information on goods, orders, and customers.</p>
+<p>SQL is intended for use with tables that have a particular structure:</p>
+<p style="text-align: center;"><picture><img alt="Data structures" height="852" src="https://ucarecdn.com/33e54fe7-c08c-4d0c-acaa-50e8d02ebd65/" width="1474"/></picture></p>
+<p>The tables contain<em> </em><strong>rows </strong>and <strong>columns</strong>. Each row is an object or entity that has a set of properties or attributes. For instance, the third row contains data about Willie, a man born in 1985.</p>
+<p>Data is often organized into a set of tables, known as a <strong>database</strong>. Then it's possible to access these tables using their individual names. For example, in an online store's database, a table called <code class="language-sql">Customers</code> would probably contain general information about the company's customers: their names and contact details. The <code class="language-sql">Orders</code> table would store information about the specific orders they place: customer names, goods, and payment details.</p>
+<h5 id="q-is-for-query">Q is for Query</h5>
+<p>SQL is a programming language with a large set of data processing features. It is <strong>declarative</strong>, meaning that a statement written in SQL can be a <strong>query</strong> that tells the system what should be done or evaluated but doesn't specify how.</p>
+<p>In the next example, a query extracts all rows and columns from the table <code class="language-sql">Census</code>:</p>
+<p><code class="language-sql">SELECT * FROM Census;</code></p>
+<p>The <code class="language-sql">*</code> symbol is used to select all the columns from the table.</p>
+<p>It's necessary to end each SQL statement with a semicolon, also known as a <strong>statement terminator</strong>. Else, there will be an error. A semicolon may be omitted only if you make one query at a time, but it is a good practice to always put it at the end of your query.</p>
+<p>Keywords such as <code class="language-sql">SELECT</code> are not case sensitive in the SQL language. They can be in any letter case but are often written in all caps to make them more visible.</p>
+<h5 id="l-is-for-language">L is for Language</h5>
+<p>You can read the simple query in the above example as "select everything from the census." SQL was designed to be as similar as possible to a natural <strong>language</strong>. Its declarative nature helps to hide the operation's complexities, letting the user define what is required in a relatively straightforward way. The system then analyzes the query, chooses the control flow, and executes it.</p>
+<p>SQL was originally adopted as a standard by the <a href="https://www.ansi.org/" rel="noopener noreferrer nofollow" target="_blank">American National Standards Institute (ANSI)</a> in the 1980s. There are many dialects implemented by software vendors that support it. Dialects are based on the ANSI standard but have some technical differences. For example, they might process dates or strings differently. This means that SQL queries written in different dialects are not compatible. However, once you know the SQL basics, it's possible to adapt to dialects fairly easily, like with written American and British English.</p>
+<p>MySQL syntax has been used in this topic and elsewhere on this website, so the examples may not be compatible with other SQL dialects.</p>
+<h5 id="conclusion">Conclusion</h5>
+<p>SQL is a domain-specific, declarative language used when working with structured data.</p>
+<p>You have learned that with data organized in tables, you can write SQL queries to select rows and columns according to various criteria, create groups of entities, calculate statistics, and much more!</p>
+<p>Read more on this topic in <a href="https://hyperskill.org/blog/post/database-design-101" rel="noopener noreferrer nofollow" target="_blank">Database Design 101</a> on Hyperskill Blog.</p>
+</div>

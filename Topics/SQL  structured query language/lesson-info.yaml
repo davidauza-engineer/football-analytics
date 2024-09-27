@@ -1,0 +1,9 @@
+custom_name: "SQL: structured query language"
+content:
+  - Theory
+  - Case sensitivity
+  - SQL syntax  boundaries
+  - Operations on a 'Students' table in a database
+  - What to do
+  - Query
+  - Statement terminator

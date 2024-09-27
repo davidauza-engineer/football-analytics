@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: Declaration
+  - text: Line
+  - text: Row
+  - text: Query
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/17214#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 27 Sep 2024 10:11:55 UTC"
+record: -1
+selected_options:
+  - 3
+local_check: false

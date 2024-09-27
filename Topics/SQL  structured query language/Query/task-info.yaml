@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: An SQL query tells the system what should be done with data but doesn't specify
+      how
+  - text: An SQL query specifies a control flow for the data management system that
+      executes it
+  - text: All software vendors declare that they support ANSI's SQL standard
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/7057#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 27 Sep 2024 10:12:37 UTC"
+record: -1
+selected_options:
+  - 0
+local_check: false

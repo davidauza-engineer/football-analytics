@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: "No"
+  - text: Depends on the SQL dialect.
+  - text: "Yes, only all capital letters are acceptable."
+  - text: "Yes, only all lowercase letters are acceptable."
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15754#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 27 Sep 2024 10:06:21 UTC"
+record: -1
+selected_options:
+  - 0
+local_check: false

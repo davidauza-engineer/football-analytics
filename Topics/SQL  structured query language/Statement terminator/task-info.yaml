@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: "It's a symbol at the end of the query. In case of SQL, it's a semicolon (;)."
+  - text: "It's a symbol of the break of the line. In case of SQL, it's a comma (,)."
+  - text: "It's a symbol at the end of the query. In case of SQL, it's a comma (,)."
+  - text: "It's a symbol of the break of the line. In case of SQL, it's a semicolon\
+    \ (;)."
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15753#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 27 Sep 2024 10:13:13 UTC"
+record: -1
+selected_options:
+  - 0
+local_check: false
