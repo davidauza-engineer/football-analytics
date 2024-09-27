@@ -1,0 +1,93 @@
+<div class="step-text">
+<p>Now that you've learned how to create instance methods let's go even further and learn to use the methods for creating and modifying attributes.</p>
+<h5 id="creating-attributes-with-methods" style="text-align: center;">Creating attributes with methods</h5>
+<p>Instance attributes are the ones defined within methods so by definition we can create new attributes inside our custom methods. Let's take the class <code class="language-python">Ship</code> as an example.</p>
+<pre><code class="language-python">class Ship:
+    def __init__(self, name, capacity):
+        self.name = name
+        self.capacity = capacity
+        self.cargo = 0</code></pre>
+<p>Every ship needs a captain so let's define a method called <code class="language-python">name_captain</code> for those purposes:</p>
+<pre><code class="language-python">class Ship:
+    # constructor
+    # ...
+
+    def name_captain(self, cap):
+        self.captain = cap
+        print("{} is the captain of the {}".format(self.captain, self.name))</code></pre>
+<p>When called for the first time, the <code class="language-python">name_captain</code> method creates a new attribute called <code class="language-python">captain</code> and prints the corresponding message. When used next, it just changes the value of the <code class="language-python">self.captain</code> attribute (and prints the message as well). </p>
+<p>To see how it would work, let's create the ship "Black Pearl":</p>
+<pre><code class="language-python">black_pearl = Ship("Black Pearl", 800)</code></pre>
+<p>If we tried to print the value of the <code class="language-python">captain</code> attribute now, we would get an error:</p>
+<pre><code class="language-python">print(black_pearl.captain)  # AttributeError</code></pre>
+<p>This is because this attribute is only created within the <code class="language-python">name_captain</code> method. If we call it, we will be able to access the attribute <code class="language-python">captain</code>:</p>
+<pre><code class="language-python">black_pearl.name_captain("Jack Sparrow")
+# prints "Jack Sparrow is the captain of the Black Pearl"
+
+print(black_pearl.captain)  # "Jack Sparrow"</code></pre>
+<p>Note that only those instances that have called this method will have the <code class="language-python">captain</code> attribute. It's an important thing to remember! You may get an error if you try to use the attribute and the method hasn't been called yet. </p>
+<p>To avoid these problems, it is recommended to define all possible attributes in the <code class="language-python">__init__</code>. This can not only help you avoid <code class="language-python">AttributeError</code>, but also gives a good understanding of the class and its objects from the get-go. If you do want to create the value for the attribute in a special instance method, then list it in the <code class="language-python">__init__</code> as <code class="language-python">None</code>:</p>
+<pre><code class="language-python">class Ship:
+    def __init__(self, name, capacity):
+        self.name = name
+        self.capacity = capacity
+        self.cargo = 0
+        self.captain = None</code></pre>
+<p>Then, in the specific method, you simply modify the default value which is what we'll consider in the next section.</p>
+<h5 id="modifying-attributes-with-methods" style="text-align: center;">Modifying attributes with methods</h5>
+<p>Methods can also be used to modify the <a class="theory-lookup not-relevant" href="/learn/step/6981" rel="noopener noreferrer nofollow" target="_blank" title="In Python, an instance attribute is a variable that stores information that is unique to each instance of a class. | Unlike class attributes, which are shared by all instances of a class, instance attributes allow for each object to have its own set of data. For example, if we have a class called Book, we might use instance attributes to store the title, author, and page count for each individual book object. Changing or adding instance attributes only affects the specific object, not the entire class.">instance attributes</a>. Take the methods <strong><code class="language-python">load_cargo </code></strong>and <strong><code class="language-python">unload_cargo</code></strong> for example:</p>
+<pre><code class="language-python">class Ship:
+    def __init__(self, name, capacity):
+        self.name = name
+        self.capacity = capacity
+        self.cargo = 0
+
+    def load_cargo(self, weight):
+        if self.cargo + weight &lt;= self.capacity:
+            self.cargo += weight
+            print("Loaded {} tons".format(weight))
+        else:
+            print("Cannot load that much")
+
+    def unload_cargo(self, weight):
+        if self.cargo - weight &gt;= 0:
+            self.cargo -= weight
+            print("Unloaded {} tons".format(weight))
+        else:
+            print("Cannot unload that much")</code></pre>
+<p>Both these methods are supposed to change the value of the attribute <strong>cargo </strong>if those changes are possible. The <code class="language-python">load_cargo</code> method first checks that the loading of a particular weight will not exceed the capacity of the ship and the <code class="language-python">unload_cargo</code> checks that the unloading will not make the weight of the cargo negative. Then they both make the changes or print a message that those changes are impossible. </p>
+<pre><code class="language-python"># example
+black_pearl.load_cargo(600)
+# "Loaded 600 tons"
+
+black_pearl.unload_cargo(400)
+# "Unloaded 400 tons"
+
+black_pearl.load_cargo(700)
+# "Cannot load that much"
+
+black_pearl.unload_cargo(300)
+# "Cannot unload that much"</code></pre>
+<p>If we wanted to print out the value of <strong>cargo </strong>after all these manipulations, we would see that it would equal 200 (tons). Because of the restrictions that we placed, only the first callings of <code class="language-python">load_cargo</code> and <code class="language-python">unload_cargo</code> made changes to the attribute <strong>cargo. </strong></p>
+<p>So far our methods haven't been returning any values since we only used the <code class="language-python">print()</code> function, but we can make our methods return any type of value that we want. For example, let's create a method that calculates how much more cargo our ship can load.</p>
+<pre><code class="language-python">class Ship:
+    # all other methods
+    
+    def free_space(self):
+        return self.capacity - self.cargo</code></pre>
+<p>If we were to call this method on our Black Pearl we wouldn't get any messages, because the method doesn't print anything. But instead, we could use the value it returns in our further calculations. We could, for instance, rewrite the <code class="language-python">load_cargo</code> method by using the<code class="language-python">free_space</code> method:</p>
+<pre><code class="language-python">class Ship:
+    # updated load_cargo method
+    def load_cargo(self, weight):
+        if weight &lt;= self.free_space():
+            self.cargo += weight
+            print("Loaded {} tons".format(weight))
+        else:
+            print("Cannot load that much")
+</code></pre>
+<p>In this example, we called a method inside another method and used the values in our calculations. Again, we used <code class="language-python">self</code> to make sure that we only deal with the particular instance of the class <code class="language-python">Ship</code> and that all calculations concern this instance.</p>
+<h5 id="summary" style="text-align: center;">Summary</h5>
+<p>In this topic, we focused on more advanced uses of instance methods in Python.</p>
+<p>Methods can be used for creating new attributes and modifying existing ones. You can call methods inside other methods, use the results for calculations or just output messages. Knowing how methods and attributes interact can help you expand the functionality of your classes and make your programs very efficient.</p>
+<p>We hope that you'll experiment with instance methods and use them in your projects!</p>
+</div>

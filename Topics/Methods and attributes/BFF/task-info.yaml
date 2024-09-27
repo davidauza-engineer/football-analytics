@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: AttributeError
+  - text: Jess
+  - text: Alex
+  - text: Melani
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6983#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 27 Sep 2024 09:16:16 UTC"
+record: -1
+selected_options:
+  - 1
+local_check: false
