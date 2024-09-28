@@ -1,0 +1,22 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: FLOAT defines the total number of digits by default but this is not the case
+      with REAL
+  - text: "FLOAT represents floating point numbers, not REAL"
+  - text: There is no difference
+  - text: REAL defines the total number of digits by default but this is not the case
+      with FLOAT
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/25633#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 28 Sep 2024 10:28:29 UTC"
+record: -1
+selected_options:
+  - 3
+local_check: false

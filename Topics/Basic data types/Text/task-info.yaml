@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: BOOLEAN
+  - text: VARCHAR(200)
+  - text: VARCHAR(2)
+  - text: "DECIMAL(200,2)"
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/7126#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 28 Sep 2024 10:27:58 UTC"
+record: -1
+selected_options:
+  - 1
+local_check: false

@@ -1,0 +1,29 @@
+type: matching
+captions:
+  - 'price '
+  - 'electricity '
+  - 'id '
+  - annual_petrol_use
+  - 'color '
+options:
+  - REAL
+  - VARCHAR(20)
+  - BOOLEAN
+  - "DECIMAL(20,2)"
+  - INTEGER
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/7128#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 28 Sep 2024 10:25:37 UTC"
+record: -1
+ordering:
+  - 3
+  - 2
+  - 4
+  - 0
+  - 1

@@ -1,0 +1,27 @@
+type: matching
+captions:
+  - Pet weight
+  - Owner's full name
+  - Numeric identifier of a pet
+  - Record of vaccination status (vaccinated or not)
+options:
+  - "DECIMAL(4, 2)"
+  - VARCHAR(50)
+  - BOOLEAN
+  - INTEGER
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15747#comment
+status: Solved
+feedback:
+  message: "<html>Your choices ensure the database will handle data accurately and\
+    \ perform efficiently. \nKeep up the great work!</html>"
+  time: "Sat, 28 Sep 2024 10:26:47 UTC"
+record: -1
+ordering:
+  - 0
+  - 1
+  - 3
+  - 2
