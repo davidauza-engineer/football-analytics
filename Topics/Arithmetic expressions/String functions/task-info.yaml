@@ -1,0 +1,29 @@
+type: matching
+captions:
+  - "concat(&#x27;ba&#x27;, &#x27;nana&#x27;)"
+  - reverse(&#x27;banana&#x27;)
+  - "substr(&#x27;banana&#x27;, 3, 2)"
+  - char_length(&#x27;banana&#x27;)
+  - "replace(&#x27;banana&#x27;, &#x27;n&#x27;, &#x27;l&#x27;)"
+options:
+  - '&#x27;ananab&#x27;'
+  - 6
+  - '&#x27;na&#x27;'
+  - '&#x27;balala&#x27;'
+  - '&#x27;banana&#x27;'
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/7412#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 28 Sep 2024 11:07:36 UTC"
+record: -1
+ordering:
+  - 4
+  - 0
+  - 2
+  - 1
+  - 3

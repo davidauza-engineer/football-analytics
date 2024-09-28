@@ -1,0 +1,43 @@
+<div class="step-text">
+<p>You already know quite a bit about data types and literals in SQL. It's time to dig deeper and discuss arithmetic and logic expressions. As a cool bonus, we'll teach you how to make a simple calculator with this knowledge!</p>
+<h5 id="arithmetic">Arithmetic</h5>
+<p>If you remember a bit of school math, arithmetic expressions in SQL will look familiar to you. We can also perform mathematical calculations on our data.</p>
+<p>The basic set of arithmetic operators supported in SQL is the following:</p>
+<ul>
+<li><code class="language-sql">-</code> unary minus that changes the sign of a value;</li>
+</ul>
+<pre><code class="language-sql">SELECT -2;
+&gt; -2</code></pre>
+<ul>
+<li><code class="language-sql">*</code> multiplication;</li>
+<li><code class="language-sql">/</code> division;</li>
+<li><code class="language-sql">%</code> modulo that returns the remainder of integer division;</li>
+</ul>
+<pre><code class="language-sql">SELECT 20*15;
+&gt; 300
+SELECT 3/5;
+&gt; 0.60
+SELECT 18%4;
+&gt; 2</code></pre>
+<ul>
+<li><code class="language-sql">+</code> addition;</li>
+<li><code class="language-sql">-</code> subtraction.</li>
+</ul>
+<pre><code class="language-sql">SELECT 30+234;
+&gt; 264
+SELECT 3-5;
+&gt; -2</code></pre>
+<p>SQL supports the common rules of operator precedence. In the list above operators are sorted in descending priority. SQL also supports brackets to make an operator take priority over any other operation.</p>
+<p></p><div class="alert alert-primary">You can also utilize brackets to improve code readability even if you do not need them to correctly evaluate an expression. Compare these: <code class="language-sql">-2+2*2-2/2</code> and <code class="language-sql">(-2)+(2*2)-(2/2)</code>. The second one is much easier to read!</div><p></p>
+<h5 id="calculator">Calculator</h5>
+<p>After reading this topic, you can now use SQL when you do not have a calculator at hand! This sounds like quite a lifehack. Moreover, now you know how to process strings. Very impressive!</p>
+<p>In SQL you can select not only a literal but an arithmetic expression, as well. Let's provide a template for a simple SQL query that extracts an expression:</p>
+<pre><code class="language-sql">SELECT expression;</code></pre>
+<p>The statement consists of three parts: the keyword <code class="language-sql">SELECT</code>, the expression we want to evaluate, and a semicolon that defines the end of the query.</p>
+<p>For example, the code below evaluates the expression <code class="language-sql">(2+2)*15</code>.</p>
+<pre><code class="language-sql">SELECT (2+2)*15;</code></pre>
+<p>The query evaluation result is <code class="language-sql">60</code>.</p>
+<h5 id="summary">Summary</h5>
+<p>As you can see, with SQL you can handle arithmetic expressions. SQL allows you to work with operators such as <code class="language-sql">+</code>, <code class="language-sql">-</code>, <code class="language-sql">*</code>, <code class="language-sql">/</code>, <code class="language-sql">%</code>. Thanks to this, you can even write a calculator! </p>
+<p>Well, this covers a lot. Let's now move on to the practical tasks?</p>
+</div>

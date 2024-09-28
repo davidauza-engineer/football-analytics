@@ -1,0 +1,23 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: /
+  - text: +
+  - text: '*'
+  - text: '-'
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16269#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 28 Sep 2024 11:10:31 UTC"
+record: -1
+selected_options:
+  - 0
+  - 1
+  - 2
+  - 3
+local_check: false
