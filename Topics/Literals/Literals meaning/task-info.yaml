@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: letters
+  - text: states
+  - text: literals
+  - text: boolean
+  - text: basic
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/7401#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 28 Sep 2024 10:47:59 UTC"
+record: -1
+selected_options:
+  - 2
+local_check: false

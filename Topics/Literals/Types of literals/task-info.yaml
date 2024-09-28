@@ -1,0 +1,49 @@
+type: table
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/18994#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 28 Sep 2024 10:46:14 UTC"
+record: -1
+rows:
+  - 3.2
+  - -512
+  - "False"
+  - '"Be happy!"'
+  - 0.4e3
+columns:
+  - Integer
+  - String
+  - Boolean
+  - Decimal
+  - Real
+selected:
+  - - false
+    - false
+    - false
+    - true
+    - false
+  - - true
+    - false
+    - false
+    - false
+    - false
+  - - false
+    - false
+    - true
+    - false
+    - false
+  - - false
+    - true
+    - false
+    - false
+    - false
+  - - false
+    - false
+    - false
+    - false
+    - true
