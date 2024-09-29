@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: DROP TABLE deletes the table but not the data inside the table
+  - text: DROP TABLE deletes the data inside the table but not the table itself
+  - text: DROP TABLE deletes the table and all the data inside the table
+  - text: DROP TABLE deletes all the tables in the database
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/9087#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sun, 29 Sep 2024 10:46:14 UTC"
+record: -1
+selected_options:
+  - 2
+local_check: false

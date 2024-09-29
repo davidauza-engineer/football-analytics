@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: DROP DATABASE shop_info;
+  - text: DELETE DATABASE shop_info;
+  - text: DELETE * FROM shop_info;
+  - text: DROP shop_info;
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/9086#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sun, 29 Sep 2024 10:47:18 UTC"
+record: -1
+selected_options:
+  - 0
+local_check: false
