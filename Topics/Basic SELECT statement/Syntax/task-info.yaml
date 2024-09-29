@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: "select 10, 2020 as year;"
+  - text: SELECT 'Alice';
+  - text: selec 'Bob';
+  - text: SELECT Alice Becker AS name;
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/7393#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sun, 29 Sep 2024 11:18:50 UTC"
+record: -1
+selected_options:
+  - 0
+  - 1
+local_check: false

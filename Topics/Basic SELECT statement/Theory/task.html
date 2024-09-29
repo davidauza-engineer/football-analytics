@@ -1,0 +1,19 @@
+<div class="step-text">
+<h5 id="introduction">Introduction</h5><p>You've already written your first simple SQL queries, for example:</p><pre><code class="language-sql">SELECT 'Hello, World!';</code></pre><p>and</p><pre><code class="language-sql">SELECT 2.3*4+5;</code></pre><p>Both of these queries are examples of basic <strong>SELECT statements</strong>. In this topic, we'll further discuss this first building block for the majority of SQL queries. Yes, you can select more data!</p><h5 id="tuple">Tuple</h5><p>In a SELECT statement, you can specify more than one value separated by a comma. For example, the query below selects a string literal, a numeric literal, and an arithmetic expression:</p><pre><code class="language-sql">SELECT 'Alice', 170, 170*0.393701;</code></pre><p>Such a set of values (or attributes, fields) is called a <strong>tuple </strong>(record, row). Actually, the result of the Hello World query is also a row with a single attribute.</p><h5 id="alias">Alias</h5><p>In a query, you may specify a name (<strong>alias</strong>) for each attribute of a tuple. To do so, you should use the keyword<strong> AS</strong> followed by a name for the value. If the attribute alias consists of several words or matches an SQL keyword, it should be stated in double-quotes. The query below illustrates the application of aliases:</p><pre><code class="language-sql">SELECT 
+  'Alice' AS name, 
+  170 AS height_in_centimeters, 
+  170*0.393701 AS "height in inches"
+;</code></pre><p>The query evaluation result is a tuple with three attributes: "name", "height_in_centimeters", and "height in inches". It's a good idea to specify human-readable aliases; alternatively, your data management system can generate some for you.</p><p>As you remember, SQL is designed to process data organized in tables. Actually, the result of the example query is also a table with column names specified in aliases and consisting of only one row.</p><h5 id="code-readability">Code readability</h5><p>SQL is case insensitive (keywords may be written in any case), so SELECT, select, SeLeCt, and seLEct are all valid. However, it is most common to type keywords in uppercase to emphasize them and improve code readability.</p><p>We also recommend using indentation, which leaves a bit of free space to visually separate the line. There are different code style guides: use your intuition and follow your team's preferences.</p><p>Compare the following formatting options of the same query. Which one would you prefer to read?</p><pre><code class="language-sql">SELECT 'Bob' AS name, 160 AS "height in centimeters", 160*0.393701 AS "height in inches";
+
+SELECT 
+  'Bob' AS "name", 
+  160 AS "height in centimeters", 
+  160*0.393701 AS "height in inches"
+;
+
+SELECT 
+  'Bob'        AS "name", 
+  160          AS "height in centimeters", 
+  160*0.393701 AS "height in inches"
+;</code></pre><p>The third version is much better: you can easily see the number of attributes, their values, and their names. The version in the middle is intermediate in terms of code readability but easier to edit than the third one (manual indentation by blanks gets broken each time one changes the code). Of course, in practice, you can choose the code formatting style that your team prefers.</p><h5 id="conclusion">Conclusion</h5><p>Here is a template for a basic SELECT statement: the SELECT keyword, a list of values to extract with optional aliases for them, and a semicolon to indicate the end of the statement:</p><pre><code class="language-sql">SELECT val1 [AS name1], ..., valN [AS nameN];</code></pre><p>Congratulations! Now you know how to select a row with several named attributes of different types. Let's practice, shall we?</p>
+</div>

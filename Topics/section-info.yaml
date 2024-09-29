@@ -24,3 +24,4 @@ content:
   - Literals
   - Arithmetic expressions
   - Basic CREATE statement
+  - Basic SELECT statement

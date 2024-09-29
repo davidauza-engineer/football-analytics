@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: Two strings
+  - text: One string
+  - text: One tuple with two attributes
+  - text: Two tuples with one attribute
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/7395#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sun, 29 Sep 2024 11:14:50 UTC"
+record: -1
+selected_options:
+  - 2
+local_check: false

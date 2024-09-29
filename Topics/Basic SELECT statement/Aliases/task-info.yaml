@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: '"spd"'
+  - text: '"t"'
+  - text: '"speed in mph"'
+  - text: '"temperature"'
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/22583#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sun, 29 Sep 2024 11:17:44 UTC"
+record: -1
+selected_options:
+  - 2
+  - 3
+local_check: false
