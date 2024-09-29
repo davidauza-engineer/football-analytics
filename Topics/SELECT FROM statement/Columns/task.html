@@ -1,0 +1,32 @@
+<div class="step-text">
+<p></p>
+<p>A table is defined by the following statement:</p>
+<pre><code class="language-sql">CREATE TABLE Weather (
+	day INTEGER,
+	hour INTEGER,
+	temperature INTEGER,
+	feels_like INTEGER,
+	wind_speed INTEGER,
+	wind_direction VARCHAR(2),
+	wind_gusts INTEGER,
+	humidity DECIMAL(3,2),
+	cloudiness DECIMAL(3,2),
+	phenomena VARCHAR(50),
+    pressure INTEGER
+);</code></pre>
+<p>How many columns from the table "Weather" are referenced in the following query?</p>
+<pre><code class="language-sql">SELECT
+    'Chicago' as place,
+    day, 
+    hour,
+    phenomena,
+    temperature*9/5+32 as "temperature in Fahrenheit",
+    feels_like*9/5+32 as "feels like in Fahrenheit", 
+    feels_like &lt; temperature as "feels colder",
+    wind_speed &gt; 7 as "windy",
+    humidity,
+    cloudiness
+FROM
+    Weather
+;</code></pre>
+</div>

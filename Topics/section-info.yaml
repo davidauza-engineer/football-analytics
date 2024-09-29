@@ -25,3 +25,4 @@ content:
   - Arithmetic expressions
   - Basic CREATE statement
   - Basic SELECT statement
+  - SELECT FROM statement

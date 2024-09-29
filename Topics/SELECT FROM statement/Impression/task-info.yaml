@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: "SELECT banner_id, banner_width, banner_height  FROM banner;"
+  - text: SELECT cost_per_click as "cost per click in US dollars";
+  - text: SELECT * FROM table;
+  - text: "SELECT banner_id, cost_per_click FROM Impression;"
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/8612#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sun, 29 Sep 2024 11:43:23 UTC"
+record: -1
+selected_options:
+  - 3
+local_check: false

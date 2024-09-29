@@ -1,0 +1,24 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: Table names
+  - text: Columns names
+  - text: Number of columns
+  - text: Size that database takes on the computer
+  - text: Column types
+  - text: Nothing of this
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/17843#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sun, 29 Sep 2024 11:42:07 UTC"
+record: -1
+selected_options:
+  - 0
+  - 1
+  - 4
+local_check: false

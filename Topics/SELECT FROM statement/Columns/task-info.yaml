@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: 10
+  - text: 8
+  - text: 11
+  - text: 9
+  - text: 5
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/8613#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sun, 29 Sep 2024 11:41:32 UTC"
+record: -1
+selected_options:
+  - 1
+local_check: false
