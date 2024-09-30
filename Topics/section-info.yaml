@@ -26,3 +26,4 @@ content:
   - Basic CREATE statement
   - Basic SELECT statement
   - SELECT FROM statement
+  - Logic and comparison expressions

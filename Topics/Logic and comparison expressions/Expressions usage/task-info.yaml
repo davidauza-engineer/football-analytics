@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: They define the criteria for data extraction.
+  - text: All the statements are wrong.
+  - text: They help to describe data in the table.
+  - text: They provide connections between elements in the table.
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/18860#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Mon, 30 Sep 2024 09:50:23 UTC"
+record: -1
+selected_options:
+  - 0
+local_check: false
