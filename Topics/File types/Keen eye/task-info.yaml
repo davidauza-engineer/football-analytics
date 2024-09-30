@@ -1,0 +1,24 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: named pipe
+  - text: regular files
+  - text: directory
+  - text: device file
+  - text: socket
+  - text: symbolic links
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/23822#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Mon, 30 Sep 2024 10:24:55 UTC"
+record: -1
+selected_options:
+  - 1
+  - 2
+  - 5
+local_check: false

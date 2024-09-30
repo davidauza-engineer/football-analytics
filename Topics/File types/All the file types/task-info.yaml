@@ -1,0 +1,32 @@
+type: matching
+captions:
+  - regular file
+  - symbolic link
+  - directory
+  - named pipe
+  - socket
+  - device file
+options:
+  - allows the exchange of data between processes in both directions
+  - is a file containing a pointer to another file or directory
+  - can contain many other files and directories
+  - passes the output of one process as input to another one and has a name
+  - "can be of 2 types: text or binary file"
+  - file which defines the device in file system
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/23823#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Mon, 30 Sep 2024 10:17:57 UTC"
+record: -1
+ordering:
+  - 4
+  - 1
+  - 2
+  - 3
+  - 0
+  - 5

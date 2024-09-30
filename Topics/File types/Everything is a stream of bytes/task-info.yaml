@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: They are data storage
+  - text: There is nothing in common between them in Unix systems
+  - text: They are devices
+  - text: They are all files
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/23824#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Mon, 30 Sep 2024 10:20:39 UTC"
+record: -1
+selected_options:
+  - 3
+local_check: false

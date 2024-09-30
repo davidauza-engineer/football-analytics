@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: place the file in the root directory
+  - text: remember all her changes and repeat them manually
+  - text: create a symbolic link
+  - text: create a copy of her file
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/13023#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Mon, 30 Sep 2024 10:19:23 UTC"
+record: -1
+selected_options:
+  - 2
+local_check: false
