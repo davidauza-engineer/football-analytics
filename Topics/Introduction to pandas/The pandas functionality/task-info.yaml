@@ -1,0 +1,22 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: Exploration and editing of the tabular data
+  - text: Combining data from multiple sources
+  - text: Performing the full range of database updates directly
+  - text: Data cleanup (such as handling of the missing values)
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/33675#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 02 Oct 2024 08:32:21 UTC"
+record: -1
+selected_options:
+  - 0
+  - 1
+  - 3
+local_check: false

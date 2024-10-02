@@ -1,0 +1,22 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: A <code>Series</code> object does not enforce the condition of having data
+      of the same type
+  - text: "Data of various types (integers, strings, and floats) can be handled concurrently\
+    \ within the same <code>Series</code> (without any type conversion)"
+  - text: "Because the <code>Series</code> data is stored in NumPy arrays, and the requirement\
+    \ for the elements in these arrays is to be of the same data type"
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/33674#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 02 Oct 2024 08:30:32 UTC"
+record: -1
+selected_options:
+  - 2
+local_check: false

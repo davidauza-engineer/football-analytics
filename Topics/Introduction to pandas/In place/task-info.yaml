@@ -1,0 +1,19 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: Because a new object uses less memory
+  - text: Because creating a new object ensures faster processing
+  - text: Because it helps to debug the code and avoid unexpected behavior
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/33677#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 02 Oct 2024 08:29:51 UTC"
+record: -1
+selected_options:
+  - 2
+local_check: false

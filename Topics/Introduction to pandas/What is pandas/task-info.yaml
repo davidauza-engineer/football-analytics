@@ -1,0 +1,23 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: pandas is built on top of NumPy
+  - text: "pandas is a free, open-source library"
+  - text: pandas is a machine learning library
+  - text: "pandas provides functionality for loading, manipulating and analysing data"
+  - text: pandas is part of the Python standard library
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/10417#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 02 Oct 2024 08:33:32 UTC"
+record: -1
+selected_options:
+  - 0
+  - 1
+  - 3
+local_check: false

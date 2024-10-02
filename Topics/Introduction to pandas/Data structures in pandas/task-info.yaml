@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: DataFrame
+  - text: Panel
+  - text: DataTable
+  - text: Series
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/10418#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 02 Oct 2024 08:32:52 UTC"
+record: -1
+selected_options:
+  - 0
+  - 3
+local_check: false
