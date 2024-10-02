@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: <code>header</code>
+  - text: <code>index_col</code>
+  - text: <code>dtype</code>
+  - text: <code>sep</code>
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/31813#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 02 Oct 2024 09:08:16 UTC"
+record: -1
+selected_options:
+  - 3
+local_check: false

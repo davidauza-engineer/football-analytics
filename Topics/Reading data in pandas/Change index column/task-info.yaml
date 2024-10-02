@@ -1,0 +1,14 @@
+type: dataset
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+  - name: data/dataset/input.txt
+    visible: true
+    learner_created: true
+feedback_link: https://hyperskill.org/learn/step/31819#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 02 Oct 2024 09:07:41 UTC"
+record: -1

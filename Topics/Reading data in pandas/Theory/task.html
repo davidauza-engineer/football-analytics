@@ -1,0 +1,77 @@
+<div class="step-text">
+<p>Reading data is one of the first steps in any machine learning pipeline. In this topic, we will learn how to properly read different types of data in Pandas.</p><h5 id="type-of-data-to-read-excel-csv-json-sql"> Type of data to read: excel, csv, json, sql</h5><p>In Pandas, you can read different types of data from various sources, such as Excel files, CSV files, JSON files, and SQL databases. To read files of different types, you need to add the file extension to the read function. For example, to read csv files, you should add <code class="language-python">csv</code> to <code class="language-python">read_</code>: <code class="language-python">pandas.read_csv()</code> and so on. All of the files will be loaded as DataFrames.</p><pre><code class="language-python">import pandas as pd
+
+# EXCEL 
+df = pd.read_excel('file_path.xlsx')
+
+# CSV 
+df = pd.read_csv('file_path.csv')
+
+# JSON
+df = pd.read_json('file_path.json')
+</code></pre><p>To read data from a SQL database, you'll need the <code class="language-python">pandas</code> library and the <code class="language-python">sqlalchemy</code> library installed. You can use the <code class="language-python">pd.read_sql()</code> function with a SQL query to fetch data from the database.</p><pre><code class="language-python">import pandas as pd
+from sqlalchemy import create_engine
+
+engine = create_engine('database_connection_string')
+query = "SELECT * FROM table_name"
+df = pd.read_sql(query, engine)
+</code></pre><h5 id="pandas-read-exploring-head-info-describe">Pandas read exploring: .head(), .info(), .describe()</h5><p>First, we create an example of a pandas frame with information about cars: their names, prices, and whether they were broken. </p><pre><code class="language-python">import pandas as pd
+
+data = {
+    'Car Name': ['Toyota Corolla', 'Honda Civic', 'Ford Mustang', 'Chevrolet Camaro', 'Tesla Model 3', 'BMW X5', 'Audi A4'],
+    'Price': [25000, 22000, 35000, 40000, 50000, 60000, 30000],
+    'Is Broken': [False, True, True, False, True, False, False]
+}
+
+df_cars = pd.DataFrame(data)
+</code></pre><pre><code class="language-sql">           Car Name  Price  Is Broken
+0   Toyota Corolla  25000      False
+1      Honda Civic  22000       True
+2     Ford Mustang  35000       True
+3  Chevrolet Camaro  40000      False
+4    Tesla Model 3  50000       True
+5           BMW X5  60000      False
+6          Audi A4  30000      False
+</code></pre><p>When you first get your DataFrame, you need to understand the information present in it. There are three main methods to do it: <code class="language-python">.head()</code>, <code class="language-python">.info()</code>, <code class="language-python">.describe()</code>. </p><ul><li><p>The <code class="language-python">.head()</code> method in Pandas is a useful method to preview the first few rows of a DataFrame. It is commonly used to get a quick overview of the data and understand its structure, column names, and the actual values in the DataFrame. You can pass the number of rows to display as a parameter n. By default, you will display only 5 rows. </p><pre><code class="language-python">df_cars.head(n=3) # display the 3 rows </code></pre><pre><code class="language-sql">         Car Name  Price  Is Broken
+0  Toyota Corolla  25000      False
+1     Honda Civic  22000       True
+2    Ford Mustang  35000       True</code></pre></li><li><p>The <code class="language-python">.info()</code> method in Pandas is used to display information about a DataFrame: data types of each column, the number of non-null values, memory usage, and more. </p><pre><code class="language-python">df_cars.info()</code></pre><pre><code class="language-sql">&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 7 entries, 0 to 6
+Data columns (total 3 columns):
+ #   Column     Non-Null Count  Dtype 
+---  ------     --------------  ----- 
+ 0   Car Name   7 non-null      object
+ 1   Price      7 non-null      int64 
+ 2   Is Broken  7 non-null      bool  
+dtypes: bool(1), int64(1), object(1)
+memory usage: 247.0+ bytes</code></pre><p>When we called <code class="language-python">df.info()</code>, it provided the following information:</p><ul><li><p><code class="language-python">&lt;class 'pandas.core.frame.DataFrame'&gt;</code>: Indicates that <code class="language-python">df</code> is a DataFrame.</p></li><li><p><code class="language-python">RangeIndex: 7 entries, 0 to 6</code>: Shows that the DataFrame has a range index from 0 to 6, indicating 7 rows.</p></li><li><p><code class="language-python">Data columns (total 3 columns)</code>: Indicates that the DataFrame has 3 columns.</p></li><li><p><code class="language-python">Column</code>: Lists the column names ('Car Name', 'Price', and 'Is Broken').</p></li><li><p><code class="language-python">Non-Null Count</code>: Shows the number of non-null values for each column. In our example, there are no null values.</p></li><li><p><code class="language-python">Dtype</code>: Specifies the data type of each column. <code class="language-python">'Car Name'</code> is of type <code class="language-python">'object'</code> (usually representing strings), <code class="language-python">'Price'</code> is of type <code class="language-python">'int64'</code> (integer), and <code class="language-python">'Is Broken'</code> is of type <code class="language-python">bool</code>. Note that sometimes columns can be inferred in the wrong way, so further type inspection and conversion might be required. You can set the types of the columns in <code class="language-python">dtype</code> argument while reading the file. Alternatively, you can use <code class="language-python">df.as_type()</code> after loading the DataFrame to specify the correct types.</p></li><li><p><code class="language-python">memory usage</code>: Displays the memory usage of the DataFrame.</p></li></ul></li><li><p>The <code class="language-python">.describe()</code> method in Pandas is used to generate a summary of statistics for numerical columns in a DataFrame. You can get the mean, count, std, first, second, and third quartiles, and other statistics of the data. </p><pre><code class="language-python">df_cars.describe()</code></pre><pre><code class="language-sql">              Price
+count      7.000000
+mean   37428.571429
+std    13709.572603
+min    22000.000000
+25%    27500.000000
+50%    35000.000000
+75%    45000.000000
+max    60000.000000</code></pre></li></ul><h5 id="data-file-options-sep-delimiter-header-index_col">Data file options: sep (delimiter), header, index_col</h5><p>Using all of the data types, you can specify the way to read them with such parameters as <code class="language-python">sep</code>, <code class="language-python">header</code> and <code class="language-python">index_col</code> . Let's download a csv file with information about different cars. <a href="https://cogniterra.org/media/attachments/lesson/30081/cars.csv" rel="noopener noreferrer nofollow" target="_blank">The link to the file</a>.  </p><pre><code class="language-python">df_cars = pd.read_csv('./cars.csv')
+</code></pre><ul><li><p><code class="language-python">sep</code> (equal to delimiter): The <code class="language-python">sep</code> parameter is used when reading files with custom delimiters. For example, if you have a CSV file with a different delimiter like a semicolon <code class="language-python">';'</code>, you can specify it using the <code class="language-python">sep</code> parameter. In our example, columns are separated using <code class="language-python">','</code>. We can set it as a parameter. </p><pre><code class="language-python">df_cars = pd.read_csv('./cars.csv', sep=',')
+</code></pre><p>Note that using a wrong <code class="language-python">sep</code> can lead to the wrong reading of the file. For instance, if we use <code class="language-python">';'</code> as a delimiter, we will get only one column with all values merged. </p><pre><code class="language-python">df_cars = pd.read_csv('./cars.csv', delimiter=';')
+</code></pre><pre><code class="language-sql">  Car Name,Price,Condition,Year,Fuel Type
+0  Toyota Corolla,25000,New,2023,Gasoline
+1    Honda Civic,22000,Used,2021,Gasoline</code></pre></li><li><p>The <code class="language-python">header</code> parameter allows you to specify which row in the data file should be considered as the header (column names). By default, it is set to <code class="language-python">0</code>, indicating the first row as the header. Let's use the third row as a header. </p><pre><code class="language-python">df_cars = pd.read_csv('./cars.csv', header=3)
+</code></pre><pre><code class="language-sql">       Ford Mustang  35000   New  2023  Gasoline
+0  Chevrolet Camaro  40000  Used  2020  Gasoline
+1     Tesla Model 3  50000   New  2023  Electric</code></pre></li><li><p>The <code class="language-python">index_col</code> parameter specifies which column should be used as the index of the DataFrame. It can take an integer or column name as a value. In our example, we can set the <code class="language-python">Car Name</code> as an index column. </p><pre><code class="language-python">df_cars = pd.read_csv('./cars.csv', index_col='Car Name')
+</code></pre><pre><code class="language-python">                Price Condition  Year Fuel Type
+Car Name                                       
+Toyota Corolla  25000       New  2023  Gasoline
+Honda Civic     22000      Used  2021  Gasoline</code></pre></li></ul><h5 id="polars-library-to-read-data">Polars library to read data</h5><p>In our previous example, we used the Pandas library, however, it can be inefficient to work with large files. One alternative is Polars. Polars is a fast and efficient DataFrame library for data manipulation, similar to Pandas. It can handle large datasets with excellent performance. All of the functions and methods are very similar to Pandas. First, you should install the Polars library. </p><pre><code class="language-bash">pip install polars</code></pre><pre><code class="language-python">df_cars = pl.read_csv('./cars.csv')</code></pre><p>Note that you will see also the type of data of each column when displaying the DataFrame. </p><pre><code class="language-no-highlight">shape: (3, 5)
+┌────────────────┬───────┬───────────┬──────┬───────────┐
+│ Car Name       ┆ Price ┆ Condition ┆ Year ┆ Fuel Type │
+│ ---            ┆ ---   ┆ ---       ┆ ---  ┆ ---       │
+│ str            ┆ i64   ┆ str       ┆ i64  ┆ str       │
+╞════════════════╪═══════╪═══════════╪══════╪═══════════╡
+│ Toyota Corolla ┆ 25000 ┆ New       ┆ 2023 ┆ Gasoline  │
+│ Honda Civic    ┆ 22000 ┆ Used      ┆ 2021 ┆ Gasoline  │
+│ Ford Mustang   ┆ 35000 ┆ New       ┆ 2023 ┆ Gasoline  │
+└────────────────┴───────┴───────────┴──────┴───────────┘</code></pre><h5 id="conclusion">Conclusion</h5><p>In this topic, we covered the basics of data reading with Pandas, exploring essential methods such as <code class="language-python">.head()</code>, <code class="language-python">.info()</code>, and <code class="language-python">.describe()</code>. We also learned how to read data from various file formats, including Excel, CSV, JSON, and SQL databases. Additionally, we briefly introduced the Polars library for data reading as an alternative to Pandas. Now you have a solid foundation to start loading and exploring data in Python for further analysis and manipulation.</p><p>Read more on this topic in <a href="https://hyperskill.org/learn/step/10416" rel="noopener noreferrer nofollow" target="_blank">Exploring Pandas Library for Python</a> on Hyperskill Blog.</p>
+</div>
