@@ -1,0 +1,22 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: The result of both expressions is NULL.
+  - text: The result of the first expression is NULL and the result of the second expression
+      is 1.
+  - text: The result of the first expression is 5 and the result of the second expression
+      is NULL.
+  - text: The result of both expressions is 0.
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/30680#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 02 Oct 2024 09:23:33 UTC"
+record: -1
+selected_options:
+  - 0
+local_check: false

@@ -1,0 +1,23 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: Rows will display their respective &#x27;population&#x27; value because NULL
+      values have no effect
+  - text: Rows with a NULL &#x27;population&#x27; value will be omitted from the result
+      set
+  - text: The command will return an error because SQL does not support arithmetic operations
+      with NULL
+  - text: Every row in the result set will be NULL
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/32227#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 02 Oct 2024 09:31:25 UTC"
+record: -1
+selected_options:
+  - 3
+local_check: false

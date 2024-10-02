@@ -1,0 +1,26 @@
+type: matching
+captions:
+  - (NULL = &#x27;&#x27;) OR TRUE
+  - FALSE AND (NULL = 0)
+  - (NULL &lt;&gt; NULL) AND TRUE
+  - 256 - 16*16 + NULL
+options:
+  - "NULL"
+  - "FALSE"
+  - UNKNOWN
+  - "TRUE"
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/7909#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 02 Oct 2024 09:25:32 UTC"
+record: -1
+ordering:
+  - 3
+  - 1
+  - 2
+  - 0

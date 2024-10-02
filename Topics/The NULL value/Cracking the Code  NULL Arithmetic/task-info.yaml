@@ -1,0 +1,22 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: "Result1: 0, Result2: 0, Result3: 0"
+  - text: "Result1: NULL, Result2: NULL, Result3: NULL"
+  - text: "Result1: 5, Result2: 0, Result3: 5"
+  - text: Error due to NULL in arithmetic expressions
+  - text: "Result1: 5, Result2: 10, Result3: 5"
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/31399#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 02 Oct 2024 09:26:10 UTC"
+record: -1
+selected_options:
+  - 1
+custom_name: "Cracking the Code: NULL Arithmetic"
+local_check: false
