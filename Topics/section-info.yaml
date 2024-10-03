@@ -31,3 +31,4 @@ content:
   - Introduction to pandas
   - Reading data in pandas
   - The NULL value
+  - Special WHERE operators

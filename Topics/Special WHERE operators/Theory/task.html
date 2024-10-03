@@ -1,0 +1,92 @@
+<div class="step-text">
+<p>You already know how to write complex SQL queries and logical expressions. In this topic, we will go further and take a look at the special <code class="language-sql">WHERE</code> operators: <code class="language-sql">BETWEEN</code>, <code class="language-sql">IN</code>, <code class="language-sql">LIKE</code>, <code class="language-sql">EXISTS</code>, <code class="language-sql">ANY</code>, <code class="language-sql">IS NULL</code> and <code class="language-sql">IS DISTINCT FROM</code> that will make your queries more advanced and readable.</p><h5 id="between-operator">BETWEEN operator</h5><p>The<strong> </strong><code class="language-sql">BETWEEN</code> operator in <code class="language-sql">WHERE</code> clause<strong> </strong>selects values that are within the given range. The range is set by the minimum and maximum values and can include dates, numbers, or text data. The <code class="language-sql">BETWEEN</code> operator is inclusive, so the minimum and maximum values are included in the range.</p><p>Let's select products with a price greater than or equal to <code class="language-sql">8</code> and less than or equal to <code class="language-sql">13</code> from the table <code class="language-sql">products</code> given below.</p><table align="center" border="1" cellpadding="1" cellspacing="1"><tbody><tr><th><p>product</p></th><th><p>price</p></th></tr><tr><td><p>milk</p></td><td><p>10</p></td></tr><tr><td><p>tofu</p></td><td><p>15</p></td></tr><tr><td><p>pasta</p></td><td><p>12</p></td></tr><tr><td><p>bread</p></td><td><p>8</p></td></tr></tbody></table><p>The query with <code class="language-sql">WHERE BETWEEN</code> will look as follows:</p><pre><code class="language-sql">SELECT
+    product 
+FROM
+    products 
+WHERE 
+    price BETWEEN 8 AND 13; </code></pre><p>The result set of the query above will have three rows:</p><table align="center" border="1" cellpadding="1" cellspacing="1"><tbody><tr><th><p>product</p></th></tr><tr><td><p>milk</p></td></tr><tr><td><p>pasta</p></td></tr><tr><td><p>bread</p></td></tr></tbody></table><p>You can also get the same result set with the query without <code class="language-sql">BETWEEN</code>:</p><pre><code class="language-sql">SELECT
+    product 
+FROM
+    products 
+WHERE 
+    (price &gt;= 8 
+     AND price &lt;= 13); </code></pre><p>so you can think of <code class="language-sql">WHERE BETWEEN</code> as a shorthand for <code class="language-sql">&gt;= AND &lt;=</code> in <code class="language-sql">WHERE</code> clause.</p><p>To select all the products outside of the range you can use <code class="language-sql">NOT BETWEEN</code> operator:</p><pre><code class="language-sql">SELECT
+    product 
+FROM
+    products 
+WHERE 
+    price NOT BETWEEN 8 AND 13; </code></pre><p>The result set will have three rows excluded now:</p><table align="center" border="1" cellpadding="1" cellspacing="1"><tbody><tr><th><p>product</p></th></tr><tr><td><p>tofu</p></td></tr></tbody></table><h5 id="in-operator">IN operator</h5><p>The <code class="language-sql">IN</code> operator in <code class="language-sql">WHERE</code> clause is a shorthand to multiple OR conditions and allows to specify multiple values.</p><p>Let's select products with price equal to <code class="language-sql">10</code>,<code class="language-sql">12</code> or <code class="language-sql">16</code> from the table <code class="language-sql">products</code> from the previous example:</p><pre><code class="language-sql">SELECT
+    product 
+FROM
+    products 
+WHERE
+    price IN (10, 12, 16); </code></pre><p>The result of this query looks like this:</p><table align="center" border="1" cellpadding="1" cellspacing="1"><tbody><tr><th><p>product</p></th></tr><tr><td><p>milk</p></td></tr><tr><td><p>pasta</p></td></tr></tbody></table><p>To select products with prices other than <code class="language-sql">10</code>, <code class="language-sql">12</code>, or <code class="language-sql">16</code> you can negate <code class="language-sql">IN</code> operator using <code class="language-sql">NOT</code>:</p><pre><code class="language-sql">SELECT
+    product 
+FROM
+    products 
+WHERE
+    price NOT IN (10, 12, 16); </code></pre><p> With this query, you will get all the products except <code class="language-sql">milk</code> and <code class="language-sql">pasta</code>:</p><table align="center" border="1" cellpadding="1" cellspacing="1"><tbody><tr><th><p>product</p></th></tr><tr><td><p>tofu</p></td></tr><tr><td><p>bread</p></td></tr></tbody></table><h5 id="like-operator">LIKE operator</h5><p>The <code class="language-sql">LIKE</code> operator<strong> </strong>can be used in the <code class="language-sql">WHERE</code> clause to check if a string matches a <strong>pattern</strong>. To create a pattern you can use two <strong>wildcard match options</strong>: <code class="language-sql">%</code> and <code class="language-sql">_</code>.</p><p>The <code class="language-sql">%</code> represents any number of characters: zero, one, or more. For example, if you write a pattern <code class="language-sql">%s%</code>, the strings <code class="language-sql">s</code>, <code class="language-sql">toaster</code>, <code class="language-sql">string</code>, and <code class="language-sql">cats</code> will all match this pattern. </p><p>The <code class="language-sql">_</code> represents exactly one character. Thus, if you write pattern <code class="language-sql">s_</code>, the string <code class="language-sql">so</code> will match this pattern, but the strings <code class="language-sql">s</code> and <code class="language-sql">soap</code> will not.</p><p>Let's select all the products with the letter 'a' in any position from our <code class="language-sql">products</code> table:</p><pre><code class="language-sql">SELECT
+    product 
+FROM
+    products 
+WHERE
+    product LIKE '%a%'; </code></pre><p>The query will return this table:</p><table align="center" border="1" cellpadding="1" cellspacing="1"><tbody><tr><th><p>product</p></th></tr><tr><td><p>pasta</p></td></tr><tr><td><p>bread</p></td></tr></tbody></table><p>As with <code class="language-sql">BETWEEN</code> and <code class="language-sql">IN</code> operator, you can negate <code class="language-sql">LIKE</code> operator with<code class="language-sql"> NOT</code> to get all the products without the <code class="language-sql">a</code> in the product name:</p><pre><code class="language-sql">SELECT
+    product 
+FROM
+    products
+WHERE
+    product NOT LIKE '%a%';</code></pre><h5 id="exists-operator">EXISTS operator</h5><p>The <code class="language-sql">EXISTS</code> operator<strong> </strong>checks if the subquery returns any records or not. If the subquery returns any records, the <code class="language-sql">EXISTS</code> operator will return <code class="language-sql">TRUE</code>, otherwise, it will return <code class="language-sql">FALSE</code>.</p><p>Let's consider the following table <code class="language-sql">suppliers</code>:</p><table align="center" border="1" cellpadding="1" cellspacing="1"><tbody><tr><th><p>supplier</p></th><th><p>product</p></th></tr><tr><td><p>Good food</p></td><td><p>pasta</p></td></tr><tr><td><p>Happy farm</p></td><td><p>milk</p></td></tr><tr><td><p>Good food</p></td><td><p>milk</p></td></tr><tr><td><p>Happy farm</p></td><td><p>bread</p></td></tr><tr><td><p>Good food</p></td><td><p>cheese</p></td></tr></tbody></table><p>We will use the <code class="language-sql">EXISTS</code> operator to select all the suppliers who supply both <code class="language-sql">milk</code> and <code class="language-sql">pasta</code>:</p><pre><code class="language-sql">SELECT DISTINCT
+    supplier 
+FROM
+    suppliers AS milk_suppliers
+WHERE
+    product = 'milk'
+    AND EXISTS
+(SELECT supplier
+FROM
+    suppliers 
+WHERE
+    product = 'pasta'
+    AND supplier = milk_suppliers.supplier);
+                         </code></pre><p>In our case the query result looks as follows:</p><table align="center" border="1" cellpadding="1" cellspacing="1"><tbody><tr><th><p>supplier</p></th></tr><tr><td><p>Good food</p></td></tr></tbody></table><p>The negated <code class="language-sql">EXISTS</code> operator<strong> </strong>returns <code class="language-sql">FALSE</code> if the subquery returns any records and <code class="language-sql">TRUE</code> otherwise. We can modify our previous query to get the suppliers who supply <code class="language-sql">milk</code> but not <code class="language-sql">pasta</code>:</p><pre><code class="language-sql">SELECT DISTINCT 
+    supplier 
+FROM
+    suppliers AS milk_suppliers
+WHERE
+    product = 'milk'
+    AND NOT EXISTS 
+(SELECT
+    supplier
+FROM
+    suppliers 
+WHERE 
+    product = 'pasta'
+    AND supplier = milk_suppliers.supplier);
+                         </code></pre><p>This query will return this table:</p><table align="center" border="1" cellpadding="1" cellspacing="1"><tbody><tr><th><p>milk_suppliers</p></th></tr><tr><td><p>Happy farm</p></td></tr></tbody></table><h5 id="any-operator">ANY operator</h5><p>The <code class="language-sql">ANY</code> operator<strong> </strong>returns <code class="language-sql">TRUE</code> if any of the subquery values meet the condition.</p><p>Let's use our tables <code class="language-sql">products</code> and <code class="language-sql">suppliers</code><em> </em>and use <code class="language-sql">ANY</code> operator to find the supplier who supplies a product that is not listed in the<em> </em><code class="language-sql">products</code><em> </em>table:</p><pre><code class="language-sql">SELECT DISTINCT
+    supplier
+FROM
+    suppliers
+WHERE
+    NOT product = ANY (SELECT product FROM products);</code></pre><p>The result of this query looks like this:</p><table align="center" border="1" cellpadding="1" cellspacing="1"><tbody><tr><th><p>supplier</p></th></tr><tr><td><p>Good food</p></td></tr></tbody></table><p>The <code class="language-sql">ANY</code> operator can be used only after standard comparison operators such as <code class="language-sql">=</code>, <code class="language-sql">!=</code>, <code class="language-sql">&lt;=</code>, etc.</p><h5 id="is-null-operator">IS NULL operator</h5><p>The<strong> </strong><code class="language-sql">IS NULL</code> operator<strong> </strong>returns <code class="language-sql">TRUE</code> if the value in the column is equal to <code class="language-sql">NULL</code>.</p><p>Let's consider the <code class="language-sql">persons</code><em> </em>table given below:</p><table align="center" border="1" cellpadding="1" cellspacing="1"><tbody><tr><th><p>name</p></th><th><p>city</p></th></tr><tr><td><p>John Oh</p></td><td><p>New-York</p></td></tr><tr><td><p>Eve Comer</p></td><td><p>NULL</p></td></tr><tr><td><p>Kim Wilson</p></td><td><p>London</p></td></tr></tbody></table><p>We can use <code class="language-sql">IS NULL</code> operator to select all rows without the information about the city from the <code class="language-sql">persons</code> table:</p><pre><code class="language-sql">SELECT
+    name 
+FROM
+    persons 
+WHERE
+    city IS NULL;</code></pre><p>The query result will look as follows:</p><table align="center" border="1" cellpadding="1" cellspacing="1"><tbody><tr><th><p>name</p></th></tr><tr><td><p>Eve Comer</p></td></tr></tbody></table><p>We can also use <code class="language-sql">IS NOT NULL</code> operator to select all rows where the city is non-null:</p><pre><code class="language-sql">SELECT
+    name
+FROM
+    persons
+WHERE
+    city IS NOT NULL;</code></pre><h5 id="is-distinct-from-operator">IS DISTINCT FROM operator</h5><p>Common comparison operators return <code class="language-sql">NULL</code>, not <code class="language-sql">TRUE</code> or <code class="language-sql">FALSE</code>. When this behavior is not desired, <code class="language-sql">IS DISTINCT FROM</code> operator can be used.</p><p>The <code class="language-sql">IS DISTINCT FROM</code> operator<strong> </strong>is very similar to not equality check (<code class="language-sql">!=</code> or <code class="language-sql">&lt;&gt;</code>). This operator returns <code class="language-sql">TRUE</code> only if two values are different, otherwise it returns <code class="language-sql">FALSE</code>. If both values are equal to <code class="language-sql">NULL</code>, the <code class="language-sql">IS DISTINCT FROM</code> operator will return<code class="language-sql"> FALSE</code>, which distinguishes <code class="language-sql">IS DISTINCT FROM</code> operator from the standard not equality check.</p><p>In other words, this constructs essentially work with <code class="language-sql">NULL</code> as if it were a normal value, not "suspense", and return <code class="language-sql">TRUE</code> or <code class="language-sql">FALSE</code> instead of <code class="language-sql">UNKNOWN</code>:</p><pre><code class="language-sql">NULL = NULL =&gt; UNKNOWN
+NULL IS NOT DISTINCT FROM NULL =&gt; TRUE</code></pre><p>Let's select all the rows where the city is not equal to New-York from the <code class="language-sql">persons</code><em> </em>table:</p><pre><code class="language-sql">SELECT
+    * 
+FROM
+    persons 
+WHERE
+    city IS DISTINCT FROM 'New-York'; </code></pre><p>The query above will select two rows:</p><table align="center" border="1" cellpadding="1" cellspacing="1"><tbody><tr><th><p>name</p></th><th><p>city</p></th></tr><tr><td><p>Eve Comer</p></td><td><p>NULL</p></td></tr><tr><td><p>Kim Wilson</p></td><td><p>London</p></td></tr></tbody></table><p>The operator with negation <code class="language-sql">IS NOT DISTINCT FROM</code> works as an equality check for non-null values and returns <code class="language-sql">TRUE</code> if both values are <code class="language-sql">NULL</code>.</p><p>Let's select all the rows where the city is equal to <code class="language-sql">NULL</code> from the <code class="language-sql">persons</code><em> </em>table:</p><pre><code class="language-sql">SELECT
+    *
+FROM
+    persons
+WHERE
+    city IS NOT DISTINCT FROM NULL;</code></pre><p>This query will return this row:</p><table align="center" border="1" cellpadding="1" cellspacing="1"><tbody><tr><th><p>name</p></th><th><p>city</p></th></tr><tr><td><p>Eve Comer</p></td><td><p>NULL</p></td></tr></tbody></table><h5 id="conclusion">Conclusion</h5><p>The special <code class="language-sql">WHERE</code> operators allow you to make your queries simpler and more advanced with a subquery.</p><p>Let's practice!</p>
+</div>

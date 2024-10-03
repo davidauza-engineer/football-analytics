@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: <pre><code class="sql">SELECT * FROM products WHERE available_quantity &gt;
+      50 AND manufacturer != NULL;</code></pre>
+  - text: <pre><code class="sql">SELECT * FROM products WHERE available_quantity &gt;
+      50 AND manufacturer IS NOT NULL;</code></pre>
+  - text: <pre><code class="sql">SELECT * FROM products WHERE available_quantity &gt;
+      50 AND manufacturer &lt;&gt; NULL;</code></pre>
+  - text: <pre><code class="sql">SELECT * FROM products WHERE available_quantity &gt;
+      50 OR manufacturer IS NOT NULL;</code></pre>
+  - text: <pre><code class="sql">SELECT * FROM products WHERE available_quantity &gt;
+      50 AND NOT manufacturer;</code></pre>
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/30891#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Thu, 03 Oct 2024 09:20:47 UTC"
+record: -1
+selected_options:
+  - 1
+local_check: false

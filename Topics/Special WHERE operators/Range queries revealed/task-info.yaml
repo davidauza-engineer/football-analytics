@@ -1,0 +1,22 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: SELECT * FROM Users WHERE Age &gt;= 30 AND Age &lt;= 40 AND Age IS NOT NULL;
+  - text: SELECT * FROM Users WHERE Age BETWEEN 30 AND 40 AND Age IS NOT NULL;
+  - text: SELECT * FROM Users WHERE (Age = 30 OR Age = 40) AND Age IS NOT NULL;
+  - text: SELECT * FROM Users WHERE Age &gt;= 30 AND Age &lt;= 40;
+  - text: "SELECT * FROM Users WHERE Age IN (30, 40) AND Age IS NOT NULL;"
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/47186#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Thu, 03 Oct 2024 09:27:10 UTC"
+record: -1
+selected_options:
+  - 0
+  - 1
+local_check: false

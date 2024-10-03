@@ -1,0 +1,29 @@
+type: matching
+captions:
+  - '''a%'''
+  - '''%a_%'''
+  - '''r_%_'''
+  - '''r__'''
+  - '''%r'''
+options:
+  - "'autumn', 'a', 'arrow' "
+  - "'r', 'Thor' "
+  - "'row', 'red'"
+  - "'as', 'any', 'toaster' "
+  - "'row', 'road'"
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/10522#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Thu, 03 Oct 2024 09:24:32 UTC"
+record: -1
+ordering:
+  - 0
+  - 3
+  - 4
+  - 2
+  - 1
