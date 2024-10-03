@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: End of file
+  - text: End of function
+  - text: End of form
+  - text: End of formula
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6055#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Thu, 03 Oct 2024 09:54:05 UTC"
+record: -1
+selected_options:
+  - 0
+local_check: false

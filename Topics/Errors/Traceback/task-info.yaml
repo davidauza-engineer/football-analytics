@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: A help page with detailed information about all the built-in Python errors
+  - text: "Summary statistics of your code (the average length of a line, etc.)"
+  - text: A stack trace with detailed information about the error that the code has
+      caused
+  - text: A regular output of your program when there is no error
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16190#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Thu, 03 Oct 2024 09:55:31 UTC"
+record: -1
+selected_options:
+  - 2
+local_check: false

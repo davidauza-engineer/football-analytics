@@ -1,0 +1,37 @@
+<div class="step-text">
+<p>At this point, you probably already know that writing code sometimes might be frustrating because not everything works as you'd expect. So, in this topic, we'll finally examine the main reason for this frustration — errors.</p>
+<p>The first thing you need to know about programming is how to print <code class="language-python">Hello, world!</code>. The second one is that this might be challenging, as even such a tiny script can contain various errors. Here you are:</p>
+<pre><code class="language-python">print("Hello, world!"</code></pre>
+<p>If you run this code, you'll get this:</p>
+<pre><code class="language-no-highlight">Traceback (most recent call last):
+  File "FULL/PATH/TO_YOUR/SCRIPT.PY", line 1
+    print("Hello, world!"
+                        ^
+SyntaxError: unexpected EOF while parsing</code></pre>
+<p><strong>Traceback </strong>is a stack trace that appears when your code causes an error. It reports detailed information on that particular error, indicating the <strong>specific files </strong>in which the error occurred. Nonetheless, the most informative lines for us right now are the last two. They point out the mistake in your code.</p>
+<p>This might seem a bit frustrating, but errors are generally designed to allow Python to communicate with you. Whenever you see those threatening red lines – don't panic! Just follow what they are saying.</p>
+<h5 id="syntax-errors" style="text-align: center;">Syntax errors</h5>
+<p>In the example above, we can see the magic word <code class="language-python">SyntaxError</code> that is likely to haunt you throughout getting used to Python. A large variety of different errors are referred to as <a class="theory-lookup not-relevant" href="/learn/step/0" rel="noopener noreferrer nofollow" target="_blank" title="In Python, a syntax error is a type of error that occurs when there is a problem with the syntax or structure of the code. | These errors are detected during the compilation phase, meaning that Python cannot even execute the program due to the issues found. Syntax errors can be caused by various factors, such as misspelled keywords, missing or extra punctuation, incorrect indentation, or mismatched parentheses, brackets, or braces. When a syntax error occurs, Python will provide a traceback with a message describing the error in detail and pointing to the exact location in the code where the mistake was found.">syntax errors</a>. They usually mean that Python has encountered a problem while trying to<strong> <a class="theory-lookup not-relevant" href="/learn/step/0" rel="noopener noreferrer nofollow" target="_blank" title="In Python, the term compile refers to the process of translating the source code into a form that can be executed by the computer. | In contrast to interpreted languages, where the code is translated and executed line-by-line during runtime, compiled languages like Python are translated into an intermediate form, known as bytecode, before being executed. This bytecode can then be executed directly by the Python Virtual Machine (PVM), which is a software implementation of a machine that interprets the bytecode.">compile</a></strong> your program and can't even execute it.</p>
+<p>If you carefully read the text of a traceback, it will help you find mistakes and correct them quite quickly, as you can see an<strong> arrow</strong> pointing to the exact place where Python found the mistake in your code. Every syntax error has an <strong>associated value</strong>.<strong> </strong>It describes an error in detail. In the example, <code class="language-python">EOF</code> in the <a class="theory-lookup not-relevant" href="/learn/step/0" rel="noopener noreferrer nofollow" target="_blank" title="In Python, a message is a description or explanation that provides details about an error or a specific condition in the code. | When an error occurs, a message is displayed along with an associated value, which can help identify the type of error. For instance, a message can indicate a syntax error, such as a missing closing bracket, and it can also be used in assert statements to display a custom error message when a certain condition is not met. This is particularly useful in testing code and identifying errors.">message</a> <code class="language-python">SyntaxError: unexpected EOF while parsing </code>stands for the end of a file. This message means that something else had been expected after your statement, but you didn't pass it to the interpreter. In our case, there should've been a closing round bracket <code class="language-python">)</code>.</p>
+<p>Mistakes won't be so obvious all the time. The message you'll get as an associated value will likely be the most common and obscure <code class="language-python">invalid syntax</code> which isn't really helpful. To locate the issue, it's enough to know that the error is in the syntax.</p>
+<h5 id="common-errors-for-beginners" style="text-align: center;">Common errors for beginners</h5>
+<p>Some of the most common syntax errors are:</p>
+<ul>
+<li><strong>Wrong spelling</strong> of keywords and function names, e.g., <code class="language-python">While</code> instead of <code class="language-python">while</code>, <code class="language-python">pint</code> instead of <code class="language-python">print</code>;</li>
+<li>the wrong number of <strong>parentheses </strong>in function calls, e.g., <code class="language-python">print just one round bracket</code>;</li>
+<li><strong>Indents </strong>are also fertile soil for errors. Therefore, use spaces and tabs carefully;</li>
+<li><strong>Quotations marks</strong>. Don't forget to wrap a string in quotation marks of the same type: triple quotes for multi-line strings or double or single quotes for ordinary strings.</li>
+</ul>
+<p>Modern IDEs check everything for you and kindly highlight where you have made a mistake or typo, but don't rely on this too much, and be ready to read the traceback yourself.</p>
+<p></p>
+<div class="alert alert-warning">Mind that Python stops compiling your program after finding<strong> </strong>the<strong> first</strong> Syntax error, so it might take a while to fix every single mistake.</div>
+<p></p>
+<p>Check the following piece of code, for example. It looks like a Petri dish of syntax errors:</p>
+<pre><code class="language-python">missing_quote  = "this is a mistake!
+another_string = this is not a string!"
+parted_string = 'I'd like to be highlighted, but'
+          prnit("I am not")</code></pre>
+<p>Take a deep breath, reread the article, and continue perfecting your programming skills! As you can see, there are plenty of syntax errors in this tiny piece of code. If you've checked and corrected everything from the list above and yet you encounter those error messages – don't worry! Once again, it's just Python trying to tell you that something went wrong.</p>
+<h5 id="conclusion">Conclusion</h5>
+<p>In this topic, we learned what traceback is, looked at syntax errors in detail, and went through several common mistakes you, as a beginner, may encounter.</p>
+</div>
