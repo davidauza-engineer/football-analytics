@@ -1,0 +1,19 @@
+type: sorting
+options:
+  - Source code
+  - Binary machine code
+  - Byte code
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6801#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Thu, 03 Oct 2024 09:41:00 UTC"
+record: -1
+ordering:
+  - 0
+  - 2
+  - 1

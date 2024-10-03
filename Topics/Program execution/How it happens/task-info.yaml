@@ -1,0 +1,23 @@
+type: sorting
+options:
+  - The compiler turns your source code into byte code.
+  - The code goes to Python Virtual Machine.
+  - Virtual Machine executes code instructions one by one.
+  - Everything works!
+  - You write code.
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6802#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Thu, 03 Oct 2024 09:42:21 UTC"
+record: -1
+ordering:
+  - 4
+  - 0
+  - 1
+  - 2
+  - 3

@@ -1,0 +1,25 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: Compilation
+  - text: Interpretation
+  - text: Writing a code
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/11883#comment
+status: Solved
+feedback:
+  message: "<html>You're right! You've already written the code. Python is an interpreted\
+    \ language, however, they also include a compilation step, but the compiler turns\
+    \ the source code into the byte code first, an intermediate language, which later\
+    \ is executed by the Python Virtual Machine right away without converting the\
+    \ byte code into the machine code, while with compiled languages, a compiler translates\
+    \ the source code into the machine code which is directly executed by a processor.</html>"
+  time: "Thu, 03 Oct 2024 09:39:45 UTC"
+record: -1
+selected_options:
+  - 0
+custom_name: What step to choose?
+local_check: false
