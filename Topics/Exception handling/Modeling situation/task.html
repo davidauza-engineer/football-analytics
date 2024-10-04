@@ -1,0 +1,8 @@
+<div class="step-text">
+<p></p><p>Implement exception handling for the <code class="language-python">exception_test()</code> function, which is provided and may raise various exceptions.</p><p>Specification:</p><ol><li><p>Call the <code class="language-python">exception_test()</code> function.</p></li><li><p>Catch and handle the following specific exceptions:</p><ul><li><p><code class="language-python">ArithmeticError</code></p></li><li><p><code class="language-python">AssertionError</code></p></li><li><p><code class="language-python">ZeroDivisionError</code></p></li></ul></li><li><p>When an exception is caught, print its name.</p></li><li><p>Consider the hierarchy of exceptions when structuring your try-except blocks.</p></li></ol><p>Your code structure should look similar to this:</p><pre><code class="language-python">try:
+    exception_test()
+except Exception:
+    print("Exception")
+except BaseException:
+    print("BaseException")</code></pre><div class="alert alert-primary"><p>When catching exceptions, remember that a handler for a parent exception will also catch its child exceptions. Therefore, the order of the except blocks is important. Generally, you should catch more specific exceptions before more general ones. For example, consider how <code class="language-python">ZeroDivisionError</code> relates to <code class="language-python">ArithmeticError</code> in the exception hierarchy. This relationship should inform the order of your except blocks.</p></div><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 2 seconds</font><br><br>
+</div>

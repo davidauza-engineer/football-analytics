@@ -1,0 +1,26 @@
+type: matching
+captions:
+  - else
+  - finally
+  - try
+  - except
+options:
+  - will be always executed
+  - will only be executed if there were no exceptions
+  - will be executed if there was a matching exception in try block
+  - 'is always executed first '
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6273#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 04 Oct 2024 10:07:31 UTC"
+record: -1
+ordering:
+  - 1
+  - 0
+  - 3
+  - 2
