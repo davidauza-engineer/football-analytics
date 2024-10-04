@@ -1,0 +1,49 @@
+<div class="step-text">
+<p>Imagine the situation: your code is syntactically correct and beautiful, it is being executed without any trouble. Great! But wait, when you continue writing the program, something else appears in the messages from Python! And the program is only partially executed. Sounds familiar? In this topic, we'll finally try to figure out what is going on when something like this happens.</p>
+<h5 id="a-different-type-of-error">A different type of error</h5>
+<p>Some errors in your code will not prevent the program from running. It will only crash while trying to execute a “broken” line: a line with an error called an <strong>exception</strong>. Thus, exceptions are the errors detected during the program <strong>execution</strong> (interpretation), whereas <a class="theory-lookup not-relevant" href="/learn/step/6042" rel="noopener noreferrer nofollow" target="_blank" title="In Python, a syntax error is a type of error that occurs when there is a problem with the syntax or structure of the code. | These errors are detected during the compilation phase, meaning that Python cannot even execute the program due to the issues found. Syntax errors can be caused by various factors, such as misspelled keywords, missing or extra punctuation, incorrect indentation, or mismatched parentheses, brackets, or braces. When a syntax error occurs, Python will provide a traceback with a message describing the error in detail and pointing to the exact location in the code where the mistake was found.">syntax errors</a> are those detected during <strong>compiling</strong> the program into byte-code.</p>
+<p>Let's examine the following piece of code:</p>
+<pre><code class="language-python">print("I will be the first")
+print("And I will be the second")
+a = 0
+b = 5
+print("Here comes an error!..")
+print(b / a)
+print("I won't be printed")
+</code></pre>
+<p>Indeed, we can see that some of the prints worked, while others (<code class="language-python">print()</code> which contains the error, and yet another one after it) didn’t. Thus, all the code <strong>before</strong> the exception is executed properly, and everything <strong>after </strong>is not.</p>
+<pre><code class="language-no-highlight">I will be the first
+And I will be the second
+Here comes an error!..
+Traceback (most recent call last):
+  File  "PATH/TO/YOUR/SCRIPT.py", line 6, in &lt;module&gt;
+    print(b / a)
+ZeroDivisionError: division by zero</code></pre>
+<p>You already know that the most important and informative part of an error in Python is the last line. It contains a clear and distinct description of the error Python has encountered. In this case, we can see <strong>ZeroDivisionError</strong>, which is quite informative, right? One can’t divide by zero.</p>
+<p>Similar to syntax errors, nearly all the built-in Python exceptions have an <strong>associated value</strong> that indicates the detailed cause of the error. Exceptions are not unconditionally fatal: later you will learn how to handle them.</p>
+<h5 id="most-common-exceptions-for-learners">Most common exceptions for learners</h5>
+<p>Perhaps, the most common exceptions people see while they are still learning Python are <code class="language-python">NameError</code>, <code class="language-python">TypeError</code> and <code class="language-python">ValueError</code>.</p>
+<p><code class="language-python">NameError</code> is usually raised when you haven’t defined your variable before using it or you have done it incorrectly.</p>
+<p></p>
+<div class="alert alert-warning"><p>Remember that variables are <strong>case-sensitive</strong> in Python and they’ve got to be defined <strong>before usage</strong>.</p></div>
+<p></p>
+<p>Consider this piece of code:</p>
+<pre><code class="language-python">print(a + b)
+a = 0
+b = 5</code></pre>
+<p>It will cause the following exception:</p>
+<pre><code class="language-python">NameError: name 'a' is not defined</code></pre>
+<p>The associated value sometimes tells you the exact problem, so it's going to be really easy to fix it.</p>
+<p><code class="language-python">TypeError</code> is raised when an operation or function is applied to an object of an <strong>inappropriate type</strong>. The associated value is a string giving details about the particular type mismatch. A common case for it is when you’re trying to perform arithmetic calculations on several unsupported operand types:</p>
+<pre><code class="language-python">print("15" + 2)</code></pre>
+<p>Here we’re trying to sum up a string and an integer, which will cause an exception again:</p>
+<pre><code class="language-python">TypeError: unsupported operand type(s) for +: 'int' and 'str'</code></pre>
+<p><code class="language-python">ValueError</code> can be raised if you’re trying to use a variable of the correct type, but with an inappropriate <strong>value</strong>. For example, it's the case when you are trying to make an integer of a string, which has no integer value:</p>
+<pre><code class="language-python">print(int("five"))
+
+ValueError: invalid literal for int() with base 10: 'five'</code></pre>
+<p>If you have any trouble trying to understand what the error is, you can always copy-paste the last line of a traceback and google it. Moreover, you're strongly encouraged to do so, as 99% of the troubles that the learners face have already been solved on specialized forums.</p>
+<h5 id="summary">Summary</h5>
+<p>We've learned the exception basics, so now you are familiar with this concept and some of the most common exceptions in Python. Here's a recap:</p>
+<ul><li><p>A program will not be compiled and executed if there are <strong>syntax errors</strong> in it.</p></li><li><p>On the other hand, <strong>exceptions </strong>don’t prevent a program from being compiled and run, but as soon as the line with an exception is being executed, the program crashes.</p></li><li><p>There are certain tools to handle exceptions and even to raise them on your own, and soon you will learn more about it.</p></li></ul>
+</div>

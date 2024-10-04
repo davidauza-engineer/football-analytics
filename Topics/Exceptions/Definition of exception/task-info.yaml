@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: Traceback
+  - text: Type of error
+  - text: Variable
+  - text: Function
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6045#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 04 Oct 2024 09:10:35 UTC"
+record: -1
+selected_options:
+  - 1
+local_check: false
