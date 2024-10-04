@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: RecursionError
+  - text: KeyError
+  - text: TabError
+  - text: NotImplementedError
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/11682#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 04 Oct 2024 09:33:21 UTC"
+record: -1
+selected_options:
+  - 0
+  - 3
+local_check: false

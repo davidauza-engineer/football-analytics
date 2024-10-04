@@ -1,0 +1,153 @@
+<div class="step-text">
+<p>Even good programmers make mistakes sometimes. You can divide an integer by zero by mistake or miss a bracket when working with lists. Python handles these cases pretty well, it usually doesn't lead to unexpected bugs. But if they happen, the <strong><a class="theory-lookup not-relevant" href="/learn/step/11680" rel="noopener noreferrer nofollow" target="_blank" title="In Python, a built-in exception is a type of exception that is already defined in the Python interpreter. | They are part of the language's built-in hierarchy of exceptions, which includes the base class Exception and its subclasses such as SyntaxError, TypeError, ValueError, OSError, and others. These built-in exceptions are used to indicate that an error has occurred during the execution of the program. They come with a pre-defined message and can be customized by the user by specifying a custom message or error code. Understanding and handling these built-in exceptions is crucial for writing robust and error-free Python code.">built-in exceptions</a></strong><strong> </strong>are raised. In this topic, we are going to present a detailed description of built-in exceptions. Specifically, we'll look at <code class="language-python">SyntaxError</code>, <code class="language-python">TypeError</code>, <code class="language-python">OSError</code> and <code class="language-python">ValueError</code> in this topic.</p>
+<h5 id="hierarchy-of-exceptions">Hierarchy of Exceptions</h5>
+<p>We should note that all built-in exceptions have a hierarchy, some of the exceptions in the hierarchy may lead to more specific exceptions. Take a look at the full structure of the built-in exceptions:</p>
+<pre><code class="language-no-highlight">BaseException
+ +-- SystemExit
+ +-- KeyboardInterrupt
+ +-- GeneratorExit
+ +-- BaseExceptionGroup
+ +-- Exception
+      +-- StopIteration
+      +-- StopAsyncIteration
+      +-- ArithmeticError
+      |    +-- FloatingPointError
+      |    +-- OverflowError
+      |    +-- ZeroDivisionError
+      +-- AssertionError
+      +-- AttributeError
+      +-- BufferError
+      +-- EOFError
+      +-- ExceptionGroup [BaseExceptionGroup]
+      +-- ImportError
+      |    +-- ModuleNotFoundError
+      +-- LookupError
+      |    +-- IndexError
+      |    +-- KeyError
+      +-- MemoryError
+      +-- NameError
+      |    +-- UnboundLocalError
+      +-- OSError
+      |    +-- BlockingIOError
+      |    +-- ChildProcessError
+      |    +-- ConnectionError
+      |    |    +-- BrokenPipeError
+      |    |    +-- ConnectionAbortedError
+      |    |    +-- ConnectionRefusedError
+      |    |    +-- ConnectionResetError
+      |    +-- FileExistsError
+      |    +-- FileNotFoundError
+      |    +-- InterruptedError
+      |    +-- IsADirectoryError
+      |    +-- NotADirectoryError
+      |    +-- PermissionError
+      |    +-- ProcessLookupError
+      |    +-- TimeoutError
+      +-- ReferenceError
+      +-- RuntimeError
+      |    +-- NotImplementedError
+      |    +-- RecursionError
+      +-- SyntaxError
+      |    +-- IndentationError
+      |         +-- TabError
+      +-- SystemError
+      +-- TypeError
+      +-- ValueError
+      |    +-- UnicodeError
+      |         +-- UnicodeDecodeError
+      |         +-- UnicodeEncodeError
+      |         +-- UnicodeTranslateError
+      +-- Warning
+           +-- DeprecationWarning
+           +-- EncodingWarning
+           +-- PendingDeprecationWarning
+           +-- RuntimeWarning
+           +-- SyntaxWarning
+           +-- UserWarning
+           +-- FutureWarning
+           +-- ImportWarning
+           +-- UnicodeWarning
+           +-- BytesWarning
+           +-- ResourceWarning</code></pre>
+<p>Don't be afraid, we know, it's hard to remember the hierarchy at once. You can do it step-by-step when you have free time. Below we try to focus on the main features of the structure you need to know.</p>
+<p>First of all, remember that the <code class="language-python">BaseException</code> class is a base class for all built-in exceptions, which we can consider as the root of all exceptions. This exception is never raised on its own and should be inherited by other exception classes. In terms of this hierarchy, other classes are known as <strong>subclasses</strong> of the root class. For instance, the <code class="language-python">IndexError</code> is a subclass of the <code class="language-python">LookupError</code> class. At the same time, the <code class="language-python">LookupError</code> itself is a subclass of the <code class="language-python">Exception</code> class.</p>
+<p>The <code class="language-python">BaseException</code> subclasses include <code class="language-python">SystemExit</code>, <code class="language-python">KeyboardInterrupt</code>, <code class="language-python">GeneratorExit</code> and <code class="language-python">Exception</code>.</p>
+<ul><li><p>The <code class="language-python">SystemExit</code> is raised when the <code class="language-python">sys.exit()</code> function is used to terminate the program.</p></li><li><p>The <code class="language-python">KeyboardInterrupt</code> is raised when the user hits the interrupt key, e.g. <code class="language-python">Ctrl</code>+<code class="language-python">C</code> during the execution of a program.</p></li><li><p>The <code class="language-python">GeneratorExit</code> appears when your generator is being closed (it will be covered later).</p></li><li><p>The most common subclass is the <code class="language-python">Exception</code> class. It contains all exceptions that are considered as <strong>errors</strong> and <strong>warnings</strong><em>.</em></p></li></ul>
+<h5 id="built-in-exceptions-types">Built-in Exceptions Types</h5>
+<p>Before we start analyzing the pieces of code, take a look at the table with the built-in exceptions that programmers often meet in their code:</p>
+<table align="center"><tbody><tr><td><p><strong>Exception</strong></p></td><td><p><strong>Explanation</strong></p></td></tr><tr><td><p><code class="language-python">SyntaxError</code></p></td><td><p>Raised when a statement uses the wrong syntax.</p></td></tr><tr><td><p><code class="language-python">TypeError</code></p></td><td><p>Raised when any operation/function is applied to an object of inappropriate type.</p></td></tr><tr><td><p><code class="language-python">ValueError</code></p></td><td><p>Raised when any operation/function accepts an argument with an inappropriate value.</p></td></tr><tr><td><p><code class="language-python">OSError</code></p></td><td><p>Raised when a system function returns a system-related error.</p></td></tr><tr><td><p><code class="language-python">ImportError</code></p></td><td><p>Raised when the imported library is not found.</p></td></tr><tr><td><p><code class="language-python">EOFError</code></p></td><td><p>Raised when such built-in functions as <code class="language-python">input()</code> reach the <u>e</u>nd <u>o</u>f the <u>f</u>ile (EOF) without reading any data.</p></td></tr><tr><td><p><code class="language-python">NameError</code></p></td><td><p>Raised when a local or global name is not found.</p></td></tr><tr><td><p><code class="language-python">IndexError</code></p></td><td><p>Raised when a sequence subscript is out of range.</p></td></tr></tbody></table>
+<p>Now, let's shed some more light on them! We'll check some of them in a later topic.</p>
+<h5 id="syntaxerror">SyntaxError</h5>
+<p>The first error is the <code class="language-python">SyntaxError</code>. Take a look at the first example:</p>
+<pre><code class="language-python">new_list = [1, 2, 3, 4, 5
+print(new_list)
+#   File "main.py", line 2
+#     print(new_list)
+#     ^
+# SyntaxError: invalid syntax</code></pre>
+<p>The list doesn't have the right-side bracket <code class="language-python">]</code>, that's why the <code class="language-python">SyntaxError</code> is raised. Below is another example:</p>
+<pre><code class="language-python">i := 3
+#   File "&lt;stdin&gt;", line 1
+#     i := 3
+#        ^
+# SyntaxError: invalid syntax
+</code></pre>
+<p>The expression is wrong and Python tells us about it by raising <code class="language-python">SyntaxError</code>.</p>
+<p></p>
+<p>The <code class="language-python">SyntaxError</code> is generally very easy to fix: you should make sure that all brackets, commas, quotation marks are in place and that everything is syntactically correct in the line that the error points out.</p>
+<p></p>
+<h5 id="typeerror">TypeError</h5>
+<p>Now let's observe a <code class="language-python">TypeError</code>:</p>
+<pre><code class="language-python">a = 'Python' + 25
+print(a)
+# Traceback (most recent call last):
+#   File "main.py", line 1, in &lt;module&gt;
+#     a = 'Python' + 25
+# TypeError: can only concatenate str (not "int") to str</code></pre>
+<p>We tried to concatenate a string and an integer, that's why the <code class="language-python">TypeError</code> was raised. This can happen to you while solving coding tasks<strong> </strong>on the platform. For example, if you read input and forget to convert it into an integer before performing some operations:</p>
+<pre><code class="language-python">num = input()
+print(num / 100)
+# Traceback (most recent call last):
+#  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+# TypeError: unsupported operand type(s) for /: 'str' and 'int'
+</code></pre>
+<p></p>
+<p>To get rid of this error, check that you perform operations on variables of the correct data type.</p>
+<p></p>
+<h5 id="valueerror">ValueError</h5>
+<p>In the code below, the input accepts a string that can't be converted to an integer, that's why the <code class="language-python">ValueError</code> is raised:</p>
+<pre><code class="language-python">user_input = input('Enter an integer: ')  # you enter 'cat' here
+a = int(user_input)
+print(a)
+# Traceback (most recent call last):
+#   File "main.py", line 1, in &lt;module&gt;
+#    a = int(user_input)
+# ValueError: invalid literal for int() with base 10: 'cat'</code></pre>
+<p>This error may also occur with a list:</p>
+<pre><code class="language-python">cats = ['Tommy', 'Timmy', 'Ram']
+cats.remove('Alex')
+print(cats)
+# Traceback (most recent call last):
+#   File "main.py", line 2, in &lt;module&gt;
+#     cats.remove('Alex')
+# ValueError: list.remove(x): x not in list</code></pre>
+<p>The method <code class="language-python">remove()</code> can't delete the specified string from the list because there's no such element there.</p>
+<p></p>
+<p>The <code class="language-python">ValueError</code> can be caused by various reasons. The general advice is to read the error message and check that the function can process the given object.</p>
+<p></p>
+<h5 id="oserror">OSError</h5>
+<p>The next example illustrates the <code class="language-python">OSError</code>. Some subclasses of this error may appear when you work with files. For example, if we try to <a class="theory-lookup not-relevant" href="/learn/step/11680" rel="noopener noreferrer nofollow" target="_blank" title="In Python, 'open' is a built-in function used to open a file and return a file object. | The file object can then be used to read or write data to the file. The 'open' function takes two arguments: the name of the file and the mode in which the file should be opened. The mode determines the type of access to the file, such as reading ('r'), writing ('w'), appending ('a'), or binary mode ('b'). If the file does not exist and you try to open it in read mode, an error will occur. If the file already exists and you open it in write mode, the existing content will be overwritten. In binary mode, the file is opened in binary format, rather than text format.">open</a> a file that doesn't exist, the <code class="language-python">FileNotFoundError</code> will be raised:</p>
+<pre><code class="language-python">f = open('i_dont_exist.txt')
+# Traceback (most recent call last):
+#   File "main.py", line 1, in &lt;module&gt;
+#     f = open('i_dont_exist.txt')
+# FileNotFoundError: [Errno 2] No such file or directory: 'i_dont_exist.txt'</code></pre>
+<p>Of course, there are a lot of other examples when the <code class="language-python">OSError</code> and its subclasses can be raised.</p>
+<p></p>
+<p>When an <code class="language-python">OSError</code> occurs, the reason for it is stated in the description.</p>
+<p></p>
+<h5 id="summary">Summary</h5>
+<p>So far, we highlighted some important issues dedicated to the built-in exceptions:</p>
+<ul><li><p>we reviewed the hierarchy of exceptions;</p></li><li><p>we learned what classes and subclasses stand for;</p></li><li><p>we analyzed some built-in exceptions and discussed the way around them.</p></li></ul>
+<p>If you are keen on reading more information, check the <a href="https://docs.python.org/3/library/exceptions.html" rel="noopener noreferrer nofollow" target="_blank">Built-in Exceptions</a> part of the official documentation. For now, let's proceed to the comprehension tasks and applications to strengthen your knowledge!</p>
+</div>
