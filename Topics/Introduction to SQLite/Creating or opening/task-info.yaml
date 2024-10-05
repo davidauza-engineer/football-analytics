@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: sqlite3 your.db
+  - text: sqlite3 create your.db
+  - text: sqlite3 create db
+  - text: sqlite your.db
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/12170#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 05 Oct 2024 11:02:17 UTC"
+record: -1
+selected_options:
+  - 0
+local_check: false

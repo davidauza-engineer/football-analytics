@@ -1,0 +1,19 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: /help
+  - text: .help
+  - text: .hint
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/13446#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 05 Oct 2024 11:00:50 UTC"
+record: -1
+selected_options:
+  - 1
+local_check: false

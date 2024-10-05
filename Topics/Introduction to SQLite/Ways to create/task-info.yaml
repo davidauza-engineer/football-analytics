@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: "<code>CREATE TABLE pets (id, name)</code>"
+  - text: "<code>CREATE TABLE pets columns(id INTEGER, name TEXT)</code>"
+  - text: "<code>CREATE TABLE pets (id INTEGER, name TEXT)</code>"
+  - text: "<code>CREATE TABLE pets [id, name]</code>"
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/32465#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 05 Oct 2024 11:01:49 UTC"
+record: -1
+selected_options:
+  - 0
+  - 2
+local_check: false

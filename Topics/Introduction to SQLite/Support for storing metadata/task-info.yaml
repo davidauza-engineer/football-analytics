@@ -1,0 +1,19 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: 2
+  - text: depends on the size of the data
+  - text: 1
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/12167#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 05 Oct 2024 11:01:22 UTC"
+record: -1
+selected_options:
+  - 2
+local_check: false
