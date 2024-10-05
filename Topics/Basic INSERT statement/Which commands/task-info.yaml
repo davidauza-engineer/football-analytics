@@ -1,0 +1,29 @@
+type: table
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/17847#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 05 Oct 2024 10:40:05 UTC"
+record: -1
+rows:
+  - INCLUDE
+  - INTO
+  - VALUES
+columns:
+  - To specify the table
+  - Non-existing command
+  - To specify the values
+selected:
+  - - false
+    - true
+    - false
+  - - true
+    - false
+    - false
+  - - false
+    - false
+    - true

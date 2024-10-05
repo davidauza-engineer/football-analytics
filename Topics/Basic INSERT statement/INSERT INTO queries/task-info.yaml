@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: You don't have to specify the table in the INSERT INTO query
+  - text: You can add multiple records with one INSERT INTO query
+  - text: You must specify columns in the INSERT INTO query
+  - text: You can't add multiple records with one INSERT INTO query
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/9060#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 05 Oct 2024 10:36:56 UTC"
+record: -1
+selected_options:
+  - 1
+local_check: false

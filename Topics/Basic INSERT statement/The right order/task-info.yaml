@@ -1,0 +1,25 @@
+type: sorting
+options:
+  - VALUES
+  - "(name, capital, population)"
+  - "('United Kingdom', 'London',  67220000);"
+  - "('USA', 'Washington',  329500000),"
+  - countries
+  - INSERT INTO
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/17848#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 05 Oct 2024 10:39:25 UTC"
+record: -1
+ordering:
+  - 5
+  - 4
+  - 1
+  - 0
+  - 3
+  - 2
