@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: WHERE salary &gt; 4000 AND experience &lt; 10
+  - text: WHERE salary &gt; 40000 AND experience &lt; 10
+  - text: IF salary &gt; 40000 AND experience &lt; 10
+  - text: WHERE salary &lt; 40000 AND experience &lt; 10
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/18763#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 05 Oct 2024 10:49:17 UTC"
+record: -1
+selected_options:
+  - 1
+local_check: false

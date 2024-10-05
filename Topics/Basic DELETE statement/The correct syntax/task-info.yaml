@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: DELETE FROM renters;
+  - text: DELETE renters;
+  - text: DELETE FROM renters name = 'Jonathan Swift';
+  - text: DELETE FROM renters WHERE lease_agreement = 'unsigned';
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/9076#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 05 Oct 2024 10:45:11 UTC"
+record: -1
+selected_options:
+  - 0
+  - 3
+local_check: false
