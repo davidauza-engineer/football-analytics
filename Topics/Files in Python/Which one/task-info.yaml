@@ -1,0 +1,22 @@
+type: string
+custom_name: Which one?
+files:
+  - name: answer.txt
+    visible: true
+    placeholders:
+      - offset: 0
+        length: 1
+        placeholder_text: type your solution here
+        initial_state:
+          length: 23
+          offset: 0
+        initialized_from_dependency: false
+        selected: false
+        status: Solved
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15108#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sun, 06 Oct 2024 13:52:29 UTC"
+record: -1

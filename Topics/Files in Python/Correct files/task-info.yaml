@@ -1,0 +1,22 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: file1 = open('file1.txt')
+  - text: "file2 = open('file2.txt', 'rb', encoding='utf-8')"
+  - text: "file3 = open('file3.txt', 'abt')"
+  - text: "file4 = open('file4.txt', 'w+', encoding='utf-16')"
+  - text: file5 = open()
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/8694#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sun, 06 Oct 2024 13:51:03 UTC"
+record: -1
+selected_options:
+  - 0
+  - 3
+local_check: false

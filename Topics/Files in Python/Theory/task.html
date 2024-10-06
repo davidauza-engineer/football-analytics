@@ -1,0 +1,46 @@
+<div class="step-text">
+<p>Often data for your program comes from the outside in the form of files. We all know what files are, we all use them in our everyday lives so it makes sense to incorporate them in a project. In this topic, you'll learn how to work with external files.</p>
+<p>The general scheme of working with files is the following: open the file, do what you need with it, then close it. Let's consider these steps in more detail.</p>
+<h5 id="open-file">Open file</h5>
+<p>Before we can try to do anything with a file, we need to open it. Python has a lot of built-in functions for working with files so we don't even need to install or import any modules. To open a file, we can use the built-in function <code class="language-python">open()</code>.</p>
+<pre><code class="language-python"># example of opening a file
+my_file = open('my_file.txt')</code></pre>
+<p>The <code class="language-python">open()</code> function has one required parameter <code class="language-python">file</code> which is a <strong>path-like object</strong>. The path-like object is a <code class="language-python">str</code> or <code class="language-python">bytes</code> that represents a path in the file directory. In our example, the <code class="language-python">file</code> parameter has the value <code class="language-python">"my_file.txt"</code> which means that the file "<strong>my_file.txt</strong>" lies in the <a class="theory-lookup not-relevant" href="/learn/step/8691" rel="noopener noreferrer nofollow" target="_blank" title="In Python, a current working directory refers to the location in the file system where the program is currently executing. | When you run a Python script, the current working directory is the folder that contains the script. You can check the current working directory using the `os.getcwd()` function, which returns the current working directory as a string. If you don't specify the directory when creating a file, it will be created in the current working directory. When importing modules, Python uses the current working directory to locate the module. Relative imports are used to import modules that are located in the same directory as the current script, while absolute imports are used to import modules that are located in a different directory.">current working directory</a>. In this topic, we won't get into details about paths and directories, so we'll just assume that all our example files lie in the current working directory.</p>
+<p>The object <code class="language-python">my_file</code> we've just created is a <strong>file</strong> or <strong>file-like</strong> <strong>object</strong>. It just means that we can use different kinds of file methods on this object.</p>
+<p>The <code class="language-python">open()</code> function has a number of optional parameters. If you take a look at the <a href="https://docs.python.org/3/library/functions.html#open" rel="noopener noreferrer nofollow" target="_blank">official Python documentation</a>, you can learn more about them. In this topic, we'll look at two parameters: <code class="language-python">mode</code> and <code class="language-python">encoding</code>.</p>
+<h5 id="the-mode-parameter">The mode parameter</h5>
+<p>One of the most important optional parameters of the <code class="language-python">open()</code> function is <code class="language-python">mode</code>. This parameter regulates how we want to open our file and what for. The following options are available:</p>
+<table border="1" cellpadding="1" cellspacing="1"><tbody><tr><td><p></p></td><td><p>Access modes</p></td></tr><tr><td><p><code class="language-python">'r'</code></p></td><td><p>Open for reading. If the file doesn't exist, an error occurs.</p></td></tr><tr><td><p><code class="language-python">'w'</code></p></td><td><p>Open for writing. If the file already exists, it will be overwritten.</p></td></tr><tr><td><p><code class="language-python">'a'</code></p></td><td><p>Open for writing. If the file already exists, append to the end of the file.</p></td></tr><tr><td><p><code class="language-python">'b'</code></p></td><td><p>Open in binary mode.</p></td></tr><tr><td><p><code class="language-python">'+'</code></p></td><td><p>Open for updating (reading and writing).</p></td></tr><tr><td><p><code class="language-python">'t'</code></p></td><td><p>Open as a text</p></td></tr></tbody></table>
+<p>Let's look at the example below.</p>
+<pre><code class="language-python">my_file_mode = open('my_file.txt', 'w')</code></pre>
+<p>As you can see, we specified the <code class="language-python">mode</code> parameter right after the name of the file. Now the file is opened for writing.</p>
+<p>A couple of things need to be said about modes.</p>
+<p>First of all, by default, files are opened for reading as a text, so the default value of <code class="language-python">mode</code> is <code class="language-python">'r'</code> or, more precisely, <code class="language-python">'rt'</code>.</p>
+<p>Second, as you can see, we can combine modes to do what we need. For example, if we want to open an existing file and be able to read and update it, we should set the mode as <code class="language-python">'r+'</code>.</p>
+<p>Third, we can choose the format in which we want to open files. The main options are text or binary, <code class="language-python">'t'</code> and <code class="language-python">'b'</code> respectively. This corresponds to the difference between <code class="language-python">str</code> and <code class="language-python">bytes</code> objects. So, if you want to open a file for writing in binary, the mode should be <code class="language-python">'wb'</code>. Note that since text format is the default format, most of the times <code class="language-python">'t'</code> is omitted.</p>
+<p> </p>
+<p></p>
+<div class="alert alert-primary"><p>Some modes cannot be combined with each other: thus, only one of the options <code class="language-python">'w'</code>, <code class="language-python">'r'</code>, and <code class="language-python">'a'</code> must be specified, we can't open a file with <code class="language-python">'ar'</code> mode. Similarly, we must choose either <code class="language-python">'b'</code> or <code class="language-python">'t'</code>, the file can't be opened both in the text and binary modes.</p></div>
+<p></p>
+<p> </p>
+<p>Lastly, we should mention an important difference between options <code class="language-python">'w'</code> and <code class="language-python">'a'</code>. Both these modes are used for writing to a file. The only difference is that <code class="language-python">'w'</code> truncates the file before writing to it. In other words, if the file already exists, its contents are deleted. The <code class="language-python">'a'</code> behaves differently: if the file exists, anything that we write to it will be simply added to the end of the file. You can differentiate them by a simple word association: <code class="language-python">'w'</code> is for <em>write</em>, and <code class="language-python">'a'</code> is for <em>append</em>.</p>
+<h5 id="encoding">Encoding</h5>
+<p>The <code class="language-python">encoding</code> parameter specifies the encoding that should be used to decode or encode the text file. It is needed when we open the file as a text, and the default value depends on the platform. Below are some examples of opening files for reading in different encodings:</p>
+<pre><code class="language-python"># UTF-8
+file_utf8 = open('my_file.txt', encoding='utf-8')
+
+# UTF-16
+file_utf16 = open('my_file.txt', encoding='utf-16')
+
+# CP1252
+file_cp1252 = open('my_file.txt', encoding='cp1252')</code></pre>
+<p>You may know that if you're not using the right encoding on your file, the information will not make sense at all. So, if the file you're trying to open looks weird or wrong, sometimes it makes sense to fiddle with this parameter.</p>
+<h5 id="closing-the-file">Closing the file</h5>
+<p>After working with a file, we need to close it. Closing files is extremely important! In most cases, a file will be closed eventually when the program finishes working. However, there is no guarantee for that. In order to ensure the safety of the data, we must make sure that the file is closed in the end. One of the ways to do it is by using the <code class="language-python">close()</code> method on the file: </p>
+<pre><code class="language-python"># closing the file
+my_file.close()</code></pre>
+<p>This is not the only way, nor the most efficient. For now, it'll do and you'll learn about other ways in another topic.</p>
+<h5 id="summary">Summary</h5>
+<p>In this topic, you've learned the basics of working with files in Python: how to open and close them. When opening files, you need to specify what you are opening them for, for example, reading or writing. By default, files are opened for reading as a text. Sometimes we also need to specify the encoding of the file so that our data can be properly encoded/decoded.</p>
+<p>In the following topics, you'll learn about what you can actually do with the file and how it can be done!</p>
+</div>
