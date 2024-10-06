@@ -1,0 +1,24 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: "If one does not specify ASC or DESC keywords, the order is assumed to be\
+    \ ascending."
+  - text: "By default, SQL sorts the resulting rows by the first column. If the first\
+    \ columns of some rows are equal, they are sorted by the next columns."
+  - text: The sorting is based on the definition of a comparison operator for the specific
+      type of expression.
+  - text: SQL does not have any default order of rows when providing the result of a
+      query evaluation.
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/8630#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sun, 06 Oct 2024 14:04:54 UTC"
+record: -1
+selected_options:
+  - 1
+local_check: false

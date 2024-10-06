@@ -1,0 +1,19 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: <code>avg mark</code>
+  - text: <code>DESC</code>
+  - text: <code>avg_mark</code>
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/25143#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sun, 06 Oct 2024 14:05:20 UTC"
+record: -1
+selected_options:
+  - 2
+local_check: false

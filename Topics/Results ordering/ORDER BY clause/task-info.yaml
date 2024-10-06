@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: ORDER BY 2 * price_per_night + price_for_early_check_in AS price
+  - text: "ORDER BY stars DESC, price_per_night"
+  - text: ORDER BY price_per_night ACS
+  - text: "SORT BY stars, price"
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/8628#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sun, 06 Oct 2024 14:04:10 UTC"
+record: -1
+selected_options:
+  - 1
+local_check: false

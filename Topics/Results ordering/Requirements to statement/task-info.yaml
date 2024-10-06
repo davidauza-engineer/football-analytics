@@ -1,0 +1,26 @@
+type: matching
+captions:
+  - hotels with many stars at the beginning
+  - hotels with low rating at the end
+  - hotels with low price per night at the beginning
+  - hotels with high total price at the end
+options:
+  - stars DESC
+  - rating DESC
+  - price
+  - price_per_night
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/8629#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sun, 06 Oct 2024 14:03:03 UTC"
+record: -1
+ordering:
+  - 0
+  - 1
+  - 3
+  - 2

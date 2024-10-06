@@ -1,0 +1,22 @@
+<div class="step-text">
+<p></p>
+<p>A table is defined by the following statement:</p>
+<pre><code class="java">CREATE TABLE hotels (
+    hotel_name VARCHAR(100), 
+    price_per_night DECIMAL(10,2),
+    price_for_early_check_in DECIMAL(10,2),
+    rating FLOAT, 
+    stars INTEGER
+);</code></pre>
+<p>Now have a look at the following query:</p>
+<pre><code class="java">SELECT
+    hotel_name, 
+    2 * price_per_night + price_for_early_check_in AS price,
+    rating, 
+    stars
+FROM 
+    hotels
+???
+;</code></pre>
+<p>Choose the correct syntax to put instead of <code class="java">???</code> to order selected data by <code class="java">stars</code> and <code class="java">price per night</code><em>.</em></p>
+</div>
