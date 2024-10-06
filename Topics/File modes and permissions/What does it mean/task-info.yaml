@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: "every user can read, write, and execute"
+  - text: "only owner can read, write, and execute"
+  - text: "every group can read, write, and execute"
+  - text: "nobody can read, write, or execute"
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/13958#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sun, 06 Oct 2024 13:07:38 UTC"
+record: -1
+selected_options:
+  - 0
+local_check: false

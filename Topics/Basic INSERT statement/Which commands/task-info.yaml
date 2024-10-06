@@ -19,11 +19,11 @@ columns:
   - To specify the values
 selected:
   - - false
-    - true
-    - false
-  - - true
     - false
     - false
   - - false
     - false
-    - true
+    - false
+  - - false
+    - false
+    - false

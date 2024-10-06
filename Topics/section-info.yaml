@@ -40,3 +40,4 @@ content:
   - Basic INSERT statement
   - Basic DELETE statement
   - Introduction to SQLite
+  - File modes and permissions
