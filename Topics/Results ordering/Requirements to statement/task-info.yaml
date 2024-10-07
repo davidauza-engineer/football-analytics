@@ -22,5 +22,5 @@ record: -1
 ordering:
   - 0
   - 1
-  - 3
   - 2
+  - 3

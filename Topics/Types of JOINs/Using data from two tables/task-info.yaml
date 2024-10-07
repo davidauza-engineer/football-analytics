@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: There is a different number of rows in each table.
+  - text: JOIN queries shouldn't be followed by a semi-colon.
+  - text: INNER JOIN requires a specification of the key field (or fields) in each table
+      on the basis of which the tables would be joined together.
+  - text: There are multiple languages spoken in many countries.
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/12103#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Mon, 07 Oct 2024 13:26:57 UTC"
+record: -1
+selected_options:
+  - 2
+local_check: false

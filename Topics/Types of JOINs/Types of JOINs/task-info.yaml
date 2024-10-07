@@ -1,0 +1,22 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: CROSS JOIN
+  - text: CENTRAL JOIN
+  - text: RIGHT JOIN
+  - text: INNER JOIN
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/17647#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Mon, 07 Oct 2024 13:19:06 UTC"
+record: -1
+selected_options:
+  - 0
+  - 2
+  - 3
+local_check: false
