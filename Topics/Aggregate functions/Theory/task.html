@@ -1,0 +1,164 @@
+<div class="step-text">
+<p>Imagine you are a business analyst in a financial consulting company. You start your day by preparing a report about what happened with the stock market yesterday. Information about the committed deals is stored in tables with hundreds of thousands of rows in an SQL-compatible database. Simply selecting all data from the columns won't work since performing the exact computation over such volume of data is unrealistic. Regular SQL functions won't help much since they are applied to each cell individually and provide no means of combining their results. What you can do instead is apply <strong>aggregate functions</strong>, and this topic is all about them.</p>
+<h5 id="general-form">General form</h5>
+<p>To execute an aggregate function and pass all values from a column to it, use the following syntax:</p>
+<pre><code class="language-sql">SELECT AGG_FUNCTION(column_name)
+FROM table_name;</code></pre>
+<p>The function will take all values from the specified column and produce a single cell as a result. Consequently, running <em>n </em>aggregate functions simultaneously produces <em>n</em> cells.</p>
+<p>Vendors of different SQL-compatible database management systems provide their users with slightly different sets of aggregate functions. Here is a list of aggregate functions according to the ANSI SQL standard:</p>
+<ul>
+<li>
+<p>MIN</p>
+</li>
+<li>
+<p>MAX</p>
+</li>
+<li>
+<p>AVG</p>
+</li>
+<li>
+<p>COUNT</p>
+</li>
+<li>
+<p>SUM</p>
+</li>
+</ul>
+<p>There are also a few more elaborate functions related to statistics such as <code class="language-sql">STDDEV_POP</code> for the population standard deviation or <code class="language-sql">CORR</code> for the correlation coefficient. It may be worth your while to check out the <a href="http://users.atw.hu/sqlnut/sqlnut2-chp-4-sect-2.html" rel="noopener noreferrer nofollow" target="_blank">full list of aggregate functions</a>.</p>
+<h5 id="example">Example</h5>
+<p>Consider this table named <em>stocks</em>:</p>
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 500px;">
+<tbody>
+<tr>
+<th>
+<p>stock_name</p>
+</th>
+<th>
+<p>price</p>
+</th>
+<th>
+<p>yesterday_deals</p>
+</th>
+</tr>
+<tr>
+<td>
+<p>WTI</p>
+</td>
+<td>
+<p>89.8</p>
+</td>
+<td>
+<p>NULL</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>NVAX</p>
+</td>
+<td>
+<p>26.3</p>
+</td>
+<td>
+<p>5</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>GSPC</p>
+</td>
+<td>
+<p>18.9</p>
+</td>
+<td>
+<p>20</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>DJI</p>
+</td>
+<td>
+<p>40</p>
+</td>
+<td>
+<p>2</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>NYSE</p>
+</td>
+<td>
+<p>15.6</p>
+</td>
+<td>
+<p>13</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>TCHENY</p>
+</td>
+<td>
+<p>52.7</p>
+</td>
+<td>
+<p>5</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>FB</p>
+</td>
+<td>
+<p>63.7</p>
+</td>
+<td>
+<p>20</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Using the <code class="language-sql">MAX</code> function, we can easily find the highest price among all the stocks:</p>
+<pre><code class="language-sql">SELECT MAX(price)
+FROM stocks;</code></pre>
+<p>This query will produce <code class="language-sql">89.8</code>. Likewise, the <code class="language-sql">MIN</code> function for the same column would give us <code class="language-sql">15.6</code>. If we want to know the count of deals made yesterday, we can use this query:</p>
+<pre><code class="language-sql">SELECT SUM(yesterday_deals)
+FROM stocks;</code></pre>
+<p>It will return <code class="language-sql">65</code>.</p>
+<p>Numeric types like INT or REAL are a natural fit for most aggregate functions. However, in some cases it also makes sense to use aggregate functions with other data types. For example, the <code class="language-sql">MIN</code> and <code class="language-sql">MAX</code> functions can be used to find the lexicographically smallest and largest strings respectively. We encourage you to experiment and see how different aggregate functions behave with other types of data!</p>
+<h5 id="adding-where">Adding WHERE</h5>
+<p>It is also possible to use <code class="language-sql">WHERE</code> to choose a subset of rows on which we want to run our aggregation functions. For example, let's find the average price and average count of deals for all stocks that cost more than 40:</p>
+<pre><code class="language-sql">SELECT 
+    AVG(price) AS avg_price,
+    AVG(yesterday_deals) AS avg_deals 
+FROM 
+    stocks 
+WHERE 
+    price &gt; 40;</code></pre>
+<p>The answer will be:</p>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 600px;">
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>avg_price</strong></td>
+<td style="text-align: center;"><strong>avg_deals</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">68.733333333</td>
+<td style="text-align: center;">12.5</td>
+</tr>
+</tbody>
+</table>
+<h5 id="distinct-keyword">DISTINCT keyword</h5>
+<p>When working with large amounts of data, you might be interested in omitting all duplicate values. To do that, place the <code class="language-sql">DISTINCT</code> keyword inside the brackets of your aggregate function:</p>
+<pre><code class="language-sql">SELECT COUNT(DISTINCT yesterday_deals)
+FROM stocks;</code></pre>
+<p>This query will return <code class="language-sql">4</code> as there are only 4 distinct numeric values in the column <em>yesterday_deals</em>.</p>
+<p>Determining the set of unique values can be costly in terms of computation complexity, so don't overuse <code class="language-sql">DISTINCT</code>. Always think about whether you really need to omit the duplicates and how it can affect the final result.</p>
+<h5 id="count">COUNT(*)</h5>
+<p>A regular call of the <code class="language-sql">COUNT</code> function with a column name as an argument will simply count the total amount of values in the column. If you call <code class="language-sql">COUNT</code> with an asterisk, then you're telling the function to count <em>all</em> rows that exist in the table. The final result won't be affected by the particular types of columns or the values that their cells store. For our <em>stocks</em> table, <code class="language-sql">COUNT(*)</code> will return <code class="language-sql">7</code>.</p>
+<p> </p>
+<p>All aggregate functions except COUNT(*) ignore the NULL values.</p>
+<p> </p>
+<h5 id="conclusion">Conclusion</h5>
+<p>In this topic, we went through some standard aggregate functions and examined their special features. It is hard to imagine working in a serious production environment without knowing the aggregate functions well. Let's move on to practical tasks and check how you've grasped them!</p>
+</div>

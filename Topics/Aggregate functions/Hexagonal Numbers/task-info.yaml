@@ -1,0 +1,29 @@
+type: matching
+captions:
+  - SUM(numbers)
+  - MAX(numbers)
+  - COUNT(numbers)
+  - AVG(numbers)
+  - MIN(numbers)
+options:
+  - 1
+  - 252
+  - 7
+  - 91
+  - 36
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/9612#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Mon, 07 Oct 2024 13:48:36 UTC"
+record: -1
+ordering:
+  - 1
+  - 3
+  - 2
+  - 4
+  - 0
