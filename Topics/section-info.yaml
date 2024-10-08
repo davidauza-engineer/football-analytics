@@ -45,3 +45,4 @@ content:
   - Results ordering
   - Types of JOINs
   - Aggregate functions
+  - GROUP BY statement

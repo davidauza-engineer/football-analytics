@@ -1,0 +1,46 @@
+<div class="step-text">
+<p>Earlier we've learned how useful aggregation functions can be for solving simple analytical tasks. Now imagine that we need to compute an aggregate value not for the whole table or one specific category but rather for many separate categories. For example, there is a table named <em>stocks </em>with historical data on prices.</p><table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 300px;"><tbody><tr><td><p> </p></td></tr><tr><th><p>stock_name</p></th><th><p>price</p></th><th><p>datetime</p></th></tr><tr><td><p>WTI</p></td><td><p>89.8</p></td><td><p>2020-05-17 11:00</p></td></tr><tr><td><p>FB</p></td><td><p>26.3</p></td><td><p>2020-04-11 10:23</p></td></tr><tr><td><p>WTI</p></td><td><p>18.9</p></td><td><p>2019-01-18 23:02</p></td></tr><tr><td><p>WTI</p></td><td><p>20.9</p></td><td><p>2019-01-18 23:02</p></td></tr><tr><td><p>FB</p></td><td><p>15.6</p></td><td><p>NULL</p></td></tr><tr><td><p>DJI</p></td><td><p>52.7</p></td><td><p>2004-05-28 21:09</p></td></tr><tr><td><p>FB</p></td><td><p>63.7</p></td><td><p>1998-03-31 04:18</p></td></tr></tbody></table><p>It is feasible but quite inconvenient to execute a query like this for each category:</p><pre><code class="language-sql">SELECT MAX(price)
+FROM stocks
+WHERE stock_name = 'WTI';</code></pre><p>Even more than that, what if we want to get corresponding results for all stocks in the form of a table and use it for further computations?<br/>In order to simplify such a workload <strong>GROUP BY </strong>statement was introduced in SQL. In this topic, you will get a perspective on how it works.</p><h5 id="general-form">General form</h5><p>Here's how we can use GROUP BY for the task:</p><pre><code class="language-sql">SELECT
+    stock_name, 
+    MAX(price) AS maximum
+FROM 
+    stocks
+GROUP BY
+    stock_name;</code></pre><p>The output would look like this:</p><table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 200px;"><tbody><tr><th><p>stock_name</p></th><th><p>maximum</p></th></tr><tr><td><p>WTI</p></td><td><p>89.8</p></td></tr><tr><td><p>FB</p></td><td><p>63.7</p></td></tr><tr><td><p>DJI</p></td><td><p>52.7</p></td></tr></tbody></table><p>What's so special about this query? In the GROUP BY clause, we specify the name of a column from the table. Every unique value from this column will get its own result of every utilized aggregate function from SELECT block. Rows corresponding to this value will be taken as an input. It's possible to group things by a computed value that is not currently present in a table; for example, we can introduce groups based on length of stock_name using GROUP BY LENGTH(stock_name).</p><p>Nothing forbids us to use more than one aggregate function. Returned values can be completely independent of each other:</p><pre><code class="language-sql">SELECT
+    stock_name,
+    MIN(datetime) AS moment,
+    MAX(price) AS maximum
+FROM
+    stocks
+GROUP BY
+    stock_name;</code></pre><table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 400px;"><tbody><tr><th><p>stock_name</p></th><th><p>moment</p></th><th><p>maximum</p></th></tr><tr><td><p>WTI</p></td><td><p>2019-01-18 23:02</p></td><td><p>89.8</p></td></tr><tr><td><p>FB</p></td><td><p>1998-03-31 04:18</p></td><td><p>63.7</p></td></tr><tr><td><p>DJI</p></td><td><p>2004-05-28 21:09</p></td><td><p>52.7</p></td></tr></tbody></table><p>If there are several columns in the GROUP BY clause, each unique combination of values from these columns will be aggregated separately.</p><pre><code class="language-sql">SELECT
+    stock_name,
+    datetime,
+    MAX(price)
+FROM
+    stocks
+GROUP BY
+    stock_name,
+    datetime;</code></pre><table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 300px;"><tbody><tr><th><p>stock_name</p></th><th><p>datetime</p></th><th><p>price</p></th></tr><tr><td><p>WTI</p></td><td><p>2020-05-17 11:00</p></td><td><p>89.8</p></td></tr><tr><td><p>FB</p></td><td><p>2020-04-11 10:23</p></td><td><p>26.3</p></td></tr><tr><td><p>WTI</p></td><td><p>2019-01-18 23:02</p></td><td><p>20.9</p></td></tr><tr><td><p>FB</p></td><td><p>NULL</p></td><td><p>15.6</p></td></tr><tr><td><p>DJI</p></td><td><p>2004-05-28 21:09</p></td><td><p>52.7</p></td></tr><tr><td><p>FB</p></td><td><p>1998-03-31 04:18</p></td><td><p>63.7</p></td></tr></tbody></table><p>Here we see that NULL value forms a separate category because it is considered to be a unique value. Two rows for WTI, 2019-01-18 23:02 got merged into one with the maximum price of 20.9. In terms of result, grouping query without any aggregate functions equals to:</p><pre><code class="language-sql">SELECT DISTINCT 
+    stock_name,
+    datetime
+FROM
+    stocks;</code></pre><p> </p><p></p><div class="alert alert-warning"><p></p><p>If a column is not mentioned in GROUP BY clause and there is at least one aggregate function being used in SELECT, this column can not be used in SELECT portion of the query without being wrapped in an aggregate function.</p><p></p></div><p></p><p> </p><h5 id="having-keyword">HAVING keyword</h5><p>The GROUP BY statement is usually used with WHERE statement to filter the rows and the ORDER BY to order them. There is another clause that is especially helpful with grouping tasks – HAVING. If WHERE accepts conditions on values that certain cells have, HAVING does the same but for values of already computed aggregations. For example, let's select "stock-datetime" pairs with maximum price above 50:</p><pre><code class="language-sql">SELECT
+    stock_name,
+    datetime,
+    MAX(price) AS maximum
+FROM
+    stocks
+GROUP BY 
+    stock_name,
+    datetime
+HAVING
+    MAX(price) &gt; 50;</code></pre><table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 350px;"><tbody><tr><th><p>stock_name</p></th><th><p>datetime</p></th><th><p>maximum</p></th></tr><tr><td><p>WTI</p></td><td><p>2020-05-17 11:00</p></td><td><p>89.8</p></td></tr><tr><td><p>DJI</p></td><td><p>2004-05-28 21:09</p></td><td><p>52.7</p></td></tr><tr><td><p>FB</p></td><td><p>1998-03-31 04:18</p></td><td><p>63.7</p></td></tr></tbody></table><p>A fair question would be "why can't we utilize WHERE for the filtering"? The reason for that is the order of evaluation of the statements:</p><ol><li><p>FROM</p></li><li><p>WHERE</p></li><li><p>GROUP BY</p></li><li><p>HAVING</p></li><li><p>SELECT</p></li><li><p>ORDER BY</p></li></ol><p>All the conditions that you put in HAVING have to relate to aggregation functions. However, besides that there are no other special restrictions. </p><h5 id="conclusion">Conclusion</h5><p>Summing up, the template for queries with grouping is the following:</p><pre><code class="language-sql">SELECT column_name [, list_of_other_columns]
+     , aggregation [, list_of_aggregations]
+FROM table_name
+[WHERE list_of_conditions]
+GROUP BY column_name [, list_of_other_columns]
+[HAVING list_of_aggregate_conditions]
+[ORDER BY list_of_columns/aliases];</code></pre><p>GROUP BY is arguably one of the most common SQL statements. It would be quite hard to find a relatively serious SQL code base without grouping queries. Now let's go straight to the tasks to check how you've comprehended this topic.</p>
+</div>
