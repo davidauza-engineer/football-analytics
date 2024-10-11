@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: print('Mighty Python')
+  - text: print("Mighty Python")
+  - text: print("Mighty" 'Python')
+  - text: print(Mighty Python)
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/47518#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 11 Oct 2024 22:46:43 UTC"
+record: -1
+selected_options:
+  - 0
+  - 1
+local_check: false

@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: 100.5
+  - text: '&lt;class ''int''&gt;'
+  - text: '&lt;class ''str''&gt;'
+  - text: '&lt;class ''float''&gt;'
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/47527#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 11 Oct 2024 22:54:38 UTC"
+record: -1
+selected_options:
+  - 3
+local_check: false

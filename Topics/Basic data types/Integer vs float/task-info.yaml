@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: 0
+  - text: 50.0
+  - text: 3.14
+  - text: 50
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/47525#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 11 Oct 2024 22:52:45 UTC"
+record: -1
+selected_options:
+  - 0
+  - 3
+local_check: false
