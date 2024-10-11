@@ -1,0 +1,27 @@
+type: matching
+captions:
+  - UNION
+  - UNION ALL
+  - INTERSECT
+  - MINUS
+options:
+  - Return all distinct rows selected by both queries
+  - Return all rows returned by first SELECT statement that are not returned by the
+    second one
+  - Return all rows selected by either query
+  - Return all distinct rows selected by either query
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/9799#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 11 Oct 2024 22:37:35 UTC"
+record: -1
+ordering:
+  - 3
+  - 2
+  - 0
+  - 1

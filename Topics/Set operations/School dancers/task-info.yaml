@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: SELECT name FROM pupils UNION SELECT name FROM dancers
+  - text: SELECT name FROM pupils INTERSECT SELECT name FROM dancers
+  - text: SELECT name FROM pupils UNION ALL SELECT name FROM dancers
+  - text: SELECT name FROM pupils EXCEPT SELECT name FROM dancers
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/9824#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 11 Oct 2024 22:33:38 UTC"
+record: -1
+selected_options:
+  - 1
+local_check: false

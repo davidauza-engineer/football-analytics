@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: SELECT name FROM stage_actors MINUS SELECT name FROM movie_actors
+  - text: SELECT name FROM movie_actors MINUS SELECT name FROM stage_actors
+  - text: SELECT name FROM stage_actors UNION SELECT name FROM movie_actors
+  - text: SELECT name FROM stage_actors INTERSECT SELECT name FROM movie_actors
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/9801#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 11 Oct 2024 22:30:04 UTC"
+record: -1
+selected_options:
+  - 0
+local_check: false

@@ -1,0 +1,26 @@
+type: matching
+captions:
+  - SELECT name FROM tutors UNION ALL SELECT name FROM teachers
+  - SELECT name FROM tutors UNION SELECT name FROM teachers
+  - SELECT name FROM tutors INTERSECT SELECT name FROM teachers
+  - SELECT name FROM tutors EXCEPT SELECT name FROM teachers
+options:
+  - 2
+  - 6
+  - 4
+  - 1
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/9802#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 11 Oct 2024 22:35:54 UTC"
+record: -1
+ordering:
+  - 1
+  - 2
+  - 0
+  - 3

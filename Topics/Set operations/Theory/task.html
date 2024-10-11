@@ -1,0 +1,218 @@
+<div class="step-text">
+<p>Occasionally, you may need to somehow combine the results of several queries that have the same structure (that is, the same order, number and types of columns), and return a result. In order to do that, you should use <strong>set operations. </strong> Let's take a look at how they are implemented in SQL.</p>
+<h5 id="set-operations" style="text-align: center;">Set operations</h5>
+<p><strong>Set operations</strong> combine rows from the result sets of multiple SELECT statements. There are multiple <strong>set operators</strong>, and all provide different ways to do it. In SQL, these are UNION, UNION ALL, INTERSECT, and EXCEPT or MINUS.</p>
+<p>Note that these set operators can only be used if all SELECT statements have the same number of columns, all the corresponding columns have similar data types, and all columns are selected in the same order.</p>
+<h5 id="union" style="text-align: center;">UNION</h5>
+<p>The <strong>UNION operator </strong>merges the results of two or more SELECT statements, and eliminates all duplicate rows.</p>
+<p>Let's consider two tables: <em>teachers</em> and <em>administrative_staff</em>.</p>
+<p>Table <em>teachers</em> has columns <em>name</em> VARCHAR(40) and <em>subject</em> VARCHAR(30), and looks as follows:</p>
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 500px;">
+<thead>
+<tr>
+<th>name</th>
+<th>subject</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ginevra Holmes</td>
+<td>Geography</td>
+</tr>
+<tr>
+<td>Carl Robinson</td>
+<td>Math</td>
+</tr>
+<tr>
+<td>Tamara Fetch</td>
+<td>IT</td>
+</tr>
+<tr>
+<td>Robert Stark</td>
+<td>English</td>
+</tr>
+</tbody>
+</table>
+<p>Table <em>administrative_staff</em> has columns <em>position</em> VARCHAR(40) and <em>name</em> VARCHAR(40):</p>
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 500px;">
+<thead>
+<tr>
+<th>position</th>
+<th>name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>headmaster</td>
+<td>Tomas Jones</td>
+</tr>
+<tr>
+<td>deputy head</td>
+<td>Tamara Fetch</td>
+</tr>
+<tr>
+<td>senior deputy head</td>
+<td>Ann Brown</td>
+</tr>
+</tbody>
+</table>
+<p>We can select all school employees from these two tables with two queries combined with the UNION operator:</p>
+<pre><code class="language-sql">SELECT name FROM teachers 
+UNION 
+SELECT name FROM administrative_staff</code></pre>
+<p>The result of this query looks like this:</p>
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 500px;">
+<thead>
+<tr>
+<th>name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Ginevra Holmes</td>
+</tr>
+<tr>
+<td style="text-align: center;">Carl Robinson</td>
+</tr>
+<tr>
+<td style="text-align: center;">Tamara Fetch</td>
+</tr>
+<tr>
+<td style="text-align: center;">Robert Stark</td>
+</tr>
+<tr>
+<td style="text-align: center;">Tomas Jones</td>
+</tr>
+<tr>
+<td style="text-align: center;">Ann Brown</td>
+</tr>
+</tbody>
+</table>
+<h5 id="union-all" style="text-align: center;">UNION ALL</h5>
+<p>The <strong>UNION ALL operator</strong> does almost the same thing as UNION but keeps all the duplicates.</p>
+<p>The query below will select all teachers and administrative staff names including all duplicates if there are any.</p>
+<pre><code class="language-sql">SELECT name FROM teachers 
+UNION ALL
+SELECT name FROM administrative_staff</code></pre>
+<p>In our case the query result looks as follows:</p>
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 500px;">
+<thead>
+<tr>
+<th>name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Ginevra Holmes</td>
+</tr>
+<tr>
+<td style="text-align: center;">Carl Robinson</td>
+</tr>
+<tr>
+<td style="text-align: center;">Tamara Fetch</td>
+</tr>
+<tr>
+<td style="text-align: center;">Robert Stark</td>
+</tr>
+<tr>
+<td style="text-align: center;">Tomas Jones</td>
+</tr>
+<tr>
+<td style="text-align: center;">Tamara Fetch</td>
+</tr>
+<tr>
+<td style="text-align: center;">Ann Brown</td>
+</tr>
+</tbody>
+</table>
+<h5 id="intersect" style="text-align: center;">INTERSECT</h5>
+<p>The <strong>INTERSECT operator</strong> returns the records that are common for all component queries without the duplicates.</p>
+<p>With INTERSECT, we can select all teachers who have an administrative position:</p>
+<pre><code class="language-sql">SELECT name FROM teachers
+INTERSECT
+SELECT name FROM administrative_staff</code></pre>
+<p>The result set of the query above will have only one row:</p>
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 500px;">
+<thead>
+<tr>
+<th>name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Tamara Fetch</td>
+</tr>
+</tbody>
+</table>
+<p></p><div class="alert alert-warming">Some SQL dialects, such as MySQL, do not support the INTERSECT operator.</div><p></p>
+<h5 id="minus-or-except" style="text-align: center;">MINUS or EXCEPT</h5>
+<p>The <strong>EXCEPT operator</strong> returns only those rows that belong to the first result set but not to the second one. It omits all the duplicates.</p>
+<p>Let's select all the teachers who don't have an additional administrative position:</p>
+<pre><code class="language-sql">SELECT name FROM teachers
+EXCEPT
+SELECT name FROM administrative_staff</code></pre>
+<p>Here, we use the EXCEPT operator, but in some SQL dialects, the EXCEPT operator is called the <strong>MINUS operator</strong>, so you can make the same query replacing EXCEPT with MINUS.</p>
+<p>The result is this:</p>
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 500px;">
+<thead>
+<tr>
+<th>name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Ginevra Holmes</td>
+</tr>
+<tr>
+<td style="text-align: center;">Carl Robinson</td>
+</tr>
+<tr>
+<td style="text-align: center;">Robert Stark</td>
+</tr>
+</tbody>
+</table>
+<p>In queries with UNION, UNION ALL and INTERSECT, it doesn't matter in which order we put the component queries.</p>
+<p>If we change the order of the component queries in a query with EXCEPT or MINUS, we also change the meaning of the query and the result set. In case of more than 2 queries, parentheses can be used to change the order in which operators must be executed.</p>
+<p>The query below will return all the administrative workers who don't work as teachers:</p>
+<pre><code class="language-sql">SELECT name FROM administrative_staff 
+EXCEPT
+SELECT name FROM teachers</code></pre>
+<p>The result of the query above will have only two rows:</p>
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 500px;">
+<thead>
+<tr>
+<th>name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Tomas Jones</td>
+</tr>
+<tr>
+<td style="text-align: center;">Ann Brown</td>
+</tr>
+</tbody>
+</table>
+<h5 id="conclusion" style="text-align: center;">Conclusion</h5>
+<p>You can use this general template for a query with set operators:</p>
+<pre><code class="language-sql">SELECT 
+    column_1_1, 
+    column_1_2,
+    ..., 
+    column_1_n 
+FROM 
+     table_1 
+[WHERE logical_expression]
+SET_OPERATOR
+SELECT 
+    column_2_1,
+    column_2_2,
+    ...,
+    column_2_n  
+FROM table_2 
+[WHERE logical_expression]
+[SET_OPERATOR
+...]
+</code></pre>
+<p>Be careful with your SQL dialect: all of them support UNION and UNION ALL operators, but INTERSECT, MINUS, or EXCEPT may not be available.</p>
+</div>

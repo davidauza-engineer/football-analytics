@@ -47,3 +47,4 @@ content:
   - Aggregate functions
   - GROUP BY statement
   - Subqueries
+  - Set operations
