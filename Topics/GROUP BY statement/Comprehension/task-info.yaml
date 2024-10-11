@@ -20,12 +20,12 @@ feedback:
   time: "Tue, 08 Oct 2024 11:05:53 UTC"
 record: -1
 ordering:
-  - 7
-  - 5
-  - 2
-  - 6
   - 0
-  - 8
   - 1
+  - 2
   - 3
   - 4
+  - 5
+  - 6
+  - 7
+  - 8

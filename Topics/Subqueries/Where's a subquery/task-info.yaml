@@ -1,0 +1,24 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: INSERT statement
+  - text: UPDATE statement
+  - text: SELECT statement
+  - text: DELETE statement
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/11794#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 11 Oct 2024 22:06:24 UTC"
+record: -1
+selected_options:
+  - 0
+  - 1
+  - 2
+  - 3
+custom_name: Where's a subquery?
+local_check: false
