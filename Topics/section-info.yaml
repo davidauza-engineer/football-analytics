@@ -48,3 +48,4 @@ content:
   - GROUP BY statement
   - Subqueries
   - Set operations
+  - Variables

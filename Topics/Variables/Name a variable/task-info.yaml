@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: uage
+  - text: age
+  - text: a
+  - text: user_age
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/47584#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Thu, 17 Oct 2024 12:15:55 UTC"
+record: -1
+selected_options:
+  - 3
+local_check: false

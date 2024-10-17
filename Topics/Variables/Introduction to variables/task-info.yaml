@@ -1,0 +1,19 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: A labeled storage unit for values
+  - text: A special kind of equation
+  - text: A mathematical operation
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/47537#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Thu, 17 Oct 2024 12:00:43 UTC"
+record: -1
+selected_options:
+  - 0
+local_check: false

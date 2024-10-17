@@ -1,0 +1,23 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: city_name
+  - text: 999_emergency
+  - text: salary
+  - text: "#date_of_birth"
+  - text: balance
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/47544#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Thu, 17 Oct 2024 12:11:18 UTC"
+record: -1
+selected_options:
+  - 0
+  - 2
+  - 4
+local_check: false

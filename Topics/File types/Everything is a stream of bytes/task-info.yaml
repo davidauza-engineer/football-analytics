@@ -1,10 +1,10 @@
 type: choice
 is_multiple_choice: false
 options:
-  - text: They are data storage
-  - text: There is nothing in common between them in Unix systems
-  - text: They are devices
-  - text: They are all files
+  - text: They are data storage.
+  - text: They are represented as files.
+  - text: They are devices.
+  - text: There is nothing in common between them in Unix systems.
 files:
   - name: main.py
     visible: true
