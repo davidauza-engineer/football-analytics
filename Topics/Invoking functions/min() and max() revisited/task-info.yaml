@@ -1,0 +1,26 @@
+type: matching
+captions:
+  - "max(&quot;gloomy&quot;, &quot;grew&quot;, &quot;green&quot;)"
+  - "min(&quot;gloomy&quot;, &quot;grey&quot;, &quot;green&quot;)"
+  - "min(&quot;green&quot;, &quot;grass&quot;)"
+  - "max(&quot;gloomy&quot;, &quot;grey&quot;, &quot;green&quot;)"
+options:
+  - '&quot;grew&quot;'
+  - '&quot;grass&quot;'
+  - '&quot;gloomy&quot;'
+  - '&quot;grey&quot;'
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/5898#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 18 Oct 2024 23:38:53 UTC"
+record: -1
+ordering:
+  - 0
+  - 2
+  - 1
+  - 3

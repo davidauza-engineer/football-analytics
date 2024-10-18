@@ -1,0 +1,19 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: help(print)
+  - text: doc(print)
+  - text: print.__doc__()
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/5894#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 18 Oct 2024 23:35:36 UTC"
+record: -1
+selected_options:
+  - 0
+local_check: false
