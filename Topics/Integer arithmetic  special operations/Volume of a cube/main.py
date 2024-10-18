@@ -1,0 +1,3 @@
+SIDE_LENGTH = 4
+
+print(SIDE_LENGTH ** 3)

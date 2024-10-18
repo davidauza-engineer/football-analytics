@@ -1,0 +1,21 @@
+type: sorting
+options:
+  - Parentheses
+  - Addition
+  - Multiplication
+  - Exponentiation
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/47578#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 18 Oct 2024 23:20:24 UTC"
+record: -1
+ordering:
+  - 0
+  - 3
+  - 2
+  - 1

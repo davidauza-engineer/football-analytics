@@ -1,0 +1,1 @@
+print(hour % 12)
