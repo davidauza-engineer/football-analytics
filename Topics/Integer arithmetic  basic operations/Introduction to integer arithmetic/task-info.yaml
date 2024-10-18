@@ -1,0 +1,26 @@
+type: matching
+captions:
+  - Multiplication
+  - Addition
+  - Subtraction
+  - Division
+options:
+  - Determining the remaining amount of milk after making a cup of coffee
+  - Calculating the total expenses after shopping
+  - Calculating the average monthly revenue from the total yearly revenue
+  - Finding the area of a rectangle from its length and width
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/47587#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 18 Oct 2024 22:35:52 UTC"
+record: -1
+ordering:
+  - 3
+  - 1
+  - 0
+  - 2

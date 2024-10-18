@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: 11<br>2
+  - text: 9<br>2
+  - text: 9<br>7
+  - text: 11<br>7
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/47589#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 18 Oct 2024 22:42:32 UTC"
+record: -1
+selected_options:
+  - 3
+local_check: false

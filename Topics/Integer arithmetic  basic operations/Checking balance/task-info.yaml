@@ -1,0 +1,13 @@
+type: code
+files:
+  - name: main.py
+    visible: true
+    highlight_level: NONE
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/47590#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 18 Oct 2024 22:43:20 UTC"
+record: -1
+submission_language: python3

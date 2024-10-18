@@ -1,0 +1,9 @@
+<div class="step-text">
+<p>We'd like to highlight a subtle aspect of data types. In Python, when you multiply, add, or subtract two integer numbers, the result remains an integer. However, when you divide an integer by another integer, the result is always a floating-point number. Consider this example:</p><pre><code class="language-python">print(type(4 + 3))
+print(type(4 - 3))
+print(type(4 * 3))
+print(type(4 / 3))</code></pre><p>The output:</p><pre><code class="language-python">&lt;class 'int'&gt;
+&lt;class 'int'&gt;
+&lt;class 'int'&gt;
+&lt;class 'float'&gt;</code></pre><p>This might not come as a surprise, as it's natural to expect a floating-point number when dividing non-divisible numbers. However, it's worth noting that the result is still a float even when dividing two numbers that divide evenly, like this:</p><pre><code class="language-python">print(type(4 / 2))</code></pre><p>The output remains <code class="language-python">&lt;class 'float'&gt;</code>.</p><p>So, can you predict the correct output of the following code now?</p><pre><code class="language-python">print(12 / 3)</code></pre>
+</div>
