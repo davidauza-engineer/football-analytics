@@ -1,0 +1,23 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: -100
+  - text: 0
+  - text: 100
+  - text: 200
+  - text: 500
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/5921#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Thu, 24 Oct 2024 10:11:59 UTC"
+record: -1
+selected_options:
+  - 0
+  - 1
+  - 4
+local_check: false

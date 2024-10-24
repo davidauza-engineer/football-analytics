@@ -1,0 +1,13 @@
+type: code
+custom_name: "Comparing heights: Andy and Ben"
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/41441#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Thu, 24 Oct 2024 10:13:24 UTC"
+record: -1
+submission_language: python3
