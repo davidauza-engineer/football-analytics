@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: Names of boolean values always start with a capital letter;
+  - text: <code>not</code> is a binary operator;
+  - text: <code>not</code> has the lowest priority of the three operators;
+  - text: <code>or</code> only returns False when both arguments are false;
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15518#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Thu, 24 Oct 2024 09:53:35 UTC"
+record: -1
+selected_options:
+  - 0
+  - 3
+local_check: false

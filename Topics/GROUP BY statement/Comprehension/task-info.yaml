@@ -1,13 +1,13 @@
 type: sorting
 options:
-  - products
-  - product_name
-  - price
-  - HAVING
-  - price &gt; 150
-  - "product_name,"
   - FROM
+  - MIN(price) AS minimum
+  - products
   - SELECT
+  - MIN(price) &lt; 150
+  - product_name
+  - HAVING
+  - "product_name,"
   - GROUP BY
 files:
   - name: main.py

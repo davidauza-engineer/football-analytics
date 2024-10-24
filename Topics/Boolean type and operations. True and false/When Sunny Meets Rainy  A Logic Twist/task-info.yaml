@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: Error
+  - text: "True"
+  - text: "False"
+  - text: None
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/47948#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Thu, 24 Oct 2024 09:47:29 UTC"
+record: -1
+selected_options:
+  - 2
+custom_name: "When Sunny Meets Rainy: A Logic Twist"
+local_check: false
