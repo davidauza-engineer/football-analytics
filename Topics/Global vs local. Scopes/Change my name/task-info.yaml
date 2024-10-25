@@ -1,0 +1,27 @@
+type: string
+custom_name: Change my name!
+files:
+  - name: answer.txt
+    visible: true
+    placeholders:
+      - offset: 0
+        length: 11
+        placeholder_text: type your solution here
+        initial_state:
+          length: 23
+          offset: 0
+        initialized_from_dependency: false
+        selected: true
+        status: Solved
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6328#comment
+status: Solved
+feedback:
+  message: "<html>When we are changing the name variable in change_name(), Python\
+    \ interpreter considers it to be defined inside the function body (because, as\
+    \ per the LEGB rule, it first looks for a variable inside the local scope) and\
+    \ therefore local. Local variables can’t be changed outside the function body.\
+    \ To change the name variable outside the function body, we must use the keyword\
+    \ global.</html>"
+  time: "Fri, 25 Oct 2024 10:17:24 UTC"
+record: -1

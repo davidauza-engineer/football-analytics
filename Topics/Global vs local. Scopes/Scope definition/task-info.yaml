@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: A part of the program where a certain variable can be reached by its name.
+  - text: A way of organizing data and functionality together.
+  - text: A block of organized and reusable code.
+  - text: A name associated with a certain value.
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6325#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 25 Oct 2024 10:12:10 UTC"
+record: -1
+selected_options:
+  - 0
+local_check: false

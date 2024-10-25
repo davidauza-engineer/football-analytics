@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: When we define the variable in the body of a function
+  - text: When there are no mentions of the variables with the same names in the code
+      above
+  - text: "When we put the line \"local [variable name]\" in our code"
+  - text: Whenever we don't explicitly define the variable's scope as global
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6324#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 25 Oct 2024 10:16:18 UTC"
+record: -1
+selected_options:
+  - 0
+local_check: false
