@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: lists can store duplicate values
+  - text: the elements' order matters (index positions)
+  - text: lists can store different types of elements (e.g. strings and numbers)
+  - text: lists cannot be empty
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6185#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 25 Oct 2024 09:36:36 UTC"
+record: -1
+selected_options:
+  - 3
+local_check: false

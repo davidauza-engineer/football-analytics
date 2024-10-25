@@ -1,0 +1,22 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: a list
+  - text: an integer
+  - text: a Boolean
+  - text: a string
+  - text: a float
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/7190#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 25 Oct 2024 09:33:23 UTC"
+record: -1
+selected_options:
+  - 0
+  - 3
+local_check: false
