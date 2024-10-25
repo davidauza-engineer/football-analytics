@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: "after the function call, it <b>returns</b> all the arguments"
+  - text: <b>return</b> invokes the function
+  - text: <b>return</b> stops the function execution and/or sends back a value resulted
+      from the function call
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/5903#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 25 Oct 2024 09:49:33 UTC"
+record: -1
+selected_options:
+  - 2
+local_check: false

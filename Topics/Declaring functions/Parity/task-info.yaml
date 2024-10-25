@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: '"Your number is even"<br>"Your number is odd"'
+  - text: '"Your number is odd"'
+  - text: None
+  - text: '"Your number is even"'
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/7282#comment
+status: Solved
+feedback:
+  message: <html>Right! The function execution stops once the first return has been
+    encountered!</html>
+  time: "Fri, 25 Oct 2024 09:48:14 UTC"
+record: -1
+selected_options:
+  - 3
+local_check: false

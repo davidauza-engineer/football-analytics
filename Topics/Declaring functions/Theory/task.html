@@ -1,0 +1,74 @@
+<div class="step-text">
+<p>Often enough, built-in functions cannot suffice even beginners. In such a case, there is no choice but to create your own function. Let's find out how exactly it can be done.</p>
+<h5 id="def-for-define">Def for Define</h5>
+<p> You can create your own function using the keyword <code class="language-python">def</code> (right, derived from <strong>define</strong>). Let's have a look at the syntax:</p>
+<pre><code class="language-python">def function_name(parameter1, parameter2, ...):
+    # function's body
+    ...
+    return "return value"</code></pre>
+<p>After <code class="language-python">def</code>, we write the name of our function (so as to invoke it later) and the names of <strong>parameters</strong>, which our function can accept, enclosed in parentheses. Do not miss the colon at the end of the line. The names of a function and its parameters follow the same convention as <strong>variable names</strong>, that is, they should be written in <strong>lowercase with underscores between words</strong>.</p>
+<p>An indent of 4 spaces shows the interpreter where the function's body starts and where it ends. All statements in the function's body must be indented. You can make calculations inside your function and use the <code class="language-python">return</code> keyword to send the result back. Only when the indentation is absent, the definition of the function ends.</p>
+<p>Later, the parameters take on values passed in a <a class="theory-lookup not-relevant" href="/learn/step/5900" rel="noopener noreferrer nofollow" target="_blank" title="In Python, a function call is the act of invoking or using a function or method. | When you call a function, you're essentially asking Python to execute the code inside that function, often passing in some argument to be used within the function's body. This allows for code reuse and modularity, making your program more organized and easier to understand. An argument is a value that will be used inside the function body. To call or invoke a function in your program, simply write its name and add parentheses after it. The values passed into the function during the function call are known as arguments, and they can be used within the function's code.">function call</a>. Those values we pass to a function are known as <strong>arguments</strong>. The only distinction between parameters and arguments is that we introduce parameters in a function definition and give arguments (some specific values) in a function call. Here is a less abstract example of a function:</p>
+<pre><code class="language-python"># Function definition
+def multiply(x, y):
+    return x * y
+
+
+# Function calls
+a = multiply(3, 5)   # 15
+b = multiply(a, 10)  # 150</code></pre>
+<p>In case you don't want to pass any arguments, the round brackets remain empty:</p>
+<pre><code class="language-python">def welcome():
+    print("Hello, people!")</code></pre>
+<p>You can also declare a sort of empty function with the <code class="language-python">pass</code> statement:</p>
+<pre><code class="language-python"># This function does nothing (yet)
+def lazy_func(param):
+    pass</code></pre>
+<p>When you choose to call <code class="language-python">lazy_func()</code> with an arbitrary value as its argument, nothing will happen. So <code class="language-python">pass</code> is just a placeholder, but at least your code will be valid with it.</p>
+<h5 id="parameters-vs-arguments">Parameters vs arguments</h5>
+<p>It's not quite clear right now, what the parameters are, is it? In fact, parameters are just aliases for values, which can be passed to a function. Consider the following example:</p>
+<pre><code class="language-python">def send_postcard(address, message):
+    print("Sending a postcard to", address)
+    print("With the message:", message)
+
+
+send_postcard("Hilton, 97", "Hello, bro!")
+# Sending a postcard to Hilton, 97
+# With the message: Hello, bro!
+
+send_postcard("Piccadilly, London", "Hi, London!")
+# Sending a postcard to Piccadilly, London
+# With the message: Hi, London!</code></pre>
+<p>As you can see, this function is a reusable piece of code, which can be executed with different arguments, i.e., different values passed to this function. Here, <code class="language-python">address</code> and <code class="language-python">message</code> are just aliases, under which the function receives values and then processes them in the body.</p>
+<p>This function takes exactly 2 arguments, so you will not be able to execute it with more or less than 2 arguments:</p>
+<pre><code class="language-python">send_postcard("Big Ben, London")
+
+TypeError: send_postcard() missing 1 required positional argument: 'message'</code></pre>
+<h5 id="execution-and-return">Execution and return</h5>
+<p>Our previous function only performed some actions, but it didn't have any <strong>return value</strong>. However, you might want to calculate something in a function and return the result at some point. Check the following example:</p>
+<pre><code class="language-python">def celsius_to_fahrenheit(temps_c):
+    temps_f = temps_c * 9 / 5 + 32
+    return round(temps_f, 2)
+
+
+# Convert the boiling point of water
+water_bp = celsius_to_fahrenheit(100)
+print(water_bp)  # 212.0</code></pre>
+<p>The keyword <code class="language-python">return</code> is used to indicate what values the function outputs. Basically, it is the result of the function call. So, in the example above, we've stored the value returned by our function in the variable <code class="language-python">water_bp</code>. Just to be sure, we printed the result.</p>
+<p>One more thing to say is that functions do not necessarily have <a class="theory-lookup not-relevant" href="/learn/step/5900" rel="noopener noreferrer nofollow" target="_blank" title="In Python, a return value is the result produced by a function when it terminates. | If a function performs an action without returning a specific result, its return value is None. However, if a function includes a return statement, the function will stop executing at that point and return the specified value. A function can have multiple return statements, and the execution will end after the first one is encountered. If you assign the result of a function with no return value to a variable or print it, you will get None.">return values</a>. The well-known <code class="language-python">print()</code> function does not, in fact, return anything. Examine the code below:</p>
+<pre><code class="language-python">chant = print("We Will Rock You")
+print(chant)
+</code></pre>
+<p>And its output:</p>
+<pre><code class="language-python">We Will Rock You
+None
+</code></pre>
+<p>We declared the variable <code class="language-python">chant</code> and <a class="theory-lookup not-relevant" href="/learn/step/5900" rel="noopener noreferrer nofollow" target="_blank" title="In Python, invoking refers to the process of starting or executing a function, method, or coroutine. | It can be done in two ways: by using an operator or by calling a method. For instance, when you perform a union on two sets, you get a new set that comprises all the elements of the initial sets. This can be done using the `union()` method or the `` operator. Similarly, coroutines become tasks when they are passed to the `asyncio.create_task()` function, which schedules them to run. In this context, a future represents a computation that hasn't necessarily been completed yet. When a future object is awaited, the coroutine will wait until the future is resolved somewhere else.">invoked</a> <code class="language-python">print()</code>. Obviously, the function was executed. But the variable itself turned out to be the <strong>None </strong>object, which means the called function had nothing to return. The value of <code class="language-python">chant</code> is <strong>None</strong>.</p>
+<p></p>
+<div class="alert alert-warning"><p>Python interpreter stops performing the function after <code class="language-python">return</code>. But what if the function body contains <strong>more</strong> than one return statement? Then the execution will end after the first one. Please, keep that in mind!</p></div>
+<p></p>
+<h5 id="summary">Summary</h5>
+<p>Thus, we've learned the syntax for declaring functions. Now you also know that:</p>
+<ul><li><p>Parameters of a function are simply aliases, or placeholders for values that you will pass to them. Parameters are re-initialized every time you call the function. Inside the function, you have access to these values, which means you can perform calculations on them.</p></li><li><p>A function can simply perform an action without returning anything or return a specific result. If your function doesn't return anything, assigning its result to a variable or printing it will give you <code class="language-python">None</code>.</p></li></ul>
+<p>Declaring your own functions makes your code more structured and reusable. Whenever you use the same piece of code more than once, try to create a function of it!</p>
+</div>

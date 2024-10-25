@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: it ends after the keyword <b>def</b>
+  - text: it ends when the function is called
+  - text: it ends with the lack of indentation
+  - text: it ends with <b>return</b> statement
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/5902#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 25 Oct 2024 09:48:48 UTC"
+record: -1
+selected_options:
+  - 2
+local_check: false
