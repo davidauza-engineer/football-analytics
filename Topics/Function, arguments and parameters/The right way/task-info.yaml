@@ -1,0 +1,22 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: "count(1, 2, 3)"
+  - text: "count(a=1, 2, c=3)"
+  - text: "count(1, c=2, b=3)"
+  - text: "count(c=3, b=2, a=1)"
+  - text: "count(b=3, c=2, a=1)"
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/10300#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 26 Oct 2024 10:51:38 UTC"
+record: -1
+selected_options:
+  - 2
+  - 4
+local_check: false

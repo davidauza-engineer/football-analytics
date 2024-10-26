@@ -1,0 +1,24 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: "For named arguments, the order of passed values doesn't matter much."
+  - text: "When a keyword argument is indicated, you shouldn't put spaces around the\
+    \ equality signs."
+  - text: There can be up to three parameters in a function.
+  - text: You can mention each parameter as many times as you want when calling a function.
+  - text: It's important to write them after positional arguments when you call a function.
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15517#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 26 Oct 2024 10:50:33 UTC"
+record: -1
+selected_options:
+  - 0
+  - 1
+  - 4
+local_check: false

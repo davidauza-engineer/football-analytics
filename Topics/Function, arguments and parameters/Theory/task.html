@@ -1,0 +1,63 @@
+<div class="step-text">
+<p>By now, you are on good terms with functions, since you know how to <a class="theory-lookup not-relevant" href="/learn/step/7248" rel="noopener noreferrer nofollow" target="_blank" title="In Python, invoking refers to the process of starting or executing a function, method, or coroutine. | It can be done in two ways: by using an operator or by calling a method. For instance, when you perform a union on two sets, you get a new set that comprises all the elements of the initial sets. This can be done using the `union()` method or the `` operator. Similarly, coroutines become tasks when they are passed to the `asyncio.create_task()` function, which schedules them to run. In this context, a future represents a computation that hasn't necessarily been completed yet. When a future object is awaited, the coroutine will wait until the future is resolved somewhere else.">invoke</a> and declare them. Let's deepen your knowledge a bit and discover some new features of functions.</p>
+<p>First, a line should be drawn between the terms <strong>"argument"</strong> and <strong>"</strong><strong>parameter</strong><strong>"</strong>. Parameters represent what a function accepts, it's those names that appear in the function definition. Meanwhile, arguments are the values we pass to a function when calling it. We'll cover both arguments and parameters further.</p>
+<h5 id="positional-arguments">Positional arguments</h5>
+<p>There are different ways to assign arguments to a function. First of all, you can do it simply by <strong>position</strong>. In this case, values will associate with parameters in the order in which you passed them into your function <strong>from left to right</strong>. Such arguments are called <strong>positional</strong>, or <strong>non-keyword</strong>.</p>
+<pre><code class="language-python">def subtract(x, y):
+    return x - y
+
+
+subtract(11, 4)  # 7
+subtract(4, 11)  # -7</code></pre>
+<p>When we swapped the numbers in the second function call, we got a different result. Thus, you can see that the order determines how arguments are assigned.</p>
+<h5 id="named-arguments">Named arguments</h5>
+<p>Another way to assign arguments is by <strong>name</strong>. Sometimes you might want to control the order of passed values. That's where <strong>named</strong>, or <strong>keyword</strong>, arguments come into play.</p>
+<pre><code class="language-python">def greet(name, surname):
+    print("Hello,", name, surname)
+
+
+# Non-keyword arguments
+greet("Willy", "Wonka")               # Hello, Willy Wonka
+
+# Keyword arguments
+greet(surname="Wonka", name="Willy")  # Hello, Willy Wonka</code></pre>
+<p>The order doesn't matter here since parameters are matched by name. However, <a class="theory-lookup not-relevant" href="/learn/step/7248" rel="noopener noreferrer nofollow" target="_blank" title="In Python, a keyword argument is a way to pass an argument to a function by specifying the parameter name along with the value. | This allows for more flexibility in assigning arguments, as the order of the arguments does not matter when using keyword arguments. Keyword arguments can be used in conjunction with positional arguments, and can make the code easier to read and follow, reducing the chance of errors and bugs. When defining a function, you can specify default values for keyword arguments, which allows the function to be called with fewer arguments than it is defined to accept.">keyword arguments</a> are always written <strong>after</strong> non-keyword arguments when you call a function:</p>
+<pre><code class="language-python">greet("Frodo", surname="Baggins")  # Hello, Frodo Baggins
+greet(name="Frodo", "Baggins")     # SyntaxError: positional argument follows keyword argument</code></pre>
+<p>Make sure to mention each parameter <strong>once</strong>. To understand why this is important, let's think about what happens every time we call a function. In fact, arguments are initialized so that all operations with the values in this function start from scratch. You cannot initialize an argument twice, so if a value has already been passed and associated with some parameter, attempts to assign another value to this name will fail.</p>
+<pre><code class="language-python">def greet(name, surname):
+    print("Hello,", name, surname)
+
+
+greet("Clementine", name="Rose")
+# TypeError: greet() got multiple values for argument 'name'</code></pre>
+<p>As shown in the example, multiple values for the same name cause an error.</p>
+<h5 id="names-are-important">Names are important</h5>
+<p>We have covered the main errors that you can face. Of course, there can be more parameters in a function:</p>
+<pre><code class="language-python">def responsibility(developer, tester, project_manager, designer):
+    print(developer, "writes code")
+    print(tester, "tests the system")
+    print(project_manager, "manages the product")
+    print(designer, "develops design")</code></pre>
+<p>Note that when we use keyword arguments, names are important, not positions. Thus, the following example will work correctly:</p>
+<pre><code class="language-python">responsibility(project_manager="Sara", developer="Abdul", tester="Yana", designer="Mark")
+# Abdul writes code
+# Yana tests the system
+# Sara manages the product
+# Mark develops design</code></pre>
+<p>However, if we call the function with the same order of names, but without <a class="theory-lookup not-relevant" href="/learn/step/7248" rel="noopener noreferrer nofollow" target="_blank" title="In Python, a named argument, also known as a keyword argument, is a way to assign arguments to a function by specifying the parameter name along with the value, instead of relying on the order of the arguments. | This allows for more flexibility in the order in which arguments are passed to a function. When using named arguments, the order of the arguments does not matter, since the parameters are matched by name. However, it is important to note that keyword arguments must always come after non-keyword arguments when calling a function.">named arguments</a>, then the output will be wrong, with mixed responsibilities:</p>
+<pre><code class="language-python">responsibility("Sara", "Abdul", "Yana", "Mark")
+# Sara writes code
+# Abdul tests the system
+# Yana manages the product
+# Mark develops design</code></pre>
+<p>This way, Python knows the names of the arguments that our function takes. We can ask Python to remind us about them using the built-in <code class="language-python">help()</code> function.</p>
+<pre><code class="language-python">help(responsibility)
+# Help on function responsibility in module __main__:
+# responsibility(developer, tester, project_manager, designer)</code></pre>
+<h5 id="pep-time">PEP time</h5>
+<p>Look at the declared function and function calls shown in this topic one more time: <code class="language-python">greet(name="Willy", surname="Wonka")</code>. Have you noticed missing spaces around the equality sign? Their absence is not accidental. By <a href="https://www.python.org/dev/peps/pep-0008/#other-recommendations" rel="noopener noreferrer nofollow" target="_blank">PEP 8 convention</a>, you should not put spaces around <code class="language-python">=</code> when indicating a keyword argument.</p>
+<h5 id="summary">Summary</h5>
+<p>Now that we've discussed some advanced features of functions, let's sum it up:</p>
+<ul><li><p>There's a distinction between <strong>parameters </strong>and <strong>arguments</strong>.</p></li><li><p>You can pass arguments to a function by <strong>position </strong>and by <strong>name</strong>.</p></li><li><p>The <strong>order</strong> of declared <strong>parameters </strong>is important, as well as the <strong>order of arguments</strong> passed into a function.</p></li><li><p>The <code class="language-python">help()</code> function can tell you the <strong><a class="theory-lookup not-relevant" href="/learn/step/7248" rel="noopener noreferrer nofollow" target="_blank" title="In Python, a function argument is a value that is passed into a function and used within the function's body. | When you call a function, you can include arguments within the parentheses following the function's name. These arguments are then assigned to the parameters specified in the function's definition. Arguments can be required or optional, and Python functions can also accept a variable number of arguments using the `*args` and `**kwargs` syntax. Arguments provide a way to customize the behavior of a function and supply it with the necessary data to perform its intended task.">function arguments</a></strong> by name.</p></li></ul>
+</div>
