@@ -1,0 +1,23 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: print('that's cool')
+  - text: print("some 'boring' string")
+  - text: print('letter \'q\' is my favourite")
+  - text: print("these are my friend's cats")
+  - text: print("\"canoodle" is a real word!")
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/5816#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 26 Oct 2024 11:04:00 UTC"
+record: -1
+selected_options:
+  - 0
+  - 2
+  - 4
+local_check: false

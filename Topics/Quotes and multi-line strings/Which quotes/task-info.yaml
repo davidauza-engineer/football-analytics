@@ -1,0 +1,11 @@
+type: unsupported
+custom_name: Which quotes?
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/38426#comment
+status: Solved
+feedback:
+  time: "Sat, 26 Oct 2024 11:02:13 UTC"
+record: -1

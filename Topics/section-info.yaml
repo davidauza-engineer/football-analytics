@@ -58,3 +58,4 @@ content:
   - Declaring functions
   - Global vs local. Scopes
   - "Function, arguments and parameters"
+  - Quotes and multi-line strings

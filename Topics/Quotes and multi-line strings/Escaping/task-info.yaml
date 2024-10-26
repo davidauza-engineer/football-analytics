@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: A backslash symbol (\)
+  - text: Double quotes ("")
+  - text: A forward slash (/)
+  - text: Single quotes ('')
+  - text: A percent sign (%)
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6880#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 26 Oct 2024 11:04:27 UTC"
+record: -1
+selected_options:
+  - 0
+local_check: false
