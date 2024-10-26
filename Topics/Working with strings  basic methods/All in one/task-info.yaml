@@ -1,0 +1,26 @@
+type: matching
+captions:
+  - "'robot'.replace('o', '_', n)"
+  - "\"\".replace(\"\", 'robot')"
+  - "'robot'.replace('o', \"\")"
+  - "'robot'.replace(\"\", \" \")"
+options:
+  - Replaces n first occurrences of an old substring with a new one.
+  - Removes substrings from the line.
+  - Inserts a substring into the empty line.
+  - Adds spacing between letters.
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6853#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 26 Oct 2024 11:23:19 UTC"
+record: -1
+ordering:
+  - 0
+  - 2
+  - 1
+  - 3

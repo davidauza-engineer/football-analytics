@@ -1,0 +1,71 @@
+<div class="step-text">
+<p>As you already know, the string is one of the most important <a class="theory-lookup not-relevant" href="/learn/step/6842" rel="noopener noreferrer nofollow" target="_blank" title="In Python, a data type is a classification of data that determines how it is stored in memory, what operations can be performed on it, and how those operations are executed. | It is similar to a biological species or any other abstract attribute shared among specific objects. For example, all dogs you've seen have the type dog, but each is an individual object. When it comes to Python, data types include basic data types such as strings, numerical types, and printing types. When you assign a value to a variable, Python creates a new object, places the value inside the object, and then creates a reference from the variable name to the object.">data types</a> in Python. To make working with strings easier, Python has many special built-in <a class="theory-lookup not-relevant" href="/learn/step/6842" rel="noopener noreferrer nofollow" target="_blank" title="In Python, a string method is a built-in function that allows you to perform various operations on a string object, such as manipulating, extracting, or modifying the string's content. | It's important to note that strings in Python are immutable, meaning that these methods do not modify the original string but instead return a new string as a result. For example, the `split()` method splits a string into a list where each word is a list item, while the `join()` method combines the elements of a list into a single string with a specified delimiter. When using these methods, it's essential to assign the result to a new variable if you want to use the modified string several times, as the original string remains unchanged. Additionally, string methods have various parameters that you can adjust according to your needs.">string methods</a>. We are about to learn some of them.</p>
+<div class="alert alert-primary"><p>An important thing to remember, however, is that the string is an <strong>immutable</strong> data type! This means that you cannot just change the string in-place, so most string methods <strong>return a copy</strong> of the string (with several exceptions). To save the changes made to the string for later use, you need to create a <strong>new variable</strong> for the copy that you made or <strong>assign the same name</strong> to the copy. So, what to do with the output of the methods depends on whether you are going to use the original string or its copy later.</p></div>
+<h5 id="changing-a-string">"Changing" a string</h5>
+<p>The first group of string methods consists of those that "modify" the string in a specific way. These methods return a new copy of the string with the specified changes, while leaving the original string unchanged.</p>
+<p>The syntax for calling a method is as follows:</p>
+<pre><code class="language-python">string.method_name(arguments)</code></pre>
+<p>or</p>
+<pre><code class="language-python">variable_name.method_name(arguments)</code></pre>
+<p>Where <code class="language-python">string</code> is the actual string, <code class="language-python">variable_name</code> is a variable holding a string, <code class="language-python">method_name</code> is the name of the method being called, and <code class="language-python">arguments</code> are any additional parameters the method may require.</p>
+<p>Here's a list of common string methods in this category:</p>
+<ul><li><p><code class="language-python">str.replace(old, new, count)</code> replaces all occurrences of the <code class="language-python">old</code> string with the <code class="language-python">new</code> one. The <code class="language-python">count</code> parameter is optional, and if specified, only the first <code class="language-python">count</code> occurrences are replaced in the given string.</p></li><li><p><code class="language-python">str.upper()</code> converts all characters of the string to upper case.</p></li><li><p><code class="language-python">str.lower()</code> converts all characters of the string to lower case.</p></li><li><p><code class="language-python">str.title()</code> converts the first character of each string to upper case.</p></li><li><p><code class="language-python">str.swapcase()</code> converts upper case to lower case and vice versa.</p></li><li><p><code class="language-python">str.capitalize()</code> changes the first character of the string to upper case and the rest to lower case.</p></li></ul>
+<p>And here's an example of how these methods are used (note that we don't save the result of every method):</p>
+<pre><code class="language-python">message = "bonjour and welcome to Paris!"
+
+print(message.upper())  # BONJOUR AND WELCOME TO PARIS!
+# `message` is not changed
+print(message)  # bonjour and welcome to Paris!
+
+title_message = message.title() 
+# `title_message` contains a new string 
+# with the first character of each word capitalized
+print(title_message)  # Bonjour And Welcome To Paris!
+
+print(message.replace("Paris", "Lyon"))  # bonjour and welcome to Lyon!
+replaced_message = message.replace("o", "!", 2)
+print(replaced_message)  # b!nj!ur and welcome to Paris!
+
+# again, the source string is unchanged, only its copy is modified
+print(message)  # bonjour and welcome to Paris!</code></pre>
+<h5 id="removing-characters-from-a-string">Removing characters from a string</h5>
+<p>When reading a string from a source (such as a file or user input), you often need to edit it to retain only the necessary information. For example, the input string may contain excessive whitespace or unwanted characters at the beginning or end. Three useful "editing" methods to help clean up such strings are:</p>
+<ul><li><p><code class="language-python">str.lstrip([chars])</code> removes the leading characters (i.e. characters from the left side). If the argument <code class="language-python">chars</code> isn’t specified, leading whitespaces are removed.</p></li><li><p><code class="language-python">str.rstrip([chars])</code> removes the trailing characters (i.e. characters from the right side). The default for the argument <code class="language-python">chars</code> is also whitespace.</p></li><li><p><code class="language-python">str.strip([chars])</code> removes both the leading and the trailing characters. The default is whitespace.</p></li></ul>
+<p>The <code class="language-python">chars</code> argument, when specified, is a string containing characters that should be removed from either the beginning or end of the string (depending on the method you're using). Here's how it works:</p>
+<pre><code class="language-python">whitespace_string = "     hey      "
+normal_string = "incomprehensibilities"
+
+# delete spaces from the left side
+whitespace_string.lstrip()  # "hey      "
+
+# delete all "i" and "s" from the left side
+normal_string.lstrip("is")  # "ncomprehensibilities"
+
+# delete spaces from the right side
+whitespace_string.rstrip()  # "     hey"
+
+# delete all "i" and "s" from the right side
+normal_string.rstrip("is")  # "incomprehensibilitie"
+
+# no spaces from both sides
+whitespace_string.strip()  # "hey"
+
+# delete all trailing "i" and "s" from both sides
+normal_string.strip("is")  # "ncomprehensibilitie"</code></pre>
+<p>Keep in mind that the methods <code class="language-python">strip()</code>, <code class="language-python">lstrip()</code>, and <code class="language-python">rstrip()</code> get rid of all possible combinations of specified characters:</p>
+<pre><code class="language-python">word = "Mississippi"
+
+# starting from the right side, all "i", "p", and "s" are removed:
+print(word.rstrip("ips"))  # "M"
+
+# the word starts with "M" rather than "i", "p", or "s", so no chars are removed from the left side:
+print(word.lstrip("ips"))  # "Mississippi"
+
+# "M", "i", "p", and "s" are removed from both sides, so nothing is left:
+print(word.strip("Mips"))  # ""</code></pre>
+<p>Use them carefully, or you may end up with an empty string.</p>
+<h5 id="summary">Summary</h5>
+<p>To sum up, we have considered the main methods for strings. Here is a brief recap:</p>
+<ul><li><p>While working with strings, you have to remember that strings are <strong>immutable</strong>, thus all the methods that "change" them only return the copy of a string with necessary changes.</p></li><li><p>If you want to save the result of a method call for later use, you need to assign this result to a variable (either the same or the one with a different name).</p></li><li><p>If you want to use this result only once, for example, in comparisons or just to print the formatted string, you are free to use the result on the spot, as we did within <code class="language-python">print()</code>.</p></li></ul>
+<p>Read more on this topic in <a href="https://hyperskill.org/blog/post/working-with-python-strings" rel="noopener noreferrer nofollow" target="_blank">Working with Python Strings</a> on Hyperskill Blog.</p>
+</div>
