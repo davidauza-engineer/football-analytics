@@ -5,7 +5,7 @@ options:
   - text: "INSERT INTO pets name, owner, pet_id FROM new_pets;"
   - text: UPDATE residents  SET debt = (SELECT debt FROM residents)  WHERE rent_paid
       = FALSE;
-  - text: DELETE FROM orders WHERE order_id = (SELECT order_id FROM delivered_orders
+  - text: DELETE FROM orders WHERE order_id IN (SELECT order_id FROM delivered_orders
       WHERE recipient = 'Ann');
 files:
   - name: main.py

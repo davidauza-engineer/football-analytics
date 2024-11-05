@@ -60,3 +60,4 @@ content:
   - "Function, arguments and parameters"
   - Quotes and multi-line strings
   - Working with strings  basic methods
+  - String formatting
