@@ -62,3 +62,4 @@ content:
   - Working with strings  basic methods
   - String formatting
   - Escape sequences
+  - Splitting strings and joining lists

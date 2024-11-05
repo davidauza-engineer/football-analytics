@@ -1,0 +1,19 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: join()
+  - text: split()
+  - text: splitlines()
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6976#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Tue, 05 Nov 2024 11:13:57 UTC"
+record: -1
+selected_options:
+  - 0
+local_check: false
