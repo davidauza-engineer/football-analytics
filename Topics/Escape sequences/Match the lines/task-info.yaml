@@ -1,0 +1,23 @@
+type: matching
+captions:
+  - <code>print('Pytho\\n \b3')</code>
+  - <code>print('Pytho\\n \m3')</code>
+  - <code>print('Pytho\\n\t3')</code>
+options:
+  - "<code>Pytho\\n\t3</code>"
+  - <code>Pytho\n3</code>
+  - <code>Pytho\n \m3</code>
+files:
+  - name: main.py
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15251#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Tue, 05 Nov 2024 10:52:26 UTC"
+record: -1
+ordering:
+  - 1
+  - 2
+  - 0
